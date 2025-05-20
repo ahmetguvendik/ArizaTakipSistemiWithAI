@@ -1,0 +1,23 @@
+using Application.Repositories;
+using Domain.Entities;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Persistance.Repositories;
+
+namespace Persistance;
+
+public static class ServiceRegistration
+{
+    public static void AddPersistanceService(this IServiceCollection collection)
+    {
+        collection.AddDbContext<FaultDbContext>(opt =>
+            opt.UseNpgsql("User ID=postgres;Password=testtest;Host=localhost;Port=5432;Database=FaultReportDb;"));  
+        AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+        collection.AddIdentity<AppUser, AppRole>()
+            .AddEntityFrameworkStores<FaultDbContext>();     
+        
+        collection.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+        
+        
+    }
+}

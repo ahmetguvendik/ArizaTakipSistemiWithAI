@@ -1,0 +1,17 @@
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Infrastructure/Persistance/obj/Debug/net9.0/Persistance.csproj.AssemblyReference.cache
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Infrastructure/Persistance/obj/Debug/net9.0/Persistance.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Infrastructure/Persistance/obj/Debug/net9.0/Persistance.AssemblyInfoInputs.cache
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Infrastructure/Persistance/obj/Debug/net9.0/Persistance.AssemblyInfo.cs
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Infrastructure/Persistance/obj/Debug/net9.0/Persistance.csproj.CoreCompileInputs.cache
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Infrastructure/Persistance/bin/Debug/net9.0/Persistance.deps.json
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Infrastructure/Persistance/bin/Debug/net9.0/Persistance.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Infrastructure/Persistance/bin/Debug/net9.0/Persistance.pdb
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Infrastructure/Persistance/bin/Debug/net9.0/Domain.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Infrastructure/Persistance/bin/Debug/net9.0/Domain.pdb
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Infrastructure/Persistance/obj/Debug/net9.0/Persista.3F568332.Up2Date
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Infrastructure/Persistance/obj/Debug/net9.0/Persistance.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Infrastructure/Persistance/obj/Debug/net9.0/refint/Persistance.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Infrastructure/Persistance/obj/Debug/net9.0/Persistance.pdb
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Infrastructure/Persistance/obj/Debug/net9.0/ref/Persistance.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Infrastructure/Persistance/bin/Debug/net9.0/Application.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Infrastructure/Persistance/bin/Debug/net9.0/Application.pdb

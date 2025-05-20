@@ -1,0 +1,12 @@
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Domain/bin/Debug/net9.0/Domain.deps.json
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Domain/bin/Debug/net9.0/Domain.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Domain/bin/Debug/net9.0/Domain.pdb
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Domain/obj/Debug/net9.0/Domain.csproj.AssemblyReference.cache
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Domain/obj/Debug/net9.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Domain/obj/Debug/net9.0/Domain.AssemblyInfoInputs.cache
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Domain/obj/Debug/net9.0/Domain.AssemblyInfo.cs
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Domain/obj/Debug/net9.0/Domain.csproj.CoreCompileInputs.cache
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Domain/obj/Debug/net9.0/Domain.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Domain/obj/Debug/net9.0/refint/Domain.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Domain/obj/Debug/net9.0/Domain.pdb
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Domain/obj/Debug/net9.0/ref/Domain.dll
