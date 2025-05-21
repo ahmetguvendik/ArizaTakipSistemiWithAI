@@ -10,3 +10,4 @@
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Domain/obj/Debug/net9.0/refint/Domain.dll
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Domain/obj/Debug/net9.0/Domain.pdb
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Domain/obj/Debug/net9.0/ref/Domain.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Domain/obj/Debug/net9.0/Domain.sourcelink.json

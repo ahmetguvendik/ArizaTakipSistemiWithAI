@@ -1,4 +1,5 @@
 using Persistance;
+using Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,7 +8,8 @@ builder.Services.AddControllers();            // ← Controller desteği
 builder.Services.AddAuthorization();          // ← Authorization middleware çalışsın diye
 builder.Services.AddEndpointsApiExplorer();   // ← Swagger için
 builder.Services.AddSwaggerGen();             // ← Swagger için
-builder.Services.AddPersistanceService();     // ← Kendi Persistance katmanını yüklüyorsun
+builder.Services.AddPersistanceService();  
+builder.Services.AddApplicationService(builder.Configuration);
 
 var app = builder.Build();
 
@@ -20,9 +22,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-// Bu sıralama önemli değil ama genelde bu sırada olur
+
 app.UseAuthorization();
 
-app.MapControllers();  // ← Controller route'larını aktif hale getirir
+app.MapControllers();  
 
 app.Run();

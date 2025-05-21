@@ -1804,3 +1804,4 @@
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/obj/Debug/net9.0/Frontend.pdb
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/obj/Debug/net9.0/Frontend.genruntimeconfig.cache
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/obj/Debug/net9.0/ref/Frontend.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/obj/Debug/net9.0/Frontend.sourcelink.json
