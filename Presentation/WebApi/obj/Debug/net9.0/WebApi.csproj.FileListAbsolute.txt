@@ -146,3 +146,6 @@
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/bin/Debug/net9.0/MediatR.dll
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/bin/Debug/net9.0/MediatR.Contracts.dll
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/obj/Debug/net9.0/WebApi.sourcelink.json
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/bin/Debug/net9.0/FluentValidation.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/bin/Debug/net9.0/FluentValidation.AspNetCore.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/bin/Debug/net9.0/FluentValidation.DependencyInjectionExtensions.dll

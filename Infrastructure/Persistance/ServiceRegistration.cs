@@ -17,7 +17,7 @@ public static class ServiceRegistration
             .AddEntityFrameworkStores<FaultDbContext>();     
         
         collection.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-        
+        collection.AddScoped(typeof(IFaultReportRepository), typeof(FaultReportRepository));
         
     }
 }

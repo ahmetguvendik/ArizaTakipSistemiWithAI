@@ -60,11 +60,7 @@ namespace Persistance.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("text");
 
-                    b.Property<int?>("DepartmentId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("DepartmentId1")
-                        .IsRequired()
+                    b.Property<string>("DepartmentId")
                         .HasColumnType("text");
 
                     b.Property<string>("Email")
@@ -113,7 +109,7 @@ namespace Persistance.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DepartmentId1");
+                    b.HasIndex("DepartmentId");
 
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
@@ -196,10 +192,7 @@ namespace Persistance.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("text");
 
-                    b.Property<int>("DepartmentId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("DepartmentId1")
+                    b.Property<string>("DepartmentId")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -213,7 +206,7 @@ namespace Persistance.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DepartmentId1");
+                    b.HasIndex("DepartmentId");
 
                     b.ToTable("Machines");
                 });
@@ -328,9 +321,7 @@ namespace Persistance.Migrations
                 {
                     b.HasOne("Domain.Entities.Department", "Department")
                         .WithMany("Users")
-                        .HasForeignKey("DepartmentId1")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("DepartmentId");
 
                     b.Navigation("Department");
                 });
@@ -362,7 +353,7 @@ namespace Persistance.Migrations
                 {
                     b.HasOne("Domain.Entities.Department", "Department")
                         .WithMany("Machines")
-                        .HasForeignKey("DepartmentId1")
+                        .HasForeignKey("DepartmentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

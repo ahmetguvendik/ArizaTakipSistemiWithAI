@@ -1,4 +1,5 @@
 using Application.Features.Commands.FaultReportComamnds;
+using Application.Features.Queries.FaultReportQueries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,6 +14,13 @@ public class FaultReportController  : Microsoft.AspNetCore.Mvc.Controller
     public FaultReportController(IMediator mediator)
     {
          _mediator = mediator;
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Get()
+    {
+        var valus = await _mediator.Send(new GetFaultReportQuery());
+        return Ok(valus);
     }
     
     [HttpPost]

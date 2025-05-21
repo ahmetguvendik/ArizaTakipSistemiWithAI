@@ -1,5 +1,7 @@
 using Persistance;
 using Application;
+using Application.Validations.FaultValidations;
+using FluentValidation.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,9 @@ builder.Services.AddEndpointsApiExplorer();   // ← Swagger için
 builder.Services.AddSwaggerGen();             // ← Swagger için
 builder.Services.AddPersistanceService();  
 builder.Services.AddApplicationService(builder.Configuration);
+builder.Services.AddControllers()
+    .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateFaultReportValidation>());
+
 
 var app = builder.Build();
 
