@@ -1,6 +1,6 @@
-namespace DTO.FaultReportDtos;
+namespace Application.Features.Results.FaultReportResults;
 
-public class GetFaultReportDto
+public class GetFaultReportByIdQueryResult
 {
     public string Id { get; set; }
     public string Title { get; set; }
@@ -12,7 +12,6 @@ public class GetFaultReportDto
     public string Status { get; set; } // Yeni, Atandı, Çözülüyor, Tamamlandı
     public string? MachineName { get; set; }
     public string? AssignedToName { get; set; } // Teknisyen
-    public string? AssignedByName { get; set; } // Supervizör   
-    public string DepartmanName { get; set; }
-    
+    public string? AssignedByName { get; set; } // Supervizör 
+    public string DepartmanName { get; set; }   
 }
