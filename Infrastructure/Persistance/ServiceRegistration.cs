@@ -18,6 +18,8 @@ public static class ServiceRegistration
         
         collection.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         collection.AddScoped(typeof(IFaultReportRepository), typeof(FaultReportRepository));
+        collection.AddScoped(typeof(IMachineRepository), typeof(MachineRepository));    
+
         
     }
 }

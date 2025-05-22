@@ -19,6 +19,8 @@ public class AssignTechnicianCommandHandler : IRequestHandler<AssignTechnicianCo
         value.AssignedToId = request.AssignnedToId;
         value.Id = request.Id;
         value.Status = "Atandı";
+        value.AssignedById = request.AssignnedById;
+        value.AssignedTime = request.AssignedTime;  
         await _faultReportRepository.UpdateAsync(value);
         await _faultReportRepository.SaveChangesAsync();
     }

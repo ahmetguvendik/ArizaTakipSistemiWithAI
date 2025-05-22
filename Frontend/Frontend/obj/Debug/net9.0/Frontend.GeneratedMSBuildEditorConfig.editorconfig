@@ -20,6 +20,10 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
+[/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/Views/AIAsistant/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQUlBc2lzdGFudC9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/Views/Ariza/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXJpemEvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -50,6 +54,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/Views/Supervisor/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3VwZXJ2aXNvci9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/Views/Teknisyen/ArizaDetay.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGVrbmlzeWVuL0FyaXphRGV0YXkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/Views/Teknisyen/Index.cshtml]

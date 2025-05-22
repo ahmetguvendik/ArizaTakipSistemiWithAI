@@ -42,7 +42,9 @@ public class LoginController : Controller
                         {
                             new Claim(ClaimTypes.Name, loginUserDto.Username),
                             new Claim(ClaimTypes.NameIdentifier, loginResult.Id), // Burada UserId'yi ekliyoruz
-                            new Claim(ClaimTypes.Role, loginResult.Role)
+                            new Claim(ClaimTypes.Role, loginResult.Role),
+                            new Claim("DepartmentId", loginResult.DepartmanId ?? "") // DepartmanId claim olarak
+
                         };
 
                         var identity = new ClaimsIdentity(claims, "MyCookieAuth");

@@ -1,230 +1,82 @@
 @model DTO.FaultReportDtos.GetFaultReportDto
 
+@using Microsoft.AspNetCore.Mvc.Rendering
+
 @{
     Layout = null;
 }
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<div class="container my-5">
+    <h2 class="mb-4">Arıza Detayları</h2>
 
-    <title>XYZ Arıza Bildirimi</title>
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">İsim Soyisim</dt>
+                <dd class="col-sm-9">@Model.ReporterName</dd>
 
-    <!-- Custom fonts for this template -->
-    <link href="startbootstrap-sb-admin-2-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+                <dt class="col-sm-3">Email</dt>
+                <dd class="col-sm-9">@Model.ReporterEmail</dd>
 
-    <!-- Custom styles for this template -->
-    <link href="startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.min.css" rel="stylesheet">
+                <dt class="col-sm-3">Telefon</dt>
+                <dd class="col-sm-9">@Model.ReporterPhone</dd>
 
-    <!-- Custom styles for this page -->
-    <link href="startbootstrap-sb-admin-2-gh-pages/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+                <dt class="col-sm-3">Başlık</dt>
+                <dd class="col-sm-9">@Model.Title</dd>
 
-</head>
+                <dt class="col-sm-3">Açıklama</dt>
+                <dd class="col-sm-9">@Model.Description</dd>
 
-<body id="page-top">
+                <dt class="col-sm-3">Tarih</dt>
+                <dd class="col-sm-9">@Model.CreatedAt.ToString("dd.MM.yyyy HH:mm")</dd>
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
+                <dt class="col-sm-3">Süpervizör</dt>
+                <dd class="col-sm-9">@Model.AssignedByName</dd>
 
-        <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+                <dt class="col-sm-3">Teknisyen</dt>
+                <dd class="col-sm-9">@Model.AssignedToName </dd>
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">XYZ Arıza Bildirim></div>
-            </a>
+                <dt class="col-sm-3">Makine</dt>
+                <dd class="col-sm-9">@Model.MachineName</dd>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
+                <dt class="col-sm-3">Departman</dt>
+                <dd class="col-sm-9">@Model.DepartmanName</dd>
 
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="\Supervisor">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Arızalar</span></a>
-            </li>
-            
-        </ul>
-        <!-- End of Sidebar -->
-
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
-
-            <!-- Main Content -->
-            <div id="content">
-
-                <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <form class="form-inline">
-                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                    </form>
-
- 
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Supervisor</span>
-                            </a>
-                            <!-- Dropdown - User Information -->
-                        </li>
-
-                    </ul>
-
-                </nav>
-                <!-- End of Topbar -->
-
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Arıza Detayı</h1>
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                    <tr>
-                                        <th>İsim</th>
-                                        <th>Email</th>
-                                        <th>Başlık</th>
-                                        <th>Açıklama</th>
-                                        <th>Tarih</th>
-                                        <th>Durum</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>@Model.ReporterName</td>
-                                        <td>@Model.ReporterEmail</td>
-                                        <td>@Model.Title</td>
-                                        <td>@Model.Description</td>
-                                        <td>@Model.CreatedAt</td>
-                                        <td>@Model.Status</td>
-                                    </tr>
-                                    
-                                    </tbody>
-                                </table>
-                                
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                    <tr>
-                                        <th>İsim</th>
-                                        <th>Email</th>
-                                        <th>Başlık</th>
-                                        <th>Açıklama</th>
-                                        <th>Tarih</th>
-                                        <th>Durum</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>@Model.MachineName</td>
-                                        <td>@Model.AssignedToName</td>
-                                        <td>@Model.AssignedByName</td>
-                                    </tr>
-                                    
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- /.container-fluid -->
-
-            </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
-
-        </div>
-        <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
+                <dt class="col-sm-3">Durum</dt>
+                <dd class="col-sm-9">@Model.Status</dd>
+            </dl>
         </div>
     </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.min.js"></script>
-    <script src="startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    @if (string.IsNullOrEmpty(Model.AssignedToId)) 
+    {
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h4 class="mb-3">Teknisyen Ataması Yap</h4>
 
-    <!-- Core plugin JavaScript-->
-    <script src="startbootstrap-sb-admin-2-gh-pages/vendor/jquery-easing/jquery.easing.min.js"></script>
+                <form asp-action="TeknisyenAta" asp-controller="Supervisor" method="post">
+                    <input type="hidden" name="faultReportId" value="@Model.Id" />
 
-    <!-- Custom scripts for all pages-->
-    <script src="startbootstrap-sb-admin-2-gh-pages/js/sb-admin-2.min.js"></script>
+                    <div class="mb-3">
+                        <label for="assignedToId" class="form-label">Atanacak Teknisyen</label>
+                        @Html.DropDownList("assignedToId", (List<SelectListItem>)ViewBag.Users, "Teknisyen Seç", new { @class = "form-select", id = "assignedToId" })
+                    </div>
 
-    <!-- Page level plugins -->
-    <script src="startbootstrap-sb-admin-2-gh-pages/vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="startbootstrap-sb-admin-2-gh-pages/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+                    <button type="submit" class="btn btn-primary">Atama Yap</button>
+                </form>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-success">
+            Bu arıza <strong>@Model.AssignedToName</strong> adlı teknisyene atanmıştır.
+        </div>
+    }
+</div>
 
-    <!-- Page level custom scripts -->
-    <script src="startbootstrap-sb-admin-2-gh-pages/js/demo/datatables-demo.js"></script>
-
-</body>
-
-</html>
-
-
-<form asp-action="TeknisyenAta" asp-controller="Supervisor" method="post">
-    <input type="hidden" name="faultReportId" value="@Model.Id" />
-
-    <div class="form-group">
-        <label for="AssignedToId">Atanacak Teknisyen</label>
-        @Html.DropDownList("assignedToId", (List<SelectListItem>)ViewBag.Users, "Teknisyen Seç", new { @class = "form-control" })
-    </div>
-
-    <button type="submit" class="btn btn-primary">Atama Yap</button>
-</form>
+<!-- Bootstrap JS Bundle (Popper + JS) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

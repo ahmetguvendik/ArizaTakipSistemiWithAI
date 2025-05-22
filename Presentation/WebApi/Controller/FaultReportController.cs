@@ -30,6 +30,13 @@ public class FaultReportController  : Microsoft.AspNetCore.Mvc.Controller
         return Ok(valus);
     }
     
+    [HttpGet("GetByDepartmanId/{id}")]         
+    public async Task<IActionResult> GetByDepartmanId(string id)
+    {
+        var valus = await _mediator.Send(new GetFaultReportByDepartmanIdQuery(id));
+        return Ok(valus);
+    }
+    
     [HttpPost]
     public async Task<IActionResult> Post(CreateFaultReportCommand command)
     {

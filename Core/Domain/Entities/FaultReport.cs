@@ -9,6 +9,7 @@ public class FaultReport : BaseEntity
         public string ReporterPhone { get; set; }
         public string ReporterEmail { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime AssignedTime { get; set; }      
         public string Status { get; set; } = "Yeni"; // Yeni, Atandı, Çözülüyor, Tamamlandı
 
         public string? MachineId { get; set; }

@@ -143,6 +143,9 @@ namespace Persistance.Migrations
                     b.Property<string>("AssignedById")
                         .HasColumnType("text");
 
+                    b.Property<DateTime>("AssignedTime")
+                        .HasColumnType("timestamp without time zone");
+
                     b.Property<string>("AssignedToId")
                         .HasColumnType("text");
 

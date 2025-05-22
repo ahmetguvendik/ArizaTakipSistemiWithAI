@@ -21,7 +21,7 @@ public class CreateFaultReportCommandHandler : IRequestHandler<CreateFaultReport
        faultReport.Title = request.Title;
        faultReport.Description = request.Description;
        faultReport.Status = "Yeni";
-       faultReport.CreatedAt = DateTime.UtcNow;
+       faultReport.CreatedAt = DateTime.Now;
        faultReport.ReporterName  = request.ReporterName;
        faultReport.ReporterEmail  = request.ReporterEmail;
        faultReport.ReporterPhone  = request.ReporterPhone;

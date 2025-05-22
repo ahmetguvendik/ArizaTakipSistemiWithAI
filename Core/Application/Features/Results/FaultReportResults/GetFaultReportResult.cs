@@ -11,7 +11,13 @@ public class GetFaultReportResult
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public string Status { get; set; } // Yeni, Atandı, Çözülüyor, Tamamlandı
     public string? MachineName { get; set; }
+    public string? MachineId { get; set; }
     public string? AssignedToName { get; set; } // Teknisyen
     public string? AssignedByName { get; set; } // Supervizör   
+    public string? AssignedToId { get; set; } // Supervizör   
+    public string? DepartmanName { get; set; } // Supervizör    
 
+    public string? DepartmanId { get; set; }   
+
+    
 }

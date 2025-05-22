@@ -28,9 +28,13 @@ public class GetFaultReportQueryHandler  : IRequestHandler<GetFaultReportQuery, 
             CreatedAt = x.CreatedAt,
             Status = x.Status,
             AssignedByName = x.AssignedBy != null ? x.AssignedBy.NameSurname : "Atanmamış",
-            AssignedToName = x.AssignedTo != null ? x.AssignedTo.NameSurname : "Atanmamış",
-            MachineName = x.Machine != null ? x.Machine.Name : "Bilinmiyor"
-            
+            AssignedToName = x.AssignedTo != null ? x.AssignedTo.NameSurname : null,
+            MachineName = x.Machine != null ? x.Machine.Name : "Bilinmiyor",
+            AssignedToId = x.AssignedToId ?? null,
+            DepartmanName = x.AssignedTo?.Department?.Name ?? null,
+            DepartmanId = x.AssignedTo?.Department?.Id ?? null,
+            MachineId = x.Machine?.Id ?? null,  
+
         }).ToList();
     }
 }

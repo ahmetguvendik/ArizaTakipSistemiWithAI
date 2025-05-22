@@ -32,6 +32,7 @@ namespace Application.Features.Handlers.AppUserHandlers.Write;
                     {
                         Id = appUser.Id,
                         Username = request.Username,
+                        DepartmanId = appUser.DepartmentId,
                         Role = "Admin",
       
                     };
@@ -42,6 +43,7 @@ namespace Application.Features.Handlers.AppUserHandlers.Write;
                     {
                         Id = appUser.Id,
                         Username = request.Username,
+                        DepartmanId = appUser.DepartmentId,
                         Role = "Teknisyen",
                
                     };
@@ -52,7 +54,7 @@ namespace Application.Features.Handlers.AppUserHandlers.Write;
                     {
                         Id = appUser.Id,
                         Username = request.Username,
-               
+                        DepartmanId = appUser.DepartmentId,
                         Role = "Supervisor"
                     };
                 }
@@ -63,7 +65,7 @@ namespace Application.Features.Handlers.AppUserHandlers.Write;
             {
                 Id = appUser.Id,
                 Username = request.Username,
-   
+                DepartmanId = appUser.DepartmentId,
                 Role = ""
             };
             

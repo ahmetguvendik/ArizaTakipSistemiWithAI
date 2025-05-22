@@ -2,12 +2,15 @@ using System.Security.Claims;
 using System.Text;
 using DTO.AppUserDto;
 using DTO.FaultReportDtos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
 
 namespace Frontend.Controllers;
 
+
+[Authorize(Roles = "Supervisor")]
 public class SupervisorController : Controller
 {
     private readonly IHttpClientFactory _httpClientFactory;
@@ -29,7 +32,7 @@ public class SupervisorController : Controller
         return View();
     }
 
-    public async Task<IActionResult> ArizaDetay(string id)
+    public async Task<IActionResult> ArizaDetay(string id)          
     {
         var client = _httpClientFactory.CreateClient();
 
@@ -59,12 +62,16 @@ public class SupervisorController : Controller
     [HttpPost]
     public async Task<IActionResult> TeknisyenAta(string faultReportId, string assignedToId)
     {
+        var supervisorId = User.Identity.IsAuthenticated ? User.FindFirstValue(ClaimTypes.NameIdentifier) : null;
+        
         var client = _httpClientFactory.CreateClient();
         var atamaDto = new TeknisyenAtamaDto()
         {
             id = faultReportId,
             AssignnedToId = assignedToId,
-            Statues = "Atandı"
+            AssignnedById = supervisorId,   
+            Statues = "Atandı",
+            AssignedTime = DateTime.Now,
         };
 
         var json = JsonConvert.SerializeObject(atamaDto);
