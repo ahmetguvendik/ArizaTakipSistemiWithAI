@@ -2,6 +2,8 @@ using Application.Features.Commands.FaultReportComamnds;
 using Application.Features.Queries.FaultReportQueries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
+using WebApi.Hubs;
 
 namespace WebApi.Controller;
 
@@ -10,10 +12,13 @@ namespace WebApi.Controller;
 public class FaultReportController  : Microsoft.AspNetCore.Mvc.Controller
 {
     private readonly IMediator _mediator;
+    private readonly IHubContext<FaultHub> _faultHubContext;
+    
 
-    public FaultReportController(IMediator mediator)
+    public FaultReportController(IMediator mediator,IHubContext<FaultHub> faultHubContext)
     {
          _mediator = mediator;
+         _faultHubContext = faultHubContext;
     }
 
     [HttpGet]
@@ -40,14 +45,16 @@ public class FaultReportController  : Microsoft.AspNetCore.Mvc.Controller
     [HttpPost]
     public async Task<IActionResult> Post(CreateFaultReportCommand command)
     {
-        await _mediator.Send(command);
-        return Ok("EKlendi");
+            await _mediator.Send(command);
+            await _faultHubContext.Clients.All.SendAsync("ReceiveUpdate", "Yeni Ariza Geldi");  
+             return Ok("Eklendi");
     }
-    
     [HttpPut]
     public async Task<IActionResult> Post(AssignTechnicianCommand command)
     {
         await _mediator.Send(command);
+        await _faultHubContext.Clients.All.SendAsync("ReceiveUpdate", "Arıza Atandi");  
+
         return Ok("Atandı");
     }
     
@@ -55,6 +62,8 @@ public class FaultReportController  : Microsoft.AspNetCore.Mvc.Controller
     public async Task<IActionResult> ClosedFault(CloseFaultCommand command) 
     {
         await _mediator.Send(command);
+        await _faultHubContext.Clients.All.SendAsync("ReceiveUpdate", "Arıza Kapatildi");
+
         return Ok("Kapatildi");
     }
 }

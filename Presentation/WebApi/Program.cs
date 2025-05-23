@@ -2,6 +2,7 @@ using Persistance;
 using Application;
 using Application.Validations.FaultValidations;
 using FluentValidation.AspNetCore;
+using WebApi.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,11 +21,14 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowAll",
         builder =>
         {
-            builder.AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader();
+            builder.AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials()
+                .SetIsOriginAllowed(origin => true);
         });
 });
+
+builder.Services.AddSignalR();
 
 var app = builder.Build();
 
@@ -35,11 +39,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
 app.UseCors("AllowAll");    
 
+app.UseHttpsRedirection();
+
+app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapControllers();  
+app.MapControllers();
+app.MapHub<FaultHub>("/fault"); 
 
 app.Run();

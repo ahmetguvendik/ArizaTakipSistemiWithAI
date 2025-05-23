@@ -17,6 +17,7 @@
 
     <ItemGroup>
       <Folder Include="Features\Handlers\MachineHandlers\Write\" />
+      <Folder Include="MCP\" />
     </ItemGroup>
 
 </Project>

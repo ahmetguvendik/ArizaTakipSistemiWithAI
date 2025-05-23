@@ -15,19 +15,19 @@ public class FaultReportRepository : IFaultReportRepository
     
     public async Task<List<FaultReport>> GetAllAsync()
     {
-        var values = await _context.FaultReports.Include(x=>x.AssignedBy).Include(x=>x.AssignedTo).ThenInclude(y=>y.Department).Include(x=>x.Machine).OrderByDescending(x=>x.CreatedAt).ToListAsync();
+        var values = await _context.FaultReports.Include(x=>x.AssignedBy).Include(x=>x.ClosedBy).Include(x=>x.AssignedTo).ThenInclude(y=>y.Department).Include(x=>x.Machine).OrderByDescending(x=>x.CreatedAt).ToListAsync();
         return values;
     }
 
     public async Task<FaultReport> GetFaultByIdAsync(string id)
     {
-        var values = await _context.FaultReports.Include(x=>x.AssignedBy).Include(x=>x.AssignedTo).ThenInclude(y=>y.Department).Include(x=>x.Machine).Where(x=>x.Id == id).FirstOrDefaultAsync();
+        var values = await _context.FaultReports.Include(x=>x.AssignedBy).Include(x=>x.AssignedTo).Include(x=>x.ClosedBy).ThenInclude(y=>y.Department).Include(x=>x.Machine).Where(x=>x.Id == id).FirstOrDefaultAsync();
         return values;
     }
 
     public async Task<List<FaultReport>> GetFaultByDepartmanIdAsync(string departmanId)
     {
-        var values = await _context.FaultReports.Include(x=>x.AssignedBy).Include(x=>x.AssignedTo).ThenInclude(y=>y.Department).Include(x=>x.Machine).Where(x=> x.AssignedTo.DepartmentId == departmanId).ToListAsync();
+        var values = await _context.FaultReports.Include(x=>x.AssignedBy).Include(x=>x.AssignedTo).Include(x=>x.ClosedBy).ThenInclude(y=>y.Department).Include(x=>x.Machine).Where(x=> x.AssignedTo.DepartmentId == departmanId).ToListAsync();
         return values;
     }
 }

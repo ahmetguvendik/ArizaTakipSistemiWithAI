@@ -93,7 +93,8 @@ _ => "bg-secondary"
                     <p><strong>Departman:</strong> @Model.DepartmanName</p>
                     <p><strong>Durum:</strong> <span class="badge @GetStatusBadgeClass(@Model.Status) px-3 py-2">@Model.Status</span></p>
                     <p><strong>Kapatma Tarihi:</strong> @Model.ClosedTime</p>
-                    <p><strong>Kapatan Personel:</strong> @Model.ClosedByName</p>
+                    <p><strong>Kapatan Personel:</strong> @(!string.IsNullOrEmpty(Model.ClosedByName) ? Model.ClosedByName : "Kapatan kişi bilgisi yok")</p>
+
 
                 </div>
 
