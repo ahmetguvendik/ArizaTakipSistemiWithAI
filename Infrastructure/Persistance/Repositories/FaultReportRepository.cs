@@ -15,7 +15,7 @@ public class FaultReportRepository : IFaultReportRepository
     
     public async Task<List<FaultReport>> GetAllAsync()
     {
-        var values = await _context.FaultReports.Include(x=>x.AssignedBy).Include(x=>x.AssignedTo).ThenInclude(y=>y.Department).Include(x=>x.Machine).ToListAsync();
+        var values = await _context.FaultReports.Include(x=>x.AssignedBy).Include(x=>x.AssignedTo).ThenInclude(y=>y.Department).Include(x=>x.Machine).OrderByDescending(x=>x.CreatedAt).ToListAsync();
         return values;
     }
 

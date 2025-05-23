@@ -1,8 +1,10 @@
 using Application.Repositories;
+using Application.Services;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Persistance.Repositories;
+using Persistance.Services;
 
 namespace Persistance;
 
@@ -19,6 +21,7 @@ public static class ServiceRegistration
         collection.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         collection.AddScoped(typeof(IFaultReportRepository), typeof(FaultReportRepository));
         collection.AddScoped(typeof(IMachineRepository), typeof(MachineRepository));    
+        collection.AddScoped(typeof(IEmailService), typeof(EmailService));
 
         
     }

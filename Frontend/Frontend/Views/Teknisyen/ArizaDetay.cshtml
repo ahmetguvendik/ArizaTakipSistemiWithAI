@@ -1,174 +1,227 @@
 @model DTO.FaultReportDtos.GetFaultReportDto
 
 @{
-    Layout = null;
+Layout = null;
 }
 
-<!-- Bootstrap 5 CSS CDN -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+@functions {
+public string GetStatusBadgeClass(string status)
+{
+return status switch
+{
+"Yeni" => "bg-success",
+"Atandı" => "bg-warning text-dark",
+"Kapandı" => "bg-danger",
+_ => "bg-secondary"
+};
+}
+}
 
-<!-- Select2 CSS -->
+<!-- CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
+<style>
+    .section-header {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #0d6efd;
+        margin-bottom: 1rem;
+    }
+
+    .form-section {
+        background: #f8f9fa;
+        border-radius: 12px;
+        padding: 1.5rem;
+    }
+
+    .select2-container--default .select2-selection--single {
+        height: 38px;
+        padding: 6px 12px;
+    }
+
+    .form-control,
+    .form-select {
+        border-radius: 8px;
+    }
+
+    #resultMessage {
+        font-weight: bold;
+    }
+</style>
+
 <div class="container my-5">
+    <h2 class="mb-4 text-primary">🔧 Arıza Detayları</h2>
 
-    <h2 class="mb-4">Arıza Detayları</h2>
-
-    <div class="row gy-4">
-        <!-- Sol taraf: Arıza bilgileri -->
-        <div class="col-md-6">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title mb-3">Bildiren Kişi</h5>
+    <div class="row g-4">
+        <!-- Sol Panel -->
+        <div class="col-lg-6">
+            <div class="form-section shadow-sm">
+                <div class="mb-4">
+                    <div class="section-header">📌 Bildiren Kişi</div>
                     <p><strong>İsim Soyisim:</strong> @Model.ReporterName</p>
                     <p><strong>Email:</strong> @Model.ReporterEmail</p>
                     <p><strong>Telefon:</strong> @Model.ReporterPhone</p>
+                </div>
 
-                    <hr />
+                <hr />
 
-                    <h5 class="card-title mb-3">Arıza Bilgileri</h5>
+                <div class="mb-4">
+                    <div class="section-header">📝 Arıza Bilgileri</div>
                     <p><strong>Başlık:</strong> @Model.Title</p>
                     <p><strong>Açıklama:</strong> @Model.Description</p>
                     <p><strong>Tarih:</strong> @Model.CreatedAt.ToString("dd.MM.yyyy HH:mm")</p>
+                </div>
 
-                    <hr />
+                <hr />
 
-                    <h5 class="card-title mb-3">Atamalar</h5>
+                <div>
+                    <div class="section-header">👥 Atamalar</div>
                     <p><strong>Süpervizör:</strong> @Model.AssignedByName</p>
                     <p><strong>Teknisyen:</strong> @Model.AssignedToName</p>
+                    <p><strong>Atanma Zamanı:</strong> @Model.AssignedTime</p>
                 </div>
             </div>
         </div>
 
-        <!-- Sağ taraf: Makine ve departman + seçim -->
-        <div class="col-md-6">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title mb-3">Makine ve Departman</h5>
+        <!-- Sağ Panel -->
+        <div class="col-lg-6">
+            <div class="form-section shadow-sm">
+                <div class="mb-4">
+                    <div class="section-header">🏭 Makine ve Departman</div>
                     <p><strong>Makine:</strong> @Model.MachineName</p>
                     <p><strong>Departman:</strong> @Model.DepartmanName</p>
-                    <p><strong>Durum:</strong> @Model.Status</p>
+                    <p><strong>Durum:</strong> <span class="badge @GetStatusBadgeClass(@Model.Status) px-3 py-2">@Model.Status</span></p>
+                    <p><strong>Kapatma Tarihi:</strong> @Model.ClosedTime</p>
+                    <p><strong>Kapatan Personel:</strong> @Model.ClosedByName</p>
 
-                    <hr />
+                </div>
 
-                    <h5 class="card-title mb-3">Makine Seçimi</h5>
+                <hr />
+
+                <!-- Makine Seçimi bölümü -->
+                <div class="mb-4">
+                    <div class="section-header">⚙️ Makine Seçimi</div>
                     <input type="hidden" id="departmanId" value="@ViewBag.DepartmanId" />
-                    
-                    <select id="machineSelect" name="machineId" class="form-select" aria-label="Makine Seçimi">
+                    <select id="machineSelect" name="machineId" class="form-select" 
+                            @(Model.Status == "Kapandı" ? "disabled" : "")>
                         <option value="">Makine Seç</option>
                     </select>
-
-                    <button id="closeFaultBtn" class="btn btn-success mt-3" disabled>Arızayı Kapat</button>
-
-                    <div id="resultMessage" class="mt-3"></div>
-
-                    <div id="loading" class="mt-2" style="display:none;">
-                        <div class="spinner-border spinner-border-sm text-primary" role="status">
-                            <span class="visually-hidden">Yükleniyor...</span>
-                        </div> Makine listesi yükleniyor...
+                    <div id="loading" class="mt-2 d-none">
+                        <div class="spinner-border spinner-border-sm text-primary" role="status"></div>
+                        <span class="ms-2">Makine listesi yükleniyor...</span>
                     </div>
-
-                    <div id="error" class="alert alert-danger mt-2" style="display:none;"></div>
+                    <div id="error" class="alert alert-danger mt-2 d-none"></div>
                 </div>
+
+                <!-- Kapatma Açıklaması -->
+                <div class="mb-4">
+                    <div class="section-header">🛑 Kapatma Açıklaması</div>
+                    <textarea id="closeDescription" class="form-control" rows="4" placeholder="Kapatma açıklaması giriniz..." 
+                @(Model.Status == "Kapandı" ? "disabled" : "")>@(Model.Status == "Kapandı" ? Model.ClosedDescription : "")</textarea>
+                </div>
+
+                <!-- Buton -->
+                <button id="closeFaultBtn" class="btn btn-success w-100 mb-3" 
+                        @(Model.Status == "Kapandı" ? "disabled style='display:none;'" : "disabled")>✅ Arızayı Kapat</button>
+
+                <div id="resultMessage"></div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- JQuery ve Bootstrap Bundle (JS + Popper) -->
+<!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- Select2 JS -->
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <script>
     $(document).ready(function () {
-        var departmanId = $('#departmanId').val();
-        var faultId = '@Model.Id'; // Arıza Id'si
+        const departmanId = $('#departmanId').val();
+        const faultId = '@Model.Id';
+        const isClosed = '@Model.Status' === 'Kapandı';
 
-        // Select2 başlat (önceden varsa zaten)
         $('#machineSelect').select2({
             placeholder: "Makine Seç",
-            allowClear: true,
-            language: {
-                noResults: function() {
-                    return "Sonuç bulunamadı";
-                }
-            }
+            allowClear: !isClosed,
+            language: { noResults: () => "Sonuç bulunamadı" }
         });
 
-        // Butonu makine seçilene kadar disable yap
-        $('#machineSelect').on('change', function() {
-            var selectedMachine = $(this).val();
-            $('#closeFaultBtn').prop('disabled', !selectedMachine);
-            $('#resultMessage').html('');
-        });
+        if (isClosed) {
+            // Arıza kapandıysa, buton kapalı, seçim ve textarea devre dışı
+            $('#closeFaultBtn').hide();
+        } else {
+            $('#machineSelect').on('change', function () {
+                const selected = $(this).val();
+                $('#closeFaultBtn').prop('disabled', !selected);
+                $('#resultMessage').html('');
+            });
+        }
 
         if (departmanId) {
-            $('#loading').show();
-            $('#error').hide();
-
+            $('#loading').removeClass('d-none');
             $.ajax({
                 url: 'http://localhost:5164/api/Machine/GetMachineByDepartmanId/' + departmanId,
                 type: 'GET',
                 success: function (data) {
-                    $('#loading').hide();
-                    var $select = $('#machineSelect');
-                    $select.empty();
-                    $select.append('<option></option>'); // placeholder için boş option
-
-                    $.each(data, function (index, item) {
+                    $('#loading').addClass('d-none');
+                    const $select = $('#machineSelect');
+                    $select.empty().append('<option></option>');
+                    $.each(data, function (i, item) {
                         $select.append($('<option>', {
                             value: item.id,
-                            text: item.name
+                            text: item.name,
+                            selected: isClosed && item.name === '@Model.MachineName' // seçili olarak ayarla
                         }));
                     });
-
                     $select.trigger('change');
                 },
                 error: function () {
-                    $('#loading').hide();
-                    $('#error').text('Makine listesi yüklenirken hata oluştu!').show();
+                    $('#loading').addClass('d-none');
+                    $('#error').text('Makine listesi yüklenirken hata oluştu!').removeClass('d-none');
                 }
             });
         } else {
             alert('Departman ID bulunamadı!');
         }
 
-        // Arızayı kapat butonu tıklanınca
-        $('#closeFaultBtn').click(function () {
-            var selectedMachineId = $('#machineSelect').val();
-            if (!selectedMachineId) {
-                alert('Lütfen önce bir makine seçin.');
-                return;
-            }
+        if (!isClosed) {
+            $('#closeFaultBtn').click(function () {
+                const machineId = $('#machineSelect').val();
+                const description = $('#closeDescription').val().trim();    
 
-            $('#closeFaultBtn').prop('disabled', true);
-            $('#resultMessage').html('Arıza kapatma işlemi yapılıyor...');
-
-            $.ajax({
-                url: 'http://localhost:5164/api/FaultReport/CloseFault', // API endpoint adresi (backend'de yazılacak)
-                type: 'POST',
-                contentType: 'application/json',
-                data: JSON.stringify({
-                    faultId: faultId,
-                    machineId: selectedMachineId
-                }),
-                success: function (response) {
-                    $('#resultMessage').html('<div class="alert alert-success">Arıza başarıyla kapatıldı.</div>');  
-                    // İstersen burada sayfayı yenile ya da başka işlem yapabilirsin
-                },
-                error: function (xhr) {
-                    var errMsg = 'Arıza kapatma sırasında hata oluştu!';
-                    if (xhr.responseJSON && xhr.responseJSON.message) {
-                        errMsg = xhr.responseJSON.message;
-                    }
-                    $('#resultMessage').html('<div class="alert alert-danger">' + errMsg + '</div>');
-                    $('#closeFaultBtn').prop('disabled', false);
+                if (!machineId || !description) {
+                    alert('Makine seçimi ve açıklama zorunludur.');
+                    return;
                 }
+
+                $('#closeFaultBtn').prop('disabled', true);
+                $('#resultMessage').html('<div class="text-info">İşlem yapılıyor...</div>');
+
+                $.ajax({
+                    url: 'http://localhost:5164/api/FaultReport/CloseFault',
+                    type: 'PUT',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        id: faultId,
+                        machineId: machineId,
+                        faultDescription: description,
+                        closedById: '@ViewBag.UserId',
+                        status: "Kapandı"
+                    }),
+                    success: function () {
+                        $('#resultMessage').html('<div class="alert alert-success">Arıza başarıyla kapatıldı.</div>');
+                        setTimeout(() => location.reload(), 1500); // sayfayı yenile
+                    },
+                    error: function (xhr) {
+                        const msg = xhr.responseJSON?.message || 'Bir hata oluştu!';
+                        $('#resultMessage').html(`<div class="alert alert-danger">${msg}</div>`);
+                        $('#closeFaultBtn').prop('disabled', false);
+                    }
+                });
             });
-        });
+        }
     });
 
 </script>

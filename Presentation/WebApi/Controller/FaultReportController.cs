@@ -50,4 +50,11 @@ public class FaultReportController  : Microsoft.AspNetCore.Mvc.Controller
         await _mediator.Send(command);
         return Ok("Atandı");
     }
+    
+    [HttpPut("CloseFault")]
+    public async Task<IActionResult> ClosedFault(CloseFaultCommand command) 
+    {
+        await _mediator.Send(command);
+        return Ok("Kapatildi");
+    }
 }

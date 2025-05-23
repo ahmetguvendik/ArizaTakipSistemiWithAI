@@ -13,4 +13,5 @@ public class AppUser : IdentityUser<string>
     public Department Department { get; set; }
     public ICollection<FaultReport> AssignedFaultReports { get; set; }
     public ICollection<FaultReport> AssignedByReports { get; set; } 
+    public ICollection<FaultReport> ClosedByReports { get; set; } 
 }

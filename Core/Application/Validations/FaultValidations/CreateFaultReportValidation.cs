@@ -10,6 +10,6 @@ public class CreateFaultReportValidation: AbstractValidator<CreateFaultReportCom
         RuleFor(x => x.ReporterName).NotEmpty().WithMessage("Isminizi Giriniz");
         RuleFor(x=>x.ReporterEmail).NotEmpty().WithMessage("Emailinizi Giriniz");
         RuleFor(x=>x.ReporterPhone).NotEmpty().WithMessage("Telefon Numaranizi Giriniz");
-        RuleFor(x => x.Description).MaximumLength(50).WithMessage("En Fazla 50 Karakter Giriniz");  
+        RuleFor(x => x.Description).MaximumLength(100).WithMessage("En Fazla 50 Karakter Giriniz");  
     }
 }

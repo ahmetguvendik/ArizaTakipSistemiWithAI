@@ -1,5 +1,6 @@
 using System.Security.Claims;
 using System.Text;
+using Application.Services;
 using DTO.AppUserDto;
 using DTO.FaultReportDtos;
 using Microsoft.AspNetCore.Authorization;
@@ -14,10 +15,13 @@ namespace Frontend.Controllers;
 public class SupervisorController : Controller
 {
     private readonly IHttpClientFactory _httpClientFactory;
+    private readonly IEmailService  _emailService;
+    
 
-    public SupervisorController(IHttpClientFactory httpClientFactory)
+    public SupervisorController(IHttpClientFactory httpClientFactory, IEmailService emailService)
     {
          _httpClientFactory = httpClientFactory;
+         _emailService = emailService;
     }
     public async Task<IActionResult> Index()
     {
@@ -63,7 +67,6 @@ public class SupervisorController : Controller
     public async Task<IActionResult> TeknisyenAta(string faultReportId, string assignedToId)
     {
         var supervisorId = User.Identity.IsAuthenticated ? User.FindFirstValue(ClaimTypes.NameIdentifier) : null;
-        
         var client = _httpClientFactory.CreateClient();
         var atamaDto = new TeknisyenAtamaDto()
         {
@@ -73,13 +76,23 @@ public class SupervisorController : Controller
             Statues = "Atandı",
             AssignedTime = DateTime.Now,
         };
+        
+            var response2 = await client.GetAsync($"http://localhost:5164/api/FaultReport/" + faultReportId);
+            var jsonData = await response2.Content.ReadAsStringAsync();
+            var values = JsonConvert.DeserializeObject<GetFaultReportDto>(jsonData);
+            
 
-        var json = JsonConvert.SerializeObject(atamaDto);
-        var content = new StringContent(json, Encoding.UTF8, "application/json");
-        var response = await client.PutAsync("http://localhost:5164/api/FaultReport", content);
+            var json = JsonConvert.SerializeObject(atamaDto);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = await client.PutAsync("http://localhost:5164/api/FaultReport", content);
 
-        if (response.IsSuccessStatusCode)
-            return RedirectToAction("Index"); // Arıza listesi gibi
+            if (response.IsSuccessStatusCode)
+            {
+                await _emailService.SendSupervisorToTeknisyenEmailAsync(values.ReporterEmail,
+                    "Arizasiniz Supervizor Tarafindan Ilgili Teknisyene Atanmistir");
+                return RedirectToAction("Index"); 
+            }
+           
 
         return BadRequest("Atama başarısız.");
     }

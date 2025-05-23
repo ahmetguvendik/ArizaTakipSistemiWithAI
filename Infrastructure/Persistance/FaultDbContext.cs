@@ -28,6 +28,13 @@ public class FaultDbContext : IdentityDbContext<AppUser, AppRole, string>
             .WithMany(u => u.AssignedByReports)
             .HasForeignKey(f => f.AssignedById)
             .OnDelete(DeleteBehavior.Restrict);
+        
+        modelBuilder.Entity<FaultReport>()
+            .HasOne(f => f.ClosedBy)
+            .WithMany(u => u.ClosedByReports)
+            .HasForeignKey(f => f.ClosedById)   
+            .OnDelete(DeleteBehavior.Restrict);
     }
+    
 
 }

@@ -25,14 +25,27 @@ public class GetFaultReportByIdQueryHandler : IRequestHandler<GetFaultReportById
             ReporterPhone = values.ReporterPhone,
             ReporterEmail = values.ReporterEmail,
             CreatedAt = values.CreatedAt,
+            AssignedTime = values.AssignedTime,
+            ClosedTime = values.ClosedTime,  
             Status = values.Status,
-            AssignedByName = values.AssignedBy != null ? values.AssignedBy.NameSurname : null,
-            AssignedToName = values.AssignedTo != null ? values.AssignedTo.NameSurname : null,
-            MachineName = values.Machine != null ? values.Machine.Name : null,
+            AssignedByName = values.AssignedBy != null
+                ? values.AssignedBy.NameSurname
+                : "Atanmamış",
+            ClosedDescription = values.ClosedDescription,    
+            AssignedToName = values.AssignedTo != null
+                ? values.AssignedTo.NameSurname
+                : null,
+            MachineName = values.Machine != null
+                ? values.Machine.Name    
+                : "Bilinmiyor",
+            AssignedToId = values.AssignedTo?.Id ?? null,
             DepartmanName = values.AssignedTo?.Department?.Name ?? null,
-            AssignedToId = values.AssignedToId ?? null,
             DepartmanId = values.AssignedTo?.Department?.Id ?? null,
             MachineId = values.Machine?.Id ?? null,
+            ClosedByName = values.ClosedBy?.NameSurname?? null,
+            ClosedById = values.ClosedBy?.Id ?? null,
+            AssignedById = values.AssignedBy?.Id ?? null,
+
 
         };
         

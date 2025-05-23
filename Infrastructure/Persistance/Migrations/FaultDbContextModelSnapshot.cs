@@ -149,6 +149,15 @@ namespace Persistance.Migrations
                     b.Property<string>("AssignedToId")
                         .HasColumnType("text");
 
+                    b.Property<string>("ClosedById")
+                        .HasColumnType("text");
+
+                    b.Property<string>("ClosedDescription")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("ClosedTime")
+                        .HasColumnType("timestamp without time zone");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp without time zone");
 
@@ -184,6 +193,8 @@ namespace Persistance.Migrations
                     b.HasIndex("AssignedById");
 
                     b.HasIndex("AssignedToId");
+
+                    b.HasIndex("ClosedById");
 
                     b.HasIndex("MachineId");
 
@@ -341,6 +352,11 @@ namespace Persistance.Migrations
                         .HasForeignKey("AssignedToId")
                         .OnDelete(DeleteBehavior.Restrict);
 
+                    b.HasOne("Domain.Entities.AppUser", "ClosedBy")
+                        .WithMany("ClosedByReports")
+                        .HasForeignKey("ClosedById")
+                        .OnDelete(DeleteBehavior.Restrict);
+
                     b.HasOne("Domain.Entities.Machine", "Machine")
                         .WithMany("FaultReports")
                         .HasForeignKey("MachineId");
@@ -348,6 +364,8 @@ namespace Persistance.Migrations
                     b.Navigation("AssignedBy");
 
                     b.Navigation("AssignedTo");
+
+                    b.Navigation("ClosedBy");
 
                     b.Navigation("Machine");
                 });
@@ -419,6 +437,8 @@ namespace Persistance.Migrations
                     b.Navigation("AssignedByReports");
 
                     b.Navigation("AssignedFaultReports");
+
+                    b.Navigation("ClosedByReports");
                 });
 
             modelBuilder.Entity("Domain.Entities.Department", b =>

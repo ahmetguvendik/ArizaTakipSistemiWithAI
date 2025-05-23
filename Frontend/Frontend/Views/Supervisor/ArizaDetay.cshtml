@@ -9,74 +9,113 @@
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-<div class="container my-5">
-    <h2 class="mb-4">Arıza Detayları</h2>
+<style>
+    /* Daha hoş bir görünüm için */
+    dt {
+        font-weight: 600;
+        color: #0d6efd;
+    }
+    dd {
+        margin-bottom: 1rem;
+        font-size: 1rem;
+    }
+    .card-header-custom {
+        background-color: #0d6efd;
+        color: white;
+        font-weight: 700;
+        font-size: 1.25rem;
+    }
+</style>
 
-    <div class="card shadow-sm mb-4">
+<div class="container my-5" style="max-width: 720px;">
+    <div class="card shadow-sm">
+        <div class="card-header card-header-custom">
+            Arıza Detayları
+        </div>
         <div class="card-body">
             <dl class="row">
-                <dt class="col-sm-3">İsim Soyisim</dt>
-                <dd class="col-sm-9">@Model.ReporterName</dd>
+                <dt class="col-sm-4">İsim Soyisim</dt>
+                <dd class="col-sm-8">@Model.ReporterName</dd>
 
-                <dt class="col-sm-3">Email</dt>
-                <dd class="col-sm-9">@Model.ReporterEmail</dd>
+                <dt class="col-sm-4">Email</dt>
+                <dd class="col-sm-8">@Model.ReporterEmail</dd>
 
-                <dt class="col-sm-3">Telefon</dt>
-                <dd class="col-sm-9">@Model.ReporterPhone</dd>
+                <dt class="col-sm-4">Telefon</dt>
+                <dd class="col-sm-8">@Model.ReporterPhone</dd>
 
-                <dt class="col-sm-3">Başlık</dt>
-                <dd class="col-sm-9">@Model.Title</dd>
+                <dt class="col-sm-4">Başlık</dt>
+                <dd class="col-sm-8">@Model.Title</dd>
 
-                <dt class="col-sm-3">Açıklama</dt>
-                <dd class="col-sm-9">@Model.Description</dd>
+                <dt class="col-sm-4">Açıklama</dt>
+                <dd class="col-sm-8">@Model.Description</dd>
 
-                <dt class="col-sm-3">Tarih</dt>
-                <dd class="col-sm-9">@Model.CreatedAt.ToString("dd.MM.yyyy HH:mm")</dd>
+                <dt class="col-sm-4">Tarih</dt>
+                <dd class="col-sm-8">@Model.CreatedAt.ToString("dd.MM.yyyy HH:mm")</dd>
 
-                <dt class="col-sm-3">Süpervizör</dt>
-                <dd class="col-sm-9">@Model.AssignedByName</dd>
+                <dt class="col-sm-4">Süpervizör</dt>
+                <dd class="col-sm-8">@Model.AssignedByName</dd>
 
-                <dt class="col-sm-3">Teknisyen</dt>
-                <dd class="col-sm-9">@Model.AssignedToName </dd>
+                <dt class="col-sm-4">Atanan Teknisyen</dt>
+                <dd class="col-sm-8">@Model.AssignedToName</dd>
+                
+                <dt class="col-sm-4">Atanma Tarih</dt>
+                <dd class="col-sm-8">@Model.AssignedTime.ToString("dd.MM.yyyy HH:mm")</dd>
 
-                <dt class="col-sm-3">Makine</dt>
-                <dd class="col-sm-9">@Model.MachineName</dd>
+                <dt class="col-sm-4">Makine</dt>
+                <dd class="col-sm-8">@Model.MachineName</dd>
 
-                <dt class="col-sm-3">Departman</dt>
-                <dd class="col-sm-9">@Model.DepartmanName</dd>
+                <dt class="col-sm-4">Departman</dt>
+                <dd class="col-sm-8">@Model.DepartmanName</dd>
+                
+                <dt class="col-sm-4">Kapatan Teknsiyen</dt>
+                <dd class="col-sm-8">@Model.ClosedByName</dd>
+                
+                <dt class="col-sm-4">Kapatma Aciklamasi</dt>
+                <dd class="col-sm-8">@Model.ClosedDescription</dd>
+                
+                <dt class="col-sm-4">Kapatma Tarihi</dt>
+                <dd class="col-sm-8">@Model.ClosedTime</dd>
 
-                <dt class="col-sm-3">Durum</dt>
-                <dd class="col-sm-9">@Model.Status</dd>
+                <dt class="col-sm-4">Durum</dt>
+                <dd class="col-sm-8">
+                    <span class="badge 
+                        @(Model.Status == "Yeni" ? "bg-success" :
+                        Model.Status == "Atandı" ? "bg-warning text-dark" :
+                        Model.Status == "Kapandı" ? "bg-danger" : "bg-secondary") 
+                        px-3 py-2">@Model.Status</span>
+                </dd>
             </dl>
         </div>
     </div>
+    
 
-    @if (string.IsNullOrEmpty(Model.AssignedToId)) 
+    @if (string.IsNullOrEmpty(Model.AssignedToId))
     {
-        <div class="card shadow-sm">
+        <div class="card shadow-sm mt-4">
+            <div class="card-header card-header-custom">
+                Teknisyen Ataması Yap
+            </div>
             <div class="card-body">
-                <h4 class="mb-3">Teknisyen Ataması Yap</h4>
-
-                <form asp-action="TeknisyenAta" asp-controller="Supervisor" method="post">
+                <form asp-action="TeknisyenAta" asp-controller="Supervisor" method="post" class="row g-3">
                     <input type="hidden" name="faultReportId" value="@Model.Id" />
-
-                    <div class="mb-3">
-                        <label for="assignedToId" class="form-label">Atanacak Teknisyen</label>
+                    <div class="col-12">
+                        <label for="assignedToId" class="form-label fw-semibold">Atanacak Teknisyen</label>
                         @Html.DropDownList("assignedToId", (List<SelectListItem>)ViewBag.Users, "Teknisyen Seç", new { @class = "form-select", id = "assignedToId" })
                     </div>
-
-                    <button type="submit" class="btn btn-primary">Atama Yap</button>
+                    <div class="col-12 d-grid">
+                        <button type="submit" class="btn btn-primary">Atama Yap</button>
+                    </div>
                 </form>
             </div>
         </div>
     }
     else
     {
-        <div class="alert alert-success">
+        <div class="alert alert-success mt-4" role="alert">
             Bu arıza <strong>@Model.AssignedToName</strong> adlı teknisyene atanmıştır.
         </div>
     }
 </div>
 
-<!-- Bootstrap JS Bundle (Popper + JS) -->
+<!-- Bootstrap JS Bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -26,15 +26,26 @@ public class GetFaultReportByDepartmanIdQueryHandler : IRequestHandler<GetFaultR
             ReporterPhone = x.ReporterPhone,
             ReporterEmail = x.ReporterEmail,
             CreatedAt = x.CreatedAt,
+            AssignedTime = x.AssignedTime,
+            ClosedTime = x.ClosedTime,  
             Status = x.Status,
-            MachineName = x.Machine != null ? x.Machine.Name : null,
-            AssignedToName = x.AssignedTo != null ? x.AssignedTo.NameSurname : null,
-            AssignedByName = x.AssignedBy != null ? x.AssignedBy.NameSurname : null,
+            AssignedByName = x.AssignedBy != null
+                ? x.AssignedBy.NameSurname
+                : "Atanmamış",
+            ClosedDescription = x.ClosedDescription,    
+            AssignedToName = x.AssignedTo != null
+                ? x.AssignedTo.NameSurname
+                : null,
+            MachineName = x.Machine != null
+                ? x.Machine.Name    
+                : "Bilinmiyor",
+            AssignedToId = x.AssignedTo?.Id ?? null,
             DepartmanName = x.AssignedTo?.Department?.Name ?? null,
-            AssignedToId = x.AssignedToId ?? null,
             DepartmanId = x.AssignedTo?.Department?.Id ?? null,
             MachineId = x.Machine?.Id ?? null,
-            
+            ClosedByName = x.ClosedBy?.NameSurname?? null,
+            ClosedById = x.ClosedBy?.Id ?? null,
+            AssignedById = x.AssignedBy?.Id ?? null,
             
         }).ToList();
     }

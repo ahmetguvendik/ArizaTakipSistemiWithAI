@@ -10,6 +10,7 @@ public class FaultReport : BaseEntity
         public string ReporterEmail { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime AssignedTime { get; set; }      
+        public DateTime ClosedTime { get; set; }      
         public string Status { get; set; } = "Yeni"; // Yeni, Atandı, Çözülüyor, Tamamlandı
 
         public string? MachineId { get; set; }
@@ -21,4 +22,7 @@ public class FaultReport : BaseEntity
         public string? AssignedById { get; set; } // Supervizör
         public AppUser AssignedBy { get; set; }
         
+        public string? ClosedById { get; set; } // Kapatan      
+        public AppUser ClosedBy { get; set; }
+        public string? ClosedDescription { get; set; }                          
 }

@@ -1,4 +1,5 @@
 using System.Security.Claims;
+using Application.Services;
 using DTO.FaultReportDtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -10,10 +11,12 @@ namespace Frontend.Controllers;
 public class TeknisyenController : Controller
 {
     private readonly IHttpClientFactory _httpClientFactory;
+    private readonly IEmailService  _emailService;
 
-    public TeknisyenController(IHttpClientFactory httpClientFactory)
+    public TeknisyenController(IHttpClientFactory httpClientFactory, IEmailService emailService)
     {
          _httpClientFactory = httpClientFactory;
+         _emailService = emailService;
     }
     
     public async Task<IActionResult> Index()
@@ -32,6 +35,8 @@ public class TeknisyenController : Controller
     
     public async Task<IActionResult> ArizaDetay(string id)          
     {
+        var userid = User.Identity.IsAuthenticated ? User.FindFirstValue(ClaimTypes.NameIdentifier) : null;
+        ViewBag.UserId = userid;
         var client = _httpClientFactory.CreateClient();
         var response = await client.GetAsync($"http://localhost:5164/api/FaultReport/" + id);
         if (response.IsSuccessStatusCode)
@@ -41,7 +46,7 @@ public class TeknisyenController : Controller
             ViewBag.DepartmanId = User.FindFirstValue("DepartmentId");
             return View(values); // artık ViewBag dolu
         }
-
+        
         return NotFound(); 
     }
 }

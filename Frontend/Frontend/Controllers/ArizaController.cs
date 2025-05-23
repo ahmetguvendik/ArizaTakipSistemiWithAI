@@ -1,4 +1,5 @@
 using System.Text;
+using Application.Services;
 using DTO.FaultReportDtos;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -8,10 +9,13 @@ namespace Frontend.Controllers;
 public class ArizaController : Controller
 {
     private readonly IHttpClientFactory _httpClientFactory;
+    private readonly IEmailService  _emailService;
+    
 
-    public ArizaController(IHttpClientFactory httpClientFactory)
+    public ArizaController(IHttpClientFactory httpClientFactory, IEmailService emailService)
     {
          _httpClientFactory = httpClientFactory;
+         _emailService = emailService;
     }
     
     public IActionResult Index()
@@ -31,6 +35,7 @@ public class ArizaController : Controller
         if (response.IsSuccessStatusCode)
         {
             TempData["SuccessMessage"] = "Ariza Kaydiniz Basarili Bir Sekilde Olusturuldu";
+            await _emailService.SendFaultEmailAsync(createJobDto.ReporterEmail,"Arizaniz Basrili Bir Sekilde Olusturuldu ve Supervizore Iletildi");
             return RedirectToAction("Index", "Ariza");
         }
 
