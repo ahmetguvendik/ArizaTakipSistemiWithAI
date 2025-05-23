@@ -23,10 +23,10 @@ builder.Services.AddAuthentication("MyCookieAuth")
 builder.Services
     .AddKernel()
     .AddOpenAIChatCompletion(
-        modelId: "google/gemma-3n-e4b-it:free", 
+        modelId: "google/gemini-2.5-flash-preview", 
         openAIClient: new OpenAIClient(
             credential: new ApiKeyCredential(
-                "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"),   
+                "sk-or-v1-a**f"),   
             options: new OpenAIClientOptions
             {
                 Endpoint = new Uri("https://openrouter.ai/api/v1")

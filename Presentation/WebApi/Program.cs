@@ -58,12 +58,14 @@ builder.Services.AddSingleton<Kernel>(serviceProvider =>
         modelId: "google/gemini-2.5-flash-preview",
         openAIClient: new OpenAIClient(
             credential: new ApiKeyCredential(
-                "sk-or-v1-***179"),
+                "sk-or-v1-a**f"),   
             options: new OpenAIClientOptions
             {
                 Endpoint = new Uri("https://openrouter.ai/api/v1")
             })
     );
+
+
 
     // FaultTools plugin'ini Kernel'e ekle.
     // FaultTools'un bir örneğini DI konteynerinden alıyoruz.
