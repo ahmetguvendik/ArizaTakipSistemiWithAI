@@ -1,4 +1,5 @@
 using Application.Repositories;
+using Application.SemanticKernel.Services;
 using Application.Services;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -22,7 +23,8 @@ public static class ServiceRegistration
         collection.AddScoped(typeof(IFaultReportRepository), typeof(FaultReportRepository));
         collection.AddScoped(typeof(IMachineRepository), typeof(MachineRepository));    
         collection.AddScoped(typeof(IEmailService), typeof(EmailService));
+        collection.AddScoped<AIService>();
 
-        
+
     }
 }

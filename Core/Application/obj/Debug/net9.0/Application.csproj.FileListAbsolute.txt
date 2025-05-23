@@ -14,3 +14,5 @@
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Application/obj/Debug/net9.0/Application.csproj.AssemblyReference.cache
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Application/obj/Debug/net9.0/Applicat.44B5EDA2.Up2Date
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Application/obj/Debug/net9.0/Application.sourcelink.json
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Application/bin/Debug/net9.0/DTO.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Application/bin/Debug/net9.0/DTO.pdb

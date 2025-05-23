@@ -16,3 +16,5 @@
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Infrastructure/Persistance/bin/Debug/net9.0/Application.dll
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Infrastructure/Persistance/bin/Debug/net9.0/Application.pdb
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Infrastructure/Persistance/obj/Debug/net9.0/Persistance.sourcelink.json
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Infrastructure/Persistance/bin/Debug/net9.0/DTO.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Infrastructure/Persistance/bin/Debug/net9.0/DTO.pdb

@@ -28,6 +28,9 @@
             "projectReferences": {
               "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Domain/Domain.csproj": {
                 "projectPath": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Domain/Domain.csproj"
+              },
+              "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/DTO/DTO.csproj": {
+                "projectPath": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/DTO/DTO.csproj"
               }
             }
           }
@@ -55,6 +58,30 @@
             "MediatR": {
               "target": "Package",
               "version": "[12.5.0, )"
+            },
+            "Microsoft.SemanticKernel": {
+              "target": "Package",
+              "version": "[1.54.0, )"
+            },
+            "ModelContextProtocol": {
+              "target": "Package",
+              "version": "[0.2.0-preview.1, )"
+            },
+            "ModelContextProtocol.AspNetCore": {
+              "target": "Package",
+              "version": "[0.2.0-preview.1, )"
+            },
+            "ModelContextProtocol.NET.Server": {
+              "target": "Package",
+              "version": "[0.3.2-alpha, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "System.ComponentModel": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             }
           },
           "imports": [

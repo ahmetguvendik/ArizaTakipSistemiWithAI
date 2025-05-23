@@ -2,9 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Frontend.Controllers;
 
-public class AIAsitantController : Controller
+public class AiController : Controller
 {
-    // GET
     public IActionResult Index()
     {
         return View();

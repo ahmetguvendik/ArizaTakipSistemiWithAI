@@ -9,15 +9,21 @@
     <ItemGroup>
       <PackageReference Include="FluentValidation" Version="12.0.0" />
       <PackageReference Include="MediatR" Version="12.5.0" />
+      <PackageReference Include="Microsoft.SemanticKernel" Version="1.54.0" />
+      <PackageReference Include="ModelContextProtocol" Version="0.2.0-preview.1" />
+      <PackageReference Include="ModelContextProtocol.AspNetCore" Version="0.2.0-preview.1" />
+      <PackageReference Include="ModelContextProtocol.NET.Server" Version="0.3.2-alpha" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+      <PackageReference Include="System.ComponentModel" Version="4.3.0" />
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\Frontend\DTO\DTO.csproj" />
       <ProjectReference Include="..\Domain\Domain.csproj" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="Features\Handlers\MachineHandlers\Write\" />
-      <Folder Include="MCP\" />
     </ItemGroup>
 
 </Project>

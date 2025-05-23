@@ -1,4 +1,8 @@
+using System.ClientModel;
+using Application.SemanticKernel.Tools;
 using Application.Services;
+using Microsoft.SemanticKernel;
+using OpenAI;
 using Persistance.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +19,19 @@ builder.Services.AddAuthentication("MyCookieAuth")
         options.AccessDeniedPath = "/Login/AccessDenied";
        
     });
+
+builder.Services
+    .AddKernel()
+    .AddOpenAIChatCompletion(
+        modelId: "google/gemma-3n-e4b-it:free", 
+        openAIClient: new OpenAIClient(
+            credential: new ApiKeyCredential(
+                "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"),   
+            options: new OpenAIClientOptions
+            {
+                Endpoint = new Uri("https://openrouter.ai/api/v1")
+            })
+    ).Plugins.AddFromType<FaultTools>();
 
 builder.Services.AddCors(options =>
 {

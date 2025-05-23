@@ -4,4 +4,5 @@ namespace WebApi.Hubs;
 
 public class FaultHub : Hub
 {
+    
 }
