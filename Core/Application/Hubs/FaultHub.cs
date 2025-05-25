@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.SignalR;
 
-namespace WebApi.Hubs;
+namespace Application.Hubs;
 
 public class FaultHub : Hub
 {

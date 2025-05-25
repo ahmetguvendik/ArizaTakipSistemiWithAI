@@ -1,9 +1,10 @@
 using Application.Features.Commands.FaultReportComamnds;
 using Application.Features.Queries.FaultReportQueries;
+using Application.Hubs;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
-using WebApi.Hubs;
+
 
 namespace WebApi.Controller;
 
@@ -18,7 +19,7 @@ public class FaultReportController  : Microsoft.AspNetCore.Mvc.Controller
     public FaultReportController(IMediator mediator,IHubContext<FaultHub> faultHubContext)
     {
          _mediator = mediator;
-         _faultHubContext = faultHubContext;
+         _faultHubContext = faultHubContext;    
     }
 
     [HttpGet]

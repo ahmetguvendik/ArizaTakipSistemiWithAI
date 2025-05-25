@@ -60,6 +60,18 @@ public class FaultTools
             return $"Hata raporu alınırken bir istisna oluştu: {ex.Message}";
         }
     }
+
+    [KernelFunction, Description("Sistemdeki en Onemli hata raporunu API'den çeker ve JSON formatında döndürür.")]
+    public async Task<string> GetMostImportantFault()
+    {
+        var client = _clientFactory.CreateClient();
+        var response = await client.GetAsync("http://localhost:5164/api/FaultReport");
+        var jsonData = await response.Content.ReadAsStringAsync();
+        var values = JsonConvert.DeserializeObject<List<GetFaultReportDto>>(jsonData);
+        return JsonConvert.SerializeObject(values, Formatting.Indented);
+       
+        
+    }
 }
     
     

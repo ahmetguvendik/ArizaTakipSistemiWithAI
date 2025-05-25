@@ -1,16 +1,15 @@
 using System.ClientModel;
-using Persistance; // Eğer Persistance katmanında bir ServiceRegistration varsa
-using Application; // Eğer Application katmanında bir ServiceRegistration varsa
+using Persistance; 
+using Application; 
 using Application.Hubs;
 using Application.SemanticKernel.Services;
 using Application.SemanticKernel.Tools;
-using Application.Validations.FaultValidations; // Eğer kullanılıyorsa
-using FluentValidation.AspNetCore; // Eğer kullanılıyorsa
+using Application.Validations.FaultValidations; 
+using FluentValidation.AspNetCore; 
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;
-using OpenAI; // Eğer OpenAIClient kullanıyorsanız
-using WebApi.Hubs; // Eğer WebApi.Hubs içinde özel bir Hub varsa (FaultHub gibi)
-using WebApi.ViewModels; // Eğer ViewModels kullanılıyorsa
+using OpenAI; 
+using WebApi.ViewModels; 
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -58,31 +57,27 @@ builder.Services.AddSingleton<Kernel>(serviceProvider =>
         modelId: "google/gemini-2.5-flash-preview",
         openAIClient: new OpenAIClient(
             credential: new ApiKeyCredential(
-                "sk-or-v1-a**f"),   
+                "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"),   
             options: new OpenAIClientOptions
             {
                 Endpoint = new Uri("https://openrouter.ai/api/v1")
             })
     );
 
-
-
-    // FaultTools plugin'ini Kernel'e ekle.
-    // FaultTools'un bir örneğini DI konteynerinden alıyoruz.
+    
     kernelBuilder.Plugins.AddFromObject(serviceProvider.GetRequiredService<FaultTools>());
 
     return kernelBuilder.Build();
 });
 
-// IChatCompletionService'i Kernel'den alarak DI'a kaydet
+
 builder.Services.AddSingleton<IChatCompletionService>(serviceProvider =>
 {
     var kernel = serviceProvider.GetRequiredService<Kernel>();
     return kernel.GetRequiredService<IChatCompletionService>();
 });
 
-// AIService'in zaten Persistance katmanında AddScoped olarak kaydedildiğini biliyoruz.
-// builder.Services.AddScoped<AIService>(); // Bu satırı tekrar yazmanıza gerek yok, Persistance.ServiceRegistration zaten ekliyor.
+
 
 var app = builder.Build();
 
@@ -93,22 +88,21 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// Middleware sıralaması önemlidir:
-// UseCors, UseRouting'den önce gelmeli
+
 app.UseCors("AllowAll");
 
-app.UseHttpsRedirection(); // HTTPS yönlendirme için (LaunchSettings.json'da HTTPS portu tanımlı olmalı)
+app.UseHttpsRedirection(); 
 
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapControllers(); // API Controller'larını mapler
+app.MapControllers();
 
 // SignalR Hub'larını ve Minimal API endpoint'lerini maple
 app.MapPost("/chat", async (AIService aiService, ChatRequestVM chatRequest, CancellationToken cancellationToken) =>
     await aiService.GetMessageStreamAsync(chatRequest.Prompt, chatRequest.ConnectionId, cancellationToken));
 
-app.MapHub<FaultHub>("/fault"); // Eğer bu Hub'ı kullanmıyorsanız kaldırabilirsiniz.
-app.MapHub<ChatHub>("/ai-hub"); // Chat uygulaması için gerekli Hub
+app.MapHub<FaultHub>("/fault"); 
+app.MapHub<ChatHub>("/ai-hub"); 
 
 app.Run(); // Uygulamayı başlat

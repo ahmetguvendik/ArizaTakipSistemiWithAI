@@ -26,7 +26,7 @@ builder.Services
         modelId: "google/gemini-2.5-flash-preview", 
         openAIClient: new OpenAIClient(
             credential: new ApiKeyCredential(
-                "sk-or-v1-a**f"),   
+                "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"),       
             options: new OpenAIClientOptions
             {
                 Endpoint = new Uri("https://openrouter.ai/api/v1")
