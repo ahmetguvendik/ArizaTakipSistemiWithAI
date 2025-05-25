@@ -1,9 +1,11 @@
 using DTO.StatisticDTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace Frontend.Controllers;
 
+[Authorize(Roles = "Supervisor")]
 public class IstatistikController : Controller
 {
     private readonly IHttpClientFactory _httpClientFactory;
