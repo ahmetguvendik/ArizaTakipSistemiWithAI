@@ -1,0 +1,61 @@
+# /Presentation/WebApi/Dockerfile
+
+# Stage 1: Build Stage
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src # Konteyner içinde çalışma dizinini /src olarak ayarla
+
+# Kök dizinden tüm repoyu (her şeyi) kopyala.
+# Bu COPY komutu Dockerfile'ın "build context"ine göre çalışır.
+# Render'da "Root Directory" olarak 'Presentation/WebApi' belirlediğinde,
+# bu Dockerfile için build context 'Presentation/WebApi' klasörüdür.
+# Yani '.' burayı temsil eder.
+# Projenin kökündeki çözüm dosyasına ve diğer klasörlere erişebilmek için
+# Build Context'i Render'da (veya docker build komutunda) projenin ana kökü olarak belirlemek EN DOĞRUSU.
+# Ancak Render, her servis için ayrı Root Directory istediği için, biraz dolambaçlı bir yol izlemeliyiz.
+
+# Render'da Root Directory olarak 'Presentation/WebApi' seçtiysen:
+# O zaman .csproj dosyaları bu dizinde, .sln dosyası ise '../../' yukarıda demektir.
+
+# Tüm repoyu kopyalamak yerine, sadece gerekli dosyaları kopyalayalım:
+# Projenin root dizinindeki .sln dosyasını kopyala
+# Render'da "Root Directory" -> "Presentation/WebApi" olduğundan,
+# bu Dockerfile'ın bağlamı 'Presentation/WebApi' klasörüdür.
+# Çözüm dosyası iki seviye yukarıda: `../../ArizaTakipSistemiWithAI.sln`
+COPY "../../ArizaTakipSistemiWithAI.sln", "./"
+
+# Kendi projenin (WebApi) .csproj dosyasını kopyala
+# Dockerfile kendi klasöründe olduğu için kaynak yolu sadece dosya adı.
+COPY "Presentation.WebApi.csproj", "Presentation.WebApi/"
+
+# Diğer bağımlı katmanların .csproj dosyalarını kopyala
+# Örneğin: Application, Domain, Infrastructure klasörleri çözümün ana dizininde ise:
+# Her bir projenin .csproj dosyasının yolunu 'build' context'ine göre ayarla.
+# Eğer bunlar, `ArizaTakipSistemiWithAI/Application/Application.csproj` gibi yollardaysa:
+COPY "../../../Application/Application.csproj", "Application/"
+COPY "../../../Domain/Domain.csproj", "Domain/"
+COPY "../../../Infrastructure/Infrastructure.csproj", "Infrastructure/"
+
+# NuGet paketlerini geri yükle
+# Proje dosyasının WORKDIR'deki (yani /src içindeki) tam yolunu veriyoruz.
+RUN dotnet restore "Presentation.WebApi/Presentation.WebApi.csproj"
+
+# Kalan tüm proje dosyalarını kopyala (bu adımda kaynak kod kopyalanır)
+# Build context'teki (Presentation/WebApi) her şeyi 'Presentation/WebApi' klasörüne kopyala
+COPY . "Presentation.WebApi/"
+
+# Proje klasörüne geç
+WORKDIR "/src/Presentation.WebApi"
+
+# Uygulamayı derle ve yayınla
+RUN dotnet publish -c Release -o /app/publish --no-restore
+
+# Stage 2: Runtime Stage
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
+WORKDIR /app
+
+COPY --from=build /app/publish .
+
+ENV ASPNETCORE_URLS="http://+:80"
+EXPOSE 80
+
+ENTRYPOINT ["dotnet", "Presentation.WebApi.dll"]
