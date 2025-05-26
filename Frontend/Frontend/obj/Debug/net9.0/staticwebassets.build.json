@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "h+BdfEWxU7Nkldh/S7zWB/umamcF8fPO+qfD/Az/CYo=",
+  "Hash": "LqbfJWMhsdpdB1jgIzXkuIra4Efyp2fUn2dtvtrwokY=",
   "Source": "Frontend",
   "BasePath": "_content/Frontend",
   "Mode": "Default",
@@ -10788,6 +10788,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/wwwroot/startbootstrap-sb-admin-2-gh-pages/vendor/fontawesome-free/svgs/brands/codepen.svg"
+    },
+    {
+      "Identity": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/obj/Debug/net9.0/compressed/aupcrs2bni-v84macuxmi.gz",
+      "SourceId": "Frontend",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/obj/Debug/net9.0/compressed/",
+      "BasePath": "_content/Frontend",
+      "RelativePath": "startbootstrap-sb-admin-2-gh-pages/chart#[.{fingerprint=v84macuxmi}]?.js.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/wwwroot/startbootstrap-sb-admin-2-gh-pages/chart.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "adn01tedvl",
+      "Integrity": "sjSCfMAzlDiVgYxXyzo5V9LTxjPJOyseydPwoMxlE4M=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/wwwroot/startbootstrap-sb-admin-2-gh-pages/chart.js"
     },
     {
       "Identity": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/obj/Debug/net9.0/compressed/avkzeolji7-3ucssc93p7.gz",
@@ -38760,6 +38781,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/startbootstrap-sb-admin-2-gh-pages/cards.html"
+    },
+    {
+      "Identity": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/wwwroot/startbootstrap-sb-admin-2-gh-pages/chart.js",
+      "SourceId": "Frontend",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/wwwroot/",
+      "BasePath": "_content/Frontend",
+      "RelativePath": "startbootstrap-sb-admin-2-gh-pages/chart#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "v84macuxmi",
+      "Integrity": "/9hneSH20h5faWLHtqsPPGuy6vdIGKXJ7MfJr1n3CzY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/startbootstrap-sb-admin-2-gh-pages/chart.js"
     },
     {
       "Identity": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/wwwroot/startbootstrap-sb-admin-2-gh-pages/charts.html",
@@ -98643,6 +98685,304 @@
         {
           "Name": "integrity",
           "Value": "sha256-CBcNnkY1cKKeAmfVsO6OkbirZayC4qt8/eyRkjhvMCA="
+        }
+      ]
+    },
+    {
+      "Route": "startbootstrap-sb-admin-2-gh-pages/chart.js",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/obj/Debug/net9.0/compressed/aupcrs2bni-v84macuxmi.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000014199906"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "70422"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sjSCfMAzlDiVgYxXyzo5V9LTxjPJOyseydPwoMxlE4M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 25 May 2025 11:46:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"/9hneSH20h5faWLHtqsPPGuy6vdIGKXJ7MfJr1n3CzY=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-/9hneSH20h5faWLHtqsPPGuy6vdIGKXJ7MfJr1n3CzY="
+        }
+      ]
+    },
+    {
+      "Route": "startbootstrap-sb-admin-2-gh-pages/chart.js",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/wwwroot/startbootstrap-sb-admin-2-gh-pages/chart.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "205422"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/9hneSH20h5faWLHtqsPPGuy6vdIGKXJ7MfJr1n3CzY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 25 May 2025 11:46:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-/9hneSH20h5faWLHtqsPPGuy6vdIGKXJ7MfJr1n3CzY="
+        }
+      ]
+    },
+    {
+      "Route": "startbootstrap-sb-admin-2-gh-pages/chart.js.gz",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/obj/Debug/net9.0/compressed/aupcrs2bni-v84macuxmi.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "70422"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sjSCfMAzlDiVgYxXyzo5V9LTxjPJOyseydPwoMxlE4M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 25 May 2025 11:46:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-sjSCfMAzlDiVgYxXyzo5V9LTxjPJOyseydPwoMxlE4M="
+        }
+      ]
+    },
+    {
+      "Route": "startbootstrap-sb-admin-2-gh-pages/chart.v84macuxmi.js",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/obj/Debug/net9.0/compressed/aupcrs2bni-v84macuxmi.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000014199906"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "70422"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sjSCfMAzlDiVgYxXyzo5V9LTxjPJOyseydPwoMxlE4M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 25 May 2025 11:46:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"/9hneSH20h5faWLHtqsPPGuy6vdIGKXJ7MfJr1n3CzY=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "v84macuxmi"
+        },
+        {
+          "Name": "label",
+          "Value": "startbootstrap-sb-admin-2-gh-pages/chart.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-/9hneSH20h5faWLHtqsPPGuy6vdIGKXJ7MfJr1n3CzY="
+        }
+      ]
+    },
+    {
+      "Route": "startbootstrap-sb-admin-2-gh-pages/chart.v84macuxmi.js",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/wwwroot/startbootstrap-sb-admin-2-gh-pages/chart.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "205422"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/9hneSH20h5faWLHtqsPPGuy6vdIGKXJ7MfJr1n3CzY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 25 May 2025 11:46:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "v84macuxmi"
+        },
+        {
+          "Name": "label",
+          "Value": "startbootstrap-sb-admin-2-gh-pages/chart.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-/9hneSH20h5faWLHtqsPPGuy6vdIGKXJ7MfJr1n3CzY="
+        }
+      ]
+    },
+    {
+      "Route": "startbootstrap-sb-admin-2-gh-pages/chart.v84macuxmi.js.gz",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/obj/Debug/net9.0/compressed/aupcrs2bni-v84macuxmi.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "70422"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sjSCfMAzlDiVgYxXyzo5V9LTxjPJOyseydPwoMxlE4M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 25 May 2025 11:46:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "v84macuxmi"
+        },
+        {
+          "Name": "label",
+          "Value": "startbootstrap-sb-admin-2-gh-pages/chart.js.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-sjSCfMAzlDiVgYxXyzo5V9LTxjPJOyseydPwoMxlE4M="
         }
       ]
     },

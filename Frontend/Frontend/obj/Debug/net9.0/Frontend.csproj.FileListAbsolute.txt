@@ -1869,3 +1869,4 @@
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/bin/Debug/net9.0/System.Numerics.Tensors.dll
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/bin/Debug/net9.0/System.Text.Json.dll
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/bin/Debug/net9.0/System.Threading.Channels.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/obj/Debug/net9.0/compressed/aupcrs2bni-v84macuxmi.gz

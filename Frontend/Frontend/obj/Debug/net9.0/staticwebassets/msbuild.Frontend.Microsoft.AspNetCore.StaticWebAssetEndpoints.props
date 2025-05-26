@@ -852,6 +852,18 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ro3mo7u9y3"},{"Name":"integrity","Value":"sha256-1Y\u002BcXkPajiGB6iQZbuNTlhjX\u002BOPb3lYeWugodSTqmH8="},{"Name":"label","Value":"_content/Frontend/startbootstrap-sb-admin-2-gh-pages/cards.html"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"32247"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u00221Y\u002BcXkPajiGB6iQZbuNTlhjX\u002BOPb3lYeWugodSTqmH8=\u0022"},{"Name":"Last-Modified","Value":"Wed, 28 Apr 2021 15:21:04 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Frontend/startbootstrap-sb-admin-2-gh-pages/chart.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\startbootstrap-sb-admin-2-gh-pages\chart.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-/9hneSH20h5faWLHtqsPPGuy6vdIGKXJ7MfJr1n3CzY="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"205422"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022/9hneSH20h5faWLHtqsPPGuy6vdIGKXJ7MfJr1n3CzY=\u0022"},{"Name":"Last-Modified","Value":"Sun, 25 May 2025 11:46:54 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Frontend/startbootstrap-sb-admin-2-gh-pages/chart.v84macuxmi.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\startbootstrap-sb-admin-2-gh-pages\chart.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"v84macuxmi"},{"Name":"integrity","Value":"sha256-/9hneSH20h5faWLHtqsPPGuy6vdIGKXJ7MfJr1n3CzY="},{"Name":"label","Value":"_content/Frontend/startbootstrap-sb-admin-2-gh-pages/chart.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"205422"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022/9hneSH20h5faWLHtqsPPGuy6vdIGKXJ7MfJr1n3CzY=\u0022"},{"Name":"Last-Modified","Value":"Sun, 25 May 2025 11:46:54 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Frontend/startbootstrap-sb-admin-2-gh-pages/charts.html">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\startbootstrap-sb-admin-2-gh-pages\charts.html'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

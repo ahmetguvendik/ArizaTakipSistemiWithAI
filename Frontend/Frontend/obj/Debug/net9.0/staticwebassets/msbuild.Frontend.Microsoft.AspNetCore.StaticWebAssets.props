@@ -1278,6 +1278,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\startbootstrap-sb-admin-2-gh-pages\cards.html'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\startbootstrap-sb-admin-2-gh-pages\chart.js'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Frontend</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Frontend</BasePath>
+      <RelativePath>startbootstrap-sb-admin-2-gh-pages/chart.js</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>v84macuxmi</Fingerprint>
+      <Integrity>/9hneSH20h5faWLHtqsPPGuy6vdIGKXJ7MfJr1n3CzY=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\startbootstrap-sb-admin-2-gh-pages\chart.js'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\startbootstrap-sb-admin-2-gh-pages\charts.html'))">
       <SourceType>Package</SourceType>
       <SourceId>Frontend</SourceId>

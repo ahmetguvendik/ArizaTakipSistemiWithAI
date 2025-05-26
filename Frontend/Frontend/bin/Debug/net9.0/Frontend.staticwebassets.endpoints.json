@@ -20975,6 +20975,304 @@
       ]
     },
     {
+      "Route": "startbootstrap-sb-admin-2-gh-pages/chart.js",
+      "AssetFile": "startbootstrap-sb-admin-2-gh-pages/chart.js.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000014199906"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "70422"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sjSCfMAzlDiVgYxXyzo5V9LTxjPJOyseydPwoMxlE4M=\""
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"/9hneSH20h5faWLHtqsPPGuy6vdIGKXJ7MfJr1n3CzY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 25 May 2025 11:46:54 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-/9hneSH20h5faWLHtqsPPGuy6vdIGKXJ7MfJr1n3CzY="
+        }
+      ]
+    },
+    {
+      "Route": "startbootstrap-sb-admin-2-gh-pages/chart.js",
+      "AssetFile": "startbootstrap-sb-admin-2-gh-pages/chart.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "205422"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/9hneSH20h5faWLHtqsPPGuy6vdIGKXJ7MfJr1n3CzY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 25 May 2025 11:46:54 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-/9hneSH20h5faWLHtqsPPGuy6vdIGKXJ7MfJr1n3CzY="
+        }
+      ]
+    },
+    {
+      "Route": "startbootstrap-sb-admin-2-gh-pages/chart.js.gz",
+      "AssetFile": "startbootstrap-sb-admin-2-gh-pages/chart.js.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "70422"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sjSCfMAzlDiVgYxXyzo5V9LTxjPJOyseydPwoMxlE4M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 25 May 2025 11:46:54 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-sjSCfMAzlDiVgYxXyzo5V9LTxjPJOyseydPwoMxlE4M="
+        }
+      ]
+    },
+    {
+      "Route": "startbootstrap-sb-admin-2-gh-pages/chart.v84macuxmi.js",
+      "AssetFile": "startbootstrap-sb-admin-2-gh-pages/chart.js.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000014199906"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "70422"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sjSCfMAzlDiVgYxXyzo5V9LTxjPJOyseydPwoMxlE4M=\""
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"/9hneSH20h5faWLHtqsPPGuy6vdIGKXJ7MfJr1n3CzY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 25 May 2025 11:46:54 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "v84macuxmi"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-/9hneSH20h5faWLHtqsPPGuy6vdIGKXJ7MfJr1n3CzY="
+        },
+        {
+          "Name": "label",
+          "Value": "startbootstrap-sb-admin-2-gh-pages/chart.js"
+        }
+      ]
+    },
+    {
+      "Route": "startbootstrap-sb-admin-2-gh-pages/chart.v84macuxmi.js",
+      "AssetFile": "startbootstrap-sb-admin-2-gh-pages/chart.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "205422"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/9hneSH20h5faWLHtqsPPGuy6vdIGKXJ7MfJr1n3CzY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 25 May 2025 11:46:54 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "v84macuxmi"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-/9hneSH20h5faWLHtqsPPGuy6vdIGKXJ7MfJr1n3CzY="
+        },
+        {
+          "Name": "label",
+          "Value": "startbootstrap-sb-admin-2-gh-pages/chart.js"
+        }
+      ]
+    },
+    {
+      "Route": "startbootstrap-sb-admin-2-gh-pages/chart.v84macuxmi.js.gz",
+      "AssetFile": "startbootstrap-sb-admin-2-gh-pages/chart.js.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "70422"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sjSCfMAzlDiVgYxXyzo5V9LTxjPJOyseydPwoMxlE4M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 25 May 2025 11:46:54 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "v84macuxmi"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-sjSCfMAzlDiVgYxXyzo5V9LTxjPJOyseydPwoMxlE4M="
+        },
+        {
+          "Name": "label",
+          "Value": "startbootstrap-sb-admin-2-gh-pages/chart.js.gz"
+        }
+      ]
+    },
+    {
       "Route": "startbootstrap-sb-admin-2-gh-pages/charts.html",
       "AssetFile": "startbootstrap-sb-admin-2-gh-pages/charts.html.gz",
       "Selectors": [

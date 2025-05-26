@@ -43,6 +43,14 @@ public class FaultReportController  : Microsoft.AspNetCore.Mvc.Controller
         return Ok(valus);
     }
     
+    [HttpGet("GetFaultByDepartman")]         
+    public async Task<IActionResult> GetFaultByDepartman()
+    {
+        var valus = await _mediator.Send(new GetFaultByDepartmanQuery());   
+        return Ok(valus);
+    }
+    
+    
     [HttpPost]
     public async Task<IActionResult> Post(CreateFaultReportCommand command)
     {
@@ -60,11 +68,19 @@ public class FaultReportController  : Microsoft.AspNetCore.Mvc.Controller
     }
     
     [HttpPut("CloseFault")]
-    public async Task<IActionResult> ClosedFault(CloseFaultCommand command) 
+    public async Task<IActionResult> ClosedFault(CloseFaultCommand command)     
     {
         await _mediator.Send(command);
         await _faultHubContext.Clients.All.SendAsync("ReceiveUpdate", "Arıza Kapatildi");
 
         return Ok("Kapatildi");
     }
+    
+    [HttpGet("GetFaultByMonth")]         
+    public async Task<IActionResult> GetFaultByMonth()  
+    {
+        var valus = await _mediator.Send(new GetFaultByMonthQuery());
+        return Ok(valus);
+    }
+    
 }
