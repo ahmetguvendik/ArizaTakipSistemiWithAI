@@ -1,0 +1,16 @@
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+WORKDIR /app
+
+COPY ArizaTakipSistemi/Presentation/*.csproj ./Presentation/
+RUN dotnet restore ./Presentation/ArizaTakipSistemi.Presentation.csproj
+
+COPY . .
+RUN dotnet publish ./Presentation/ArizaTakipSistemi.Presentation.csproj -c Release -o /publish
+
+FROM mcr.microsoft.com/dotnet/aspnet:7.0
+WORKDIR /app
+COPY --from=build /publish .
+
+EXPOSE 80
+
+ENTRYPOINT ["dotnet", "ArizaTakipSistemi.Presentation.dll"]
