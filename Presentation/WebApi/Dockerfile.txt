@@ -1,16 +1,46 @@
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
-WORKDIR /app
+# /Presentation/WebApi/Dockerfile
 
-COPY ArizaTakipSistemi/Presentation/*.csproj ./Presentation/
-RUN dotnet restore ./Presentation/ArizaTakipSistemi.Presentation.csproj
+# Stage 1: Build Stage
+# Uses the .NET SDK image. Adjust the .NET version (e.g., 6.0, 7.0, 8.0) if your project targets a different one.
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
 
+# Copy the solution file and the WebApi project file.
+# The `../` is crucial here to navigate up to the solution root from the current project directory.
+COPY ["../ArizaTakipSistemiWithAI.sln", "./"]
+COPY ["Presentation/WebApi/Presentation.WebApi.csproj", "Presentation/WebApi/"]
+
+# If your WebApi project depends on other internal projects (e.g., Application, Domain, Infrastructure),
+# you'll need to copy their .csproj files too.
+# Example:
+# COPY ["Application/Application.csproj", "Application/"]
+# COPY ["Domain/Domain.csproj", "Domain/"]
+# COPY ["Infrastructure/Infrastructure.csproj", "Infrastructure/"]
+
+# Restore NuGet package dependencies
+RUN dotnet restore "Presentation/WebApi/Presentation.WebApi.csproj"
+
+# Copy all project files to the build context.
 COPY . .
-RUN dotnet publish ./Presentation/ArizaTakipSistemi.Presentation.csproj -c Release -o /publish
 
-FROM mcr.microsoft.com/dotnet/aspnet:7.0
+# Change to the WebApi project directory for building
+WORKDIR "/src/Presentation/WebApi"
+
+# Build and publish the application
+# The published output will be in /app/publish
+RUN dotnet publish -c Release -o /app/publish --no-restore
+
+# Stage 2: Runtime Stage
+# Uses the smaller ASP.NET Core Runtime image for the final production image.
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
-COPY --from=build /publish .
 
+# Copy the published output from the build stage
+COPY --from=build /app/publish .
+
+# Define the port the application will listen on inside the container
+ENV ASPNETCORE_URLS="http://+:80"
 EXPOSE 80
 
-ENTRYPOINT ["dotnet", "ArizaTakipSistemi.Presentation.dll"]
+# Set the entry point for the application (the main DLL of your WebApi project)
+ENTRYPOINT ["dotnet", "Presentation.WebApi.dll"]
