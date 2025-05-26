@@ -1,46 +1,53 @@
-# /Presentation/WebApi/Dockerfile
+# /Presentation/WebApi/Dockerfile (Bu dosya bu klasörde)
 
 # Stage 1: Build Stage
-# Uses the .NET SDK image. Adjust the .NET version (e.g., 6.0, 7.0, 8.0) if your project targets a different one.
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-WORKDIR /src
+WORKDIR /src # Konteyner içinde /src dizinine geçiyoruz
 
-# Copy the solution file and the WebApi project file.
-# The `../` is crucial here to navigate up to the solution root from the current project directory.
-COPY ["../ArizaTakipSistemiWithAI.sln", "./"]
-COPY ["Presentation/WebApi/Presentation.WebApi.csproj", "Presentation/WebApi/"]
+# Çözüm dosyasını ve WebApi proje dosyasını kopyala
+# Dockerfile'ın bulunduğu yerden (Presentation/WebApi) çözüm dosyasına ulaşmak için '../../' kullanmalıyız.
+# WebApi projesi için 'Presentation/WebApi/Presentation.WebApi.csproj' yolu Dockerfile'a göre doğru değildir.
+# Çünkü Dockerfile zaten 'Presentation/WebApi' klasörünün içinde.
+# Bu yüzden, kendi klasöründeki projeyi kopyalarken sadece proje dosyasının adını kullanmalıyız.
 
-# If your WebApi project depends on other internal projects (e.g., Application, Domain, Infrastructure),
-# you'll need to copy their .csproj files too.
-# Example:
-# COPY ["Application/Application.csproj", "Application/"]
-# COPY ["Domain/Domain.csproj", "Domain/"]
-# COPY ["Infrastructure/Infrastructure.csproj", "Infrastructure/"]
+# Çözüm dosyasını /src dizinine kopyala
+COPY "../../ArizaTakipSistemiWithAI.sln", "./"
 
-# Restore NuGet package dependencies
-RUN dotnet restore "Presentation/WebApi/Presentation.WebApi.csproj"
+# WebApi projesi ve varsa diğer bağımlı projelerin .csproj dosyalarını kopyala
+# Dockerfile'ın kendisi WebApi klasöründe olduğu için, kaynak yolu './' ile başlar.
+COPY "Presentation.WebApi.csproj", "Presentation/WebApi/"
 
-# Copy all project files to the build context.
-COPY . .
+# Diğer bağımlı projeler varsa (örneğin Application, Domain, Infrastructure)
+# Dockerfile'ın bulunduğu yerden (Presentation/WebApi) diğer projelere ulaşmak için '../' veya '../../' kullanılır.
+# Örneğin, Application klasörü Solution'ın altında ve WebApi ile aynı seviyede değilse:
+COPY "../../../Application/Application.csproj", "Application/"
+COPY "../../../Domain/Domain.csproj", "Domain/"
+COPY "../../../Infrastructure/Infrastructure.csproj", "Infrastructure/"
 
-# Change to the WebApi project directory for building
+
+# Bağımlılıkları geri yükle
+# Restore komutu çözüm dosyasının yolunu veya WebApi projesinin tam yolunu bekler (kopyalandığı yere göre).
+RUN dotnet restore "./Presentation.WebApi/Presentation.WebApi.csproj"
+
+# Tüm proje dosyalarını kopyala
+# Şimdi Dockerfile'ın bulunduğu dizindeki tüm içeriği /src/Presentation/WebApi'e kopyalıyoruz.
+# Kaynak yolu '.' Dockerfile'ın bulunduğu dizini (WebApi) temsil eder.
+# Hedef yolu 'Presentation/WebApi/' de /src altında bir klasör oluşturur ve oraya kopyalar.
+COPY . "Presentation/WebApi/"
+
+# WebApi proje klasörüne geç
 WORKDIR "/src/Presentation/WebApi"
 
-# Build and publish the application
-# The published output will be in /app/publish
+# Uygulamayı derle ve yayınla
 RUN dotnet publish -c Release -o /app/publish --no-restore
 
 # Stage 2: Runtime Stage
-# Uses the smaller ASP.NET Core Runtime image for the final production image.
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
 
-# Copy the published output from the build stage
 COPY --from=build /app/publish .
 
-# Define the port the application will listen on inside the container
 ENV ASPNETCORE_URLS="http://+:80"
 EXPOSE 80
 
-# Set the entry point for the application (the main DLL of your WebApi project)
 ENTRYPOINT ["dotnet", "Presentation.WebApi.dll"]
