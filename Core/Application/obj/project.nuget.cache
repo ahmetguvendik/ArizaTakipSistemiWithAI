@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Ae+Lt64FpXU=",
+  "dgSpecHash": "FH8ZWdqBNS8=",
   "success": true,
   "projectFilePath": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Application/Application.csproj",
   "expectedPackageFiles": [
     "/Users/ahmetguvendik/.nuget/packages/azure.ai.openai/2.2.0-beta.4/azure.ai.openai.2.2.0-beta.4.nupkg.sha512",
     "/Users/ahmetguvendik/.nuget/packages/azure.core/1.44.1/azure.core.1.44.1.nupkg.sha512",
+    "/Users/ahmetguvendik/.nuget/packages/bouncycastle.cryptography/2.5.1/bouncycastle.cryptography.2.5.1.nupkg.sha512",
     "/Users/ahmetguvendik/.nuget/packages/fluentvalidation/12.0.0/fluentvalidation.12.0.0.nupkg.sha512",
     "/Users/ahmetguvendik/.nuget/packages/mediatr/12.5.0/mediatr.12.5.0.nupkg.sha512",
     "/Users/ahmetguvendik/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",

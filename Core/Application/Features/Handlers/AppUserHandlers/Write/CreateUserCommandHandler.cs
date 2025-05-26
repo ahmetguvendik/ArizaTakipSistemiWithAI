@@ -21,6 +21,7 @@ namespace Application.Features.Handlers.AppUserHandlers.Write;
             appUser.UserName = request.Username;    
             appUser.NameSurname = request.NameSurname;
             appUser.DepartmentId = request.DepartmanId;
+            appUser.Email = request.Email;
             var response = await _userManager.CreateAsync(appUser, request.Password);
             if (response.Succeeded)
             {

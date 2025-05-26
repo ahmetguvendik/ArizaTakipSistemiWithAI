@@ -1,8 +1,10 @@
 using System.Security.Claims;
+using System.Text;
 using Application.Features.Results.AppUserResults;
 using DTO.AppUserDto;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace Frontend.Controllers;
 
@@ -86,5 +88,36 @@ public class LoginController : Controller
         {
             await HttpContext.SignOutAsync("MyCookieAuth");
             return RedirectToAction("Index", "Ariza");    
+        }
+        
+        public async Task<IActionResult> ResetPassword(ResetPasswordDto resetPasswordDto)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var jsonData = JsonConvert.SerializeObject(resetPasswordDto);
+            StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
+            var response = await client.PostAsync("http://localhost:5164/api/Login/reset-password", stringContent);
+            if (response.IsSuccessStatusCode)
+            {
+                TempData["SuccessMessage"] = "Ariza Kaydiniz Basarili Bir Sekilde Olusturuldu";
+                return RedirectToAction("Index", "Login");
+            }
+
+            return View();
+        }
+        
+        public async Task<IActionResult> ResetPasswordEmail(ResetPasswordEmailDto resetPasswordEmailDto)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var jsonData = JsonConvert.SerializeObject(resetPasswordEmailDto);
+            StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
+            var response = await client.PostAsync("http://localhost:5164/api/Login/forgot-password", stringContent);
+
+            if (response.IsSuccessStatusCode)
+            {
+                TempData["SuccessMessage"] = "Ariza Kaydiniz Basarili Bir Sekilde Olusturuldu";
+                return RedirectToAction("Index", "Login");
+            }
+
+            return View();
         }
     }
