@@ -32,7 +32,6 @@ Arıza açıklamaları üzerinden yapay zeka modeli kullanılarak arızanın han
 
 ## 🖼️ Ekran Görüntüleri
 
-![9](https://github.com/user-attachments/assets/7df6d915-bbb2-43e2-8ec4-faffe5791cab)
 ![8](https://github.com/user-attachments/assets/230bf573-8743-4692-ab09-63c1f676feff)
 ![7](https://github.com/user-attachments/assets/142d5122-12f1-486d-9cac-78d8042b6675)
 ![6](https://github.com/user-attachments/assets/33afef14-871e-48bb-9483-1072507642ca)
