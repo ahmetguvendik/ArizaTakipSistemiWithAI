@@ -2,6 +2,7 @@ using Application.Repositories;
 using Application.SemanticKernel.Services;
 using Application.Services;
 using Domain.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Persistance.Repositories;
@@ -17,7 +18,8 @@ public static class ServiceRegistration
             opt.UseNpgsql("User ID=postgres;Password=testtest;Host=localhost;Port=5432;Database=FaultReportDb;"));  
         AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         collection.AddIdentity<AppUser, AppRole>()
-            .AddEntityFrameworkStores<FaultDbContext>();     
+            .AddEntityFrameworkStores<FaultDbContext>()
+            .AddDefaultTokenProviders(); // Bu satır şart!;     
         
         collection.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         collection.AddScoped(typeof(IFaultReportRepository), typeof(FaultReportRepository));
@@ -25,7 +27,6 @@ public static class ServiceRegistration
         collection.AddScoped(typeof(IEmailService), typeof(EmailService));
         collection.AddScoped(typeof(IStatisticsRepository), typeof(StatisticsRepository));
         collection.AddScoped<AIService>();
-
-
+        
     }
 }
