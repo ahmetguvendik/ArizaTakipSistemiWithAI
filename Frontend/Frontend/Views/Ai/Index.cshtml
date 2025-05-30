@@ -1,0 +1,106 @@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>AI Chat</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+</head>
+<body>
+    <h2>AI Chat</h2>
+
+    <p id="status">Bağlantı kuruluyor...</p>
+
+    <textarea id="inputPrompt" rows="4" cols="50" placeholder="Mesajınızı yazın..."></textarea><br />
+    <button id="sendBtn" disabled>Gönder</button>
+
+    <h3>Yanıt:</h3>
+    <pre id="responseArea"></pre>
+
+    <script>
+        (function () {
+            const sendBtn = document.getElementById("sendBtn");
+            const statusText = document.getElementById("status");
+            let currentConnectionId = null; // Connection ID'yi burada saklayacağız
+
+            const connection = new signalR.HubConnectionBuilder()
+                .withUrl("http://localhost:5164/ai-hub")
+                .withAutomaticReconnect()
+                .build();
+
+            // Sunucudan AI yanıtı veya diğer mesajlar geldiğinde bu fonksiyon çalışacak
+            connection.on("ReceiveMessage", message => {
+                const responseArea = document.getElementById("responseArea");
+                responseArea.textContent += message;
+            });
+
+            // Bağlantı kurulduğunda sunucudan Connection ID'yi çağırıyoruz
+            connection.start()
+                .then(async () => { // async ekledik çünkü await kullanacağız
+                    console.log("SignalR bağlantısı kuruldu");
+                    statusText.textContent = "SignalR bağlantısı kuruldu";
+
+                    // *** KRİTİK DEĞİŞİKLİK BURADA: Sunucudaki GetConnectionId metodunu çağırıyoruz ***
+                    try {
+                        currentConnectionId = await connection.invoke("GetConnectionId");
+                        console.log("Sunucudan gelen ConnectionId:", currentConnectionId);
+                        sendBtn.disabled = false; // Connection ID alındıktan sonra butonu etkinleştiriyoruz
+                        statusText.textContent = "SignalR bağlantısı kuruldu ve hazır.";
+                    } catch (invokeErr) {
+                        console.error("GetConnectionId çağrı hatası:", invokeErr);
+                        statusText.textContent = "Connection ID alınamadı: " + invokeErr.message;
+                        sendBtn.disabled = true; // Hata durumunda butonu devre dışı bırak
+                    }
+                })
+                .catch(err => {
+                    console.error("SignalR bağlantı hatası:", err);
+                    statusText.textContent = "SignalR bağlantı hatası: " + err.message;
+                    sendBtn.disabled = true; // Hata durumunda butonu devre dışı bırak
+                });
+
+            sendBtn.addEventListener("click", async () => {
+                const prompt = document.getElementById("inputPrompt").value.trim();
+                if (!prompt) {
+                    alert("Lütfen bir mesaj yazın");
+                    return;
+                }
+
+                const responseArea = document.getElementById("responseArea");
+                responseArea.textContent = ""; // Yeni yanıt için alanı temizle
+
+                try {
+                    // Bağlantı ID'sinin sunucudan gelmiş olduğundan emin ol
+                    if (!currentConnectionId) {
+                        alert("SignalR bağlantısı henüz kurulmadı veya Connection ID alınamadı.");
+                        return;
+                    }
+
+                    // Prompt ve ConnectionId'yi API'ye gönder
+                    const res = await fetch("http://localhost:5164/chat", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            Prompt: prompt,
+                            ConnectionId: currentConnectionId // Sakladığımız Connection ID'yi gönderiyoruz
+                        })
+                    });
+
+                    if (!res.ok) {
+                        const errorText = await res.text();
+                        alert("Mesaj gönderilemedi: " + res.statusText + " - " + errorText);
+                        console.error("API hatası:", errorText);
+                    } else {
+                        document.getElementById("inputPrompt").value = ""; // Mesaj gönderildikten sonra input'u temizle
+                    }
+                } catch (err) {
+                    alert("İstek gönderilirken hata: " + err.message);
+                    console.error("Fetch hatası:", err);
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

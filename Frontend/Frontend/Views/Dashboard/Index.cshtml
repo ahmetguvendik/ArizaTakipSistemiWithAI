@@ -1,0 +1,203 @@
+@model Frontend.ViewModels.DashboardViewModel
+@using Newtonsoft.Json
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <title>Solvix Arıza Sistemi</title>
+
+    <link href="startbootstrap-sb-admin-2-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link href="startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.min.css" rel="stylesheet" />
+    <link href="startbootstrap-sb-admin-2-gh-pages/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body id="page-top">
+
+<div id="wrapper">
+
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" style="padding-top: 1rem;">
+        <!-- Brand Logo and Title -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-start px-3 mb-3" href="/Supervisor" style="padding-top: 0.5rem; padding-bottom: 0.5rem;">
+            <img src="/images/logo.png" alt="Solvix Logo" style="height: 48px; margin-right: 14px; display: block;" />
+            <span class="h6 font-weight-bold text-white m-0">Solvix Arıza Sistemi</span>
+        </a>
+
+
+        <hr class="sidebar-divider my-1" />
+
+        <!-- Dashboard -->
+        <li class="nav-item mb-2">
+            <a class="nav-link d-flex align-items-center" href="/Dashboard">
+                <i class="fas fa-fw fa-tachometer-alt me-2"></i>
+                <span>Dashboard</span>
+            </a>
+        </li>
+
+        <!-- İstatistik -->
+        <li class="nav-item mb-2">
+            <a class="nav-link d-flex align-items-center" href="/Istatistik">
+                <i class="fas fa-fw fa-chart-bar me-2"></i>
+                <span>İstatistik</span>
+            </a>
+        </li>
+
+        <!-- Arızalar -->
+        <li class="nav-item mb-2">
+            <a class="nav-link d-flex align-items-center" href="/Supervisor">
+                <i class="fas fa-fw fa-tools me-2"></i>
+                <span>Arızalar</span>
+            </a>
+        </li>
+
+        <!-- AI Asistan -->
+        <li class="nav-item mb-2">
+            <a class="nav-link d-flex align-items-center" href="/Ai">
+                <i class="fas fa-fw fa-robot me-2"></i>
+                <span>AI Asistan</span>
+            </a>
+        </li>
+    </ul>
+
+
+
+    <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <form class="form-inline">
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </form>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown">
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Supervisor</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="container">
+                <h1 class="h3 mb-4 text-gray-800">Dashboard</h1>
+
+                <div class="row">
+
+                    <!-- Aylık Arıza Sayısı -->
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary">Aylık Arıza Sayısı</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart-area">
+                                    <canvas id="myAreaChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Departmana Göre Arıza Sayısı -->
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary">Departmana Göre Arıza Sayısı</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart-area">
+                                    <canvas id="departmentChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- content -->
+    </div> <!-- content-wrapper -->
+</div> <!-- wrapper -->
+
+<!-- JS -->
+<script src="startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.min.js"></script>
+<script src="startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="startbootstrap-sb-admin-2-gh-pages/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="startbootstrap-sb-admin-2-gh-pages/js/sb-admin-2.min.js"></script>
+<script src="startbootstrap-sb-admin-2-gh-pages/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="startbootstrap-sb-admin-2-gh-pages/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="startbootstrap-sb-admin-2-gh-pages/js/demo/datatables-demo.js"></script>
+
+<script>
+    // Aylık Arıza Sayısı
+    const faultData = @Html.Raw(JsonConvert.SerializeObject(Model.FaultsByMonth));
+    const aylar = faultData.map(x => x.MonthName);
+    const arizaSayilari = faultData.map(x => x.Count);
+
+    const ctx = document.getElementById('myAreaChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: aylar,
+            datasets: [{
+                label: 'Arıza Sayısı',
+                data: arizaSayilari,
+                backgroundColor: 'rgba(78, 115, 223, 0.5)',
+                borderColor: 'rgba(78, 115, 223, 1)',
+                borderWidth: 1,
+                hoverBackgroundColor: 'rgba(78, 115, 223, 0.7)',
+                hoverBorderColor: 'rgba(78, 115, 223, 1)'
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        stepSize: 1
+                    }
+                }
+            }
+        }
+    });
+
+    // Departman Bazlı Arıza Sayısı
+    const deptData = @Html.Raw(JsonConvert.SerializeObject(Model.FaultsByDepartment));
+    const departmanlar = deptData.map(x => x.DepartmanName);
+    const deptArizaSayilari = deptData.map(x => x.Count);
+
+    const deptCtx = document.getElementById('departmentChart').getContext('2d');
+    new Chart(deptCtx, {
+        type: 'bar',
+        data: {
+            labels: departmanlar,
+            datasets: [{
+                label: 'Arıza Sayısı',
+                data: deptArizaSayilari,
+                backgroundColor: 'rgba(28, 200, 138, 0.5)',
+                borderColor: 'rgba(28, 200, 138, 1)',
+                borderWidth: 1,
+                hoverBackgroundColor: 'rgba(28, 200, 138, 0.7)',
+                hoverBorderColor: 'rgba(28, 200, 138, 1)'
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    ticks: {
+                        stepSize: 1
+                    }
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
