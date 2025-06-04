@@ -12,17 +12,18 @@ namespace Frontend.Controllers;
 public class TeknisyenController : Controller
 {
     private readonly IHttpClientFactory _httpClientFactory;
-    private readonly IEmailService  _emailService;
 
-    public TeknisyenController(IHttpClientFactory httpClientFactory, IEmailService emailService)
+
+    public TeknisyenController(IHttpClientFactory httpClientFactory)
     {
          _httpClientFactory = httpClientFactory;
-         _emailService = emailService;
+       
     }
     
     public async Task<IActionResult> Index()
     {
         var departmentId = User.FindFirstValue("DepartmentId");
+        ViewBag.DepartmentId = departmentId;
         var client = _httpClientFactory.CreateClient();
         var response = await client.GetAsync($"http://localhost:5164/api/FaultReport/GetByDepartmanId/{departmentId}"); 
         if (response.IsSuccessStatusCode)

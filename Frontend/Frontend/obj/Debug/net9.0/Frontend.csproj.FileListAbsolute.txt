@@ -1873,3 +1873,16 @@
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/bin/Debug/net9.0/Serilog.dll
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/bin/Debug/net9.0/Serilog.Sinks.PeriodicBatching.dll
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/bin/Debug/net9.0/Serilog.Sinks.PostgreSQL.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/bin/Debug/net9.0/EPPlus.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/bin/Debug/net9.0/EPPlus.Interfaces.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/bin/Debug/net9.0/Microsoft.Extensions.Configuration.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/bin/Debug/net9.0/Microsoft.Extensions.Configuration.FileExtensions.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/bin/Debug/net9.0/Microsoft.Extensions.Configuration.Json.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/bin/Debug/net9.0/Microsoft.Extensions.FileProviders.Physical.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/bin/Debug/net9.0/Microsoft.Extensions.FileSystemGlobbing.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/bin/Debug/net9.0/Microsoft.IO.RecyclableMemoryStream.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/bin/Debug/net9.0/System.Security.Cryptography.Pkcs.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/bin/Debug/net9.0/System.Security.Cryptography.Xml.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/bin/Debug/net9.0/System.Text.Encoding.CodePages.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/bin/Debug/net9.0/runtimes/win/lib/net9.0/System.Security.Cryptography.Pkcs.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/bin/Debug/net9.0/runtimes/win/lib/net9.0/System.Text.Encoding.CodePages.dll
