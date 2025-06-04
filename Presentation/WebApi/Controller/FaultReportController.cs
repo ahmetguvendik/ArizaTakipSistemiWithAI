@@ -54,24 +54,7 @@ public class FaultReportController  : Microsoft.AspNetCore.Mvc.Controller
     [HttpPost]
     public async Task<IActionResult> Post([FromForm]CreateFaultReportCommand command)
     {
-        if (command.FaultFire == null || command.FaultFire.Length == 0)
-            return BadRequest("Dosya yüklenmedi.");
-
-        // Dosya yolunu belirle
-        var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
-        Directory.CreateDirectory(uploadsFolder); // Klasör yoksa oluştur
-
-        var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(command.FaultFire.FileName);
-        var filePath = Path.Combine(uploadsFolder, uniqueFileName); 
-
-        using (var stream = new FileStream(filePath, FileMode.Create))
-        {
-            await command.FaultFire.CopyToAsync(stream); // Dosyayı yükle
-        }
-
-        // Dosya yolunu Command'a ekle
-        command.FaultFirePath = "/uploads/" + uniqueFileName;
-
+        
             await _mediator.Send(command);
             await _faultHubContext.Clients.All.SendAsync("ReceiveUpdate", "Yeni Ariza Geldi");  
              return Ok("Eklendi");

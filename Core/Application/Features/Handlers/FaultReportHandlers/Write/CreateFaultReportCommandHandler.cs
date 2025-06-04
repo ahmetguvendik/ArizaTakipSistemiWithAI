@@ -37,10 +37,6 @@ public class CreateFaultReportCommandHandler : IRequestHandler<CreateFaultReport
             
         }
 
-        else
-        {
-            throw new ApplicationException("<UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK>");
-        }
         
         var  faultReport = new FaultReport();
         faultReport.Id = Guid.NewGuid().ToString();
@@ -51,7 +47,7 @@ public class CreateFaultReportCommandHandler : IRequestHandler<CreateFaultReport
         faultReport.ReporterName  = request.ReporterName;
         faultReport.ReporterEmail  = request.ReporterEmail;
         faultReport.ReporterPhone  = request.ReporterPhone;
-        faultReport.FaultFirePath = "/uploads/" + fileName; 
+        faultReport.FaultFirePath = fileName != null ? "/uploads/" + fileName : "Gorsel veya Belge Yok";   
         await _faultReportRepository.CreateAsync(faultReport);
         await _faultReportRepository.SaveChangesAsync();
        
