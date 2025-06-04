@@ -24,5 +24,6 @@ public class FaultReport : BaseEntity
         
         public string? ClosedById { get; set; } // Kapatan      
         public AppUser ClosedBy { get; set; }
-        public string? ClosedDescription { get; set; }                          
+        public string? ClosedDescription { get; set; }
+        public string? FaultFirePath { get; set; }      
 }

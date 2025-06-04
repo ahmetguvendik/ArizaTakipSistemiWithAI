@@ -181,3 +181,4 @@
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/bin/Debug/net9.0/System.Threading.Channels.dll
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/bin/Debug/net9.0/DTO.dll
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/bin/Debug/net9.0/DTO.pdb
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/bin/Debug/net9.0/WebApi.staticwebassets.runtime.json

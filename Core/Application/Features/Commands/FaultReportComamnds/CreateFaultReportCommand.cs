@@ -1,4 +1,5 @@
 using MediatR;
+using Microsoft.AspNetCore.Http;
 
 namespace Application.Features.Commands.FaultReportComamnds;
 
@@ -15,4 +16,6 @@ public class CreateFaultReportCommand : IRequest
     public string? MachineId { get; set; }
     public string? AssignedToId { get; set; } // Teknisyen
     public string? AssignedById { get; set; } // Supervizör
+    public IFormFile? FaultFire { get; set; }
+    public string? FaultFirePath { get; set; }  
 }

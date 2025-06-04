@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Http;
+
 namespace DTO.FaultReportDtos;
 
 public class CreateFaultReportDto
@@ -12,4 +14,6 @@ public class CreateFaultReportDto
     public string? MachineId { get; set; }
     public string? AssignedToId { get; set; } // Teknisyen
     public string? AssignedById { get; set; } // Supervizör
+    public IFormFile? FaultFire { get; set; }
+    public string? FaultFirePath { get; set; }      
 }

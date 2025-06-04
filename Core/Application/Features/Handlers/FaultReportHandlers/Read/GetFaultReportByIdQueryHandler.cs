@@ -45,7 +45,7 @@ public class GetFaultReportByIdQueryHandler : IRequestHandler<GetFaultReportById
             ClosedByName = values.ClosedBy?.NameSurname?? null,
             ClosedById = values.ClosedBy?.Id ?? null,
             AssignedById = values.AssignedBy?.Id ?? null,
-
+            FaultFilePath = values.FaultFirePath != null ? values.FaultFirePath : null,
 
         };
         

@@ -57,10 +57,10 @@ public class SupervisorController : Controller
         {
             var jsonData = await response.Content.ReadAsStringAsync();
             var values = JsonConvert.DeserializeObject<GetFaultReportDto>(jsonData);
-            return View(values); // artık ViewBag dolu
+            return View(values); 
         }
 
-        return NotFound(); // veya boş bir View de döndürebilirsin ama NotFound daha iyi
+        return NotFound(); 
     }
 
     [HttpPost]

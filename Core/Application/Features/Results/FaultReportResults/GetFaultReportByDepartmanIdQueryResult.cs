@@ -23,4 +23,5 @@ public class GetFaultReportByDepartmanIdQueryResult
     public string ClosedDescription { get; set; }
     public string DepartmanId { get; set; }
     public string DepartmanName { get; set; }   
+    public string FaultFilePath { get; set; }
 }

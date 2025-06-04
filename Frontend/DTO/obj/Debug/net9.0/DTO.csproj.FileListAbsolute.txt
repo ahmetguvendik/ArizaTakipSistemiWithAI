@@ -10,3 +10,4 @@
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/DTO/obj/Debug/net9.0/refint/DTO.dll
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/DTO/obj/Debug/net9.0/DTO.pdb
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/DTO/obj/Debug/net9.0/ref/DTO.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/DTO/obj/Debug/net9.0/DTO.csproj.AssemblyReference.cache

@@ -165,6 +165,9 @@ namespace Persistance.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("FaultFirePath")
+                        .HasColumnType("text");
+
                     b.Property<string>("MachineId")
                         .HasColumnType("text");
 
