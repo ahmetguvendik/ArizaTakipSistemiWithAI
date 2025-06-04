@@ -182,3 +182,6 @@
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/bin/Debug/net9.0/DTO.dll
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/bin/Debug/net9.0/DTO.pdb
 /Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/bin/Debug/net9.0/WebApi.staticwebassets.runtime.json
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/bin/Debug/net9.0/Serilog.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/bin/Debug/net9.0/Serilog.Sinks.PeriodicBatching.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/bin/Debug/net9.0/Serilog.Sinks.PostgreSQL.dll

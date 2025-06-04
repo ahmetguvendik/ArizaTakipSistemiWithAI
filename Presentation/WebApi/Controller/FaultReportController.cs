@@ -1,9 +1,11 @@
 using Application.Features.Commands.FaultReportComamnds;
 using Application.Features.Queries.FaultReportQueries;
 using Application.Hubs;
+using Application.Services;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
+using Serilog;
 
 
 namespace WebApi.Controller;
@@ -14,12 +16,15 @@ public class FaultReportController  : Microsoft.AspNetCore.Mvc.Controller
 {
     private readonly IMediator _mediator;
     private readonly IHubContext<FaultHub> _faultHubContext;
+    private readonly IEmailService  _emailService;
+    
     
 
-    public FaultReportController(IMediator mediator,IHubContext<FaultHub> faultHubContext)
+    public FaultReportController(IMediator mediator,IHubContext<FaultHub> faultHubContext,IEmailService emailService)
     {
          _mediator = mediator;
          _faultHubContext = faultHubContext;    
+         _emailService = emailService;
     }
 
     [HttpGet]
@@ -73,7 +78,8 @@ public class FaultReportController  : Microsoft.AspNetCore.Mvc.Controller
     {
         await _mediator.Send(command);
         await _faultHubContext.Clients.All.SendAsync("ReceiveUpdate", "Arıza Kapatildi");
-
+    
+        Log.Information("Ariza ID: "+command.Id +"Ariza Kapatan: "+command.ClosedById);
         return Ok("Kapatildi");
     }
     

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
+using Serilog;
 
 namespace Frontend.Controllers;
 
@@ -33,6 +34,7 @@ public class SupervisorController : Controller
             var values = JsonConvert.DeserializeObject<List<GetFaultReportDto>>(jsonData);
             return View(values);
         }
+        Log.Error("Veriler Yuklenirken Hata Olustu");
         return View();
     }
 
@@ -59,7 +61,7 @@ public class SupervisorController : Controller
             var values = JsonConvert.DeserializeObject<GetFaultReportDto>(jsonData);
             return View(values); 
         }
-
+        Log.Error("Ariza Detay Yuklenirken Hata Olustu");
         return NotFound(); 
     }
 
@@ -90,10 +92,11 @@ public class SupervisorController : Controller
             {
                 await _emailService.SendSupervisorToTeknisyenEmailAsync(values.ReporterEmail,
                     "Arizasiniz Supervizor Tarafindan Ilgili Teknisyene Atanmistir");
+                Log.Information(messageTemplate:"Ariza ID: " + faultReportId+" "+supervisorId + " " + "Adli Supervizor"+ assignedToId +" "+"Adli kisiye ariza atamistir");
                 return RedirectToAction("Index"); 
             }
            
-
+        Log.Error("Atama Yaparken Hata Olustu");
         return BadRequest("Atama başarısız.");
     }
 

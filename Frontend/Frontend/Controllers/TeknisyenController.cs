@@ -4,6 +4,7 @@ using DTO.FaultReportDtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Serilog;
 
 namespace Frontend.Controllers;
 
@@ -30,6 +31,8 @@ public class TeknisyenController : Controller
             var values = JsonConvert.DeserializeObject<List<GetFaultReportByDepartmanIdDto>>(jsonData);
             return View(values);
         }
+       
+        Log.Error("Teknsiyen Veri Cekerken Hata Olustu");
         return View();  
     }
     
@@ -47,6 +50,7 @@ public class TeknisyenController : Controller
             return View(values); // artık ViewBag dolu
         }
         
+        Log.Error("Teknsiyen Ariza Detaya Girerken Hata Olustu");
         return NotFound(); 
     }
 }

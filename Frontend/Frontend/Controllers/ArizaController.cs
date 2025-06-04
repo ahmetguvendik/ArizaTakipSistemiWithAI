@@ -4,6 +4,7 @@ using Application.Services;
 using DTO.FaultReportDtos;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Serilog;
 
 namespace Frontend.Controllers;
 
@@ -27,6 +28,7 @@ public class ArizaController : Controller
 [HttpPost]
 public async Task<IActionResult> Index(CreateFaultReportDto createJobDto)
 {
+    
     createJobDto.CreatedAt = DateTime.Now;
     var client = _httpClientFactory.CreateClient();
     using var content = new MultipartFormDataContent();
@@ -61,6 +63,7 @@ public async Task<IActionResult> Index(CreateFaultReportDto createJobDto)
 
     if (response.IsSuccessStatusCode)
     {
+        Log.Information(createJobDto.ReporterName + " " + " Ariza olusturdu");
         TempData["SuccessMessage"] = "Ariza Kaydiniz Basarili Bir Sekilde Olusturuldu";
         await _emailService.SendFaultEmailAsync(createJobDto.ReporterEmail, "Arizaniz Basrili Bir Sekilde Olusturuldu ve Supervizore Iletildi");
         return RedirectToAction("Index", "Ariza");
@@ -75,20 +78,26 @@ public async Task<IActionResult> Index(CreateFaultReportDto createJobDto)
         var errors = JsonConvert.DeserializeObject<Dictionary<string, string[]>>(responseContent);
         if (errors != null)
         {
+           
             foreach (var err in errors)
             {
+             
+                Log.Error(createJobDto.ReporterName + " " + err.Value);
                 allErrors.AddRange(err.Value);
             }
         }
         else
         {
+            Log.Error(createJobDto.ReporterName +" " + errors.First().Value);
             allErrors.Add("Bilinmeyen bir hata oluştu.");
         }
     }
     catch
     {
         allErrors.Add("Sunucudan geçersiz cevap alındı.");
+        Log.Error(createJobDto.ReporterName +" " + allErrors.First());
         allErrors.Add(responseContent);
+        
     }
 
     TempData["ErrorMessages"] = JsonConvert.SerializeObject(allErrors);

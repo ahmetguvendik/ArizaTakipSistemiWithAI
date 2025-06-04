@@ -5,6 +5,7 @@ using DTO.AppUserDto;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Serilog;
 
 namespace Frontend.Controllers;
 
@@ -54,29 +55,34 @@ public class LoginController : Controller
 
                         // 🔐 Kullanıcı oturum açıyor
                         await HttpContext.SignInAsync("MyCookieAuth", principal);
-
+                        Log.Information(loginUserDto.Username + "Giris Yapti");
                         // Rol bazlı yönlendirme
                         return loginResult.Role switch
                         {
                             "Admin" => RedirectToAction("Index", "AdminJob"),   
                             "Teknisyen" => RedirectToAction("Index", "Teknisyen"),
                             "Supervisor" => RedirectToAction("Index", "Supervisor"),   
-                            _ => RedirectToAction("Index", "Login")
+                            _ => RedirectToAction("Index", "Login"),
+                            
                         };
+                       
                     }
                     else
                     {
+                        Log.Error("Giris Yapilirken Hata Olustu");
                         ViewBag.Error = "Kullanıcı adı ya da şifre hatalı.";
                     }
                 }
                 else
                 {
                     var errorText = await response.Content.ReadAsStringAsync();
+                    Log.Error("Giris Yapilirken Hata Olustu" + errorText);
                     ViewBag.Error = "Sunucudan hata döndü: " + errorText;
                 }
             }
             catch (Exception ex)
             {
+                Log.Error("Giris Yapilirken Hata Olustu" + ex.Message);
                 ViewBag.Error = "İstek sırasında beklenmeyen bir hata oluştu: " + ex.Message;
             }
 
@@ -98,7 +104,8 @@ public class LoginController : Controller
             var response = await client.PostAsync("http://localhost:5164/api/Login/reset-password", stringContent);
             if (response.IsSuccessStatusCode)
             {
-                TempData["SuccessMessage"] = "Ariza Kaydiniz Basarili Bir Sekilde Olusturuldu";
+                Log.Information("Sifre Sifirlama Istegi Yapildi" + resetPasswordDto.Email);
+                TempData["SuccessMessage"] = "Sifre Sifirlama Isteginiz Basarili Bir Sekilde Olusturuldu";
                 return RedirectToAction("Index", "Login");
             }
 
@@ -114,7 +121,8 @@ public class LoginController : Controller
 
             if (response.IsSuccessStatusCode)
             {
-                TempData["SuccessMessage"] = "Ariza Kaydiniz Basarili Bir Sekilde Olusturuldu";
+                TempData["SuccessMessage"] = "Sifre Sifirlama Basarili Bir Sekilde Olusturuldu";
+                Log.Information("Sifre Sifirlama Yapildi" + resetPasswordEmailDto.Email);
                 return RedirectToAction("Index", "Login");
             }
 

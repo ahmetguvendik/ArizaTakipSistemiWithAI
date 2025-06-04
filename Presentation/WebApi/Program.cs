@@ -8,7 +8,8 @@ using Application.Validations.FaultValidations;
 using FluentValidation.AspNetCore; 
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;
-using OpenAI; 
+using OpenAI;
+using Serilog;
 using WebApi.ViewModels; 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,6 +26,7 @@ builder.Services.AddPersistanceService();
 builder.Services.AddApplicationService(builder.Configuration);
 
 builder.Services.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateFaultReportValidation>()); // Eğer kullanılıyorsa
+Log.Logger = new LoggerConfiguration().WriteTo.PostgreSQL("User ID=postgres;Password=testtest;Host=localhost;Port=5432;Database=logs_db;","Logs",needAutoCreateTable:true).MinimumLevel.Information().CreateLogger();
 
 // CORS ayarları: SignalR ve AJAX istekleri için kritik
 builder.Services.AddCors(options =>
