@@ -22,6 +22,7 @@ public class GetMachineByDepartmanIdQueryHandler : IRequestHandler<GetMachineByD
         {
             Id = x.Id,
             Name = x.Name,
+            SeriNo = x.SerialNumber
         }).ToList();
     }
 }

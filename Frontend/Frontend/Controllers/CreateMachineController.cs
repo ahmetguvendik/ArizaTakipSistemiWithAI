@@ -1,13 +1,14 @@
 using System.Security.Claims;
 using DTO.DepartmentDTOs;
 using DTO.MachuneDTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
-using Serilog;
 
 namespace Frontend.Controllers;
 
+[Authorize(Roles = "Teknisyen")]
 public class CreateMachineController : Controller
 {
    private readonly IHttpClientFactory _clientFactory;
