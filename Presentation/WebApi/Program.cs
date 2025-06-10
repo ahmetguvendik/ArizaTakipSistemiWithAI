@@ -4,7 +4,8 @@ using Application;
 using Application.Hubs;
 using Application.SemanticKernel.Services;
 using Application.SemanticKernel.Tools;
-using Application.Validations.FaultValidations; 
+using Application.Validations.FaultValidations;
+using Application.Validations.MachineValidations;
 using FluentValidation.AspNetCore; 
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;
@@ -25,7 +26,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddPersistanceService();
 builder.Services.AddApplicationService(builder.Configuration);
 
-builder.Services.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateFaultReportValidation>()); // Eğer kullanılıyorsa
+builder.Services.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateFaultReportValidation>()); 
+builder.Services.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateMachineValidation>()); 
 Log.Logger = new LoggerConfiguration().WriteTo.PostgreSQL("User ID=postgres;Password=testtest;Host=localhost;Port=5432;Database=logs_db;","Logs",needAutoCreateTable:true).MinimumLevel.Information().CreateLogger();
 
 // CORS ayarları: SignalR ve AJAX istekleri için kritik
