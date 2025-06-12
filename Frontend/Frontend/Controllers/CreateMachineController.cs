@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
+using Serilog;
 
 namespace Frontend.Controllers;
 
@@ -31,12 +32,16 @@ public class CreateMachineController : Controller
     [HttpPost]
     public async Task<IActionResult> Index(CreateMachineDto createMachine)
     {
+        var userId = User.Identity.IsAuthenticated ? User.FindFirstValue(ClaimTypes.NameIdentifier) : null;
+
         var client = _clientFactory.CreateClient();
         var response = await client.PostAsJsonAsync("http://localhost:5164/api/Machine", createMachine);
         if (response.IsSuccessStatusCode)
         {
             TempData["SuccessMessage"] = "Makine Kaydiniz Basarili Bir Sekilde Olusturuldu";
+            Log.Information("Kisi ID: "+ userId + "Makine Ekledi");
             return RedirectToAction("Index","CreateMachine");
+          
         }
         
         var responseContent = await response.Content.ReadAsStringAsync();

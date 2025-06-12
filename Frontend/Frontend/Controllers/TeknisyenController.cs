@@ -51,7 +51,7 @@ public class TeknisyenController : Controller
             return View(values); // artık ViewBag dolu
         }
         
-        Log.Error("Teknsiyen Ariza Detaya Girerken Hata Olustu");
+        Log.Error("Teknsiyen Ariza Detaya Bakarken Hata Olustu");
         return NotFound(); 
     }
 }

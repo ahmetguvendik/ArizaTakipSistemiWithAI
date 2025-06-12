@@ -92,7 +92,7 @@ public class SupervisorController : Controller
             {
                 await _emailService.SendSupervisorToTeknisyenEmailAsync(values.ReporterEmail,
                     "Arizasiniz Supervizor Tarafindan Ilgili Teknisyene Atanmistir");
-                Log.Information(messageTemplate:"Ariza ID: " + faultReportId+" "+supervisorId + " " + "Adli Supervizor"+ assignedToId +" "+"Adli kisiye ariza atamistir");
+                Log.Information(messageTemplate:"Ariza ID: " + faultReportId+" Supervisor ID: "+supervisorId + " " + "Teknisyen ID:"+ assignedToId +" "+"Adli kisiye ariza atamistir");
                 return RedirectToAction("Index"); 
             }
            
