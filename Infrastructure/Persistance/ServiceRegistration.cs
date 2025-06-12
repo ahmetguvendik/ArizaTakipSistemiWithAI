@@ -28,6 +28,7 @@ public static class ServiceRegistration
         collection.AddScoped(typeof(IHangfireService), typeof(HangfireService));
         collection.AddScoped(typeof(IStatisticsRepository), typeof(StatisticsRepository));
         collection.AddScoped(typeof(IDepartmentRepository), typeof(DepartmentRepository));
+        collection.AddScoped(typeof(IUserRepository), typeof(UserRepository));
         collection.AddScoped<AIService>();
         
     }

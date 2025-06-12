@@ -1,3 +1,4 @@
+@using System.Security.Claims
 @{
     Layout = null;
 }
@@ -23,7 +24,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                @await Component.InvokeAsync("_TeknisyenTopBarComponentPartial")        
+                @await Component.InvokeAsync("_TeknisyenTopBarComponentPartial", new { id = User.FindFirst(ClaimTypes.NameIdentifier)?.Value })
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->

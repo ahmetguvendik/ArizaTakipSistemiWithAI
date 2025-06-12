@@ -16,9 +16,16 @@ public class UserController  : Microsoft.AspNetCore.Mvc.Controller
     }
     
     [HttpGet]
-    public async Task<IActionResult> Get()
+    public async Task<IActionResult> Get()  
     {
         var valus = await _mediator.Send(new GetTeknisyenUserQuery());
+        return Ok(valus);
+    }
+    
+    [HttpGet("GetUserById/{id}")]   
+    public async Task<IActionResult> GetUserById(string id)
+    {
+        var valus = await _mediator.Send(new GetUserByIdQuery(id));
         return Ok(valus);
     }
 }

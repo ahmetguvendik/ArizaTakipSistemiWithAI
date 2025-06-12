@@ -1,3 +1,4 @@
+@using System.Security.Claims
 @{
     Layout = null;
 }
@@ -20,7 +21,8 @@
 
             <!-- Topbar -->
         
-            @await Component.InvokeAsync("_SupervisorTopbarComponentPartial")       
+            @await Component.InvokeAsync("_SupervisorTopbarComponentPartial", new { id = User.FindFirst(ClaimTypes.NameIdentifier)?.Value })
+    
             <!-- Begin Page Content -->
             <div class="container-fluid">
 
