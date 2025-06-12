@@ -25,6 +25,7 @@ public static class ServiceRegistration
         collection.AddScoped(typeof(IFaultReportRepository), typeof(FaultReportRepository));
         collection.AddScoped(typeof(IMachineRepository), typeof(MachineRepository));    
         collection.AddScoped(typeof(IEmailService), typeof(EmailService));
+        collection.AddScoped(typeof(IHangfireService), typeof(HangfireService));
         collection.AddScoped(typeof(IStatisticsRepository), typeof(StatisticsRepository));
         collection.AddScoped(typeof(IDepartmentRepository), typeof(DepartmentRepository));
         collection.AddScoped<AIService>();

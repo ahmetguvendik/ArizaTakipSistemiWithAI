@@ -4,13 +4,18 @@ using Application;
 using Application.Hubs;
 using Application.SemanticKernel.Services;
 using Application.SemanticKernel.Tools;
+using Application.Services;
 using Application.Validations.FaultValidations;
 using Application.Validations.MachineValidations;
-using FluentValidation.AspNetCore; 
+using FluentValidation.AspNetCore;
+using Hangfire;
+using Hangfire.PostgreSql;
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;
 using OpenAI;
+using Persistance.Services;
 using Serilog;
+using WebApi.Controller;
 using WebApi.ViewModels; 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -30,7 +35,9 @@ builder.Services.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyCont
 builder.Services.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateMachineValidation>()); 
 Log.Logger = new LoggerConfiguration().WriteTo.PostgreSQL("User ID=postgres;Password=testtest;Host=localhost;Port=5432;Database=logs_db;","Logs",needAutoCreateTable:true).MinimumLevel.Information().CreateLogger();
 
-// CORS ayarları: SignalR ve AJAX istekleri için kritik
+builder.Services.AddHangfire(configuration => configuration.UsePostgreSqlStorage("User ID=postgres;Password=testtest;Host=localhost;Port=5432;Database=FaultReportDb;"));
+builder.Services.AddHangfireServer();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",
@@ -94,9 +101,12 @@ if (app.Environment.IsDevelopment())
 
 
 app.UseCors("AllowAll");
-
+app.UseHangfireDashboard();
 app.UseHttpsRedirection(); 
-
+RecurringJob.AddOrUpdate<IHangfireService>(
+    "send-report",
+    service => service.SendDailyReportEmailAsync(),
+    Cron.Daily);
 app.UseStaticFiles();
 app.UseAuthentication();
 app.UseAuthorization();
