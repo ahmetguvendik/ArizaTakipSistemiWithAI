@@ -1,0 +1,50 @@
+<div id="signalrStatus" style="position: fixed; bottom: 10px; left: 10px; 
+        background: #eee; padding: 10px; border: 1px solid #ccc; max-width: 300px; font-family: monospace;">
+    Bağlantı durumu: Bekleniyor...
+</div>
+
+<!-- JS ve SignalR scriptleri -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        const statusDiv = document.getElementById('signalrStatus');
+
+        function logStatus(message) {
+            const time = new Date().toLocaleTimeString();
+            statusDiv.innerHTML += `<div>[${time}] ${message}</div>`;   
+            statusDiv.scrollTop = statusDiv.scrollHeight; // Kaydırmayı aşağı al
+        }
+
+        $('#dataTable').DataTable();
+
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("http://localhost:5164/fault")
+            .configureLogging(signalR.LogLevel.Information) 
+            .build();
+
+        connection.on("ReceiveUpdate", function (message) {
+            alert("Güncelleme mesajı: " + message);
+            logStatus("Mesaj alındı: " + message);
+            location.reload();
+        });
+
+        connection.start()
+            .then(() => {
+                logStatus("SignalR bağlantısı başarılı!");
+            })
+            .catch(err => {
+                logStatus("SignalR bağlantı hatası: " + err.toString());
+            });
+
+        connection.onclose(async () => {
+            logStatus("SignalR bağlantısı kapandı. Yeniden bağlanıyor...");
+            try {
+                await connection.start();
+                logStatus("SignalR bağlantısı yeniden sağlandı.");
+            } catch (err) {
+                logStatus("Yeniden bağlanma hatası: " + err.toString());
+            }
+        });
+    });
+</script>
