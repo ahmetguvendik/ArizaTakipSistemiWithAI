@@ -1,6 +1,7 @@
 using System.ClientModel;
 using Application.SemanticKernel.Tools;
 using Application.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.SemanticKernel;
 using OpenAI;
 using Persistance.Services;
@@ -18,8 +19,14 @@ builder.Services.AddAuthentication("MyCookieAuth")
     {
         options.LoginPath = "/Login/Index";
         options.AccessDeniedPath = "/Login/AccessDenied";
-       
+
+        // İstersen cookie adını özelleştir
+        options.Cookie.Name = "MyCookieAuthCookie";
+        options.ExpireTimeSpan = TimeSpan.FromHours(1);
+        options.SlidingExpiration = true;
     });
+
+
 
 Log.Logger = new LoggerConfiguration().WriteTo.PostgreSQL("User ID=postgres;Password=testtest;Host=localhost;Port=5432;Database=logs_db;","Logs",needAutoCreateTable:true).MinimumLevel.Information().CreateLogger();
 
