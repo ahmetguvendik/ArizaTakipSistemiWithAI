@@ -5,7 +5,5 @@ namespace Application.Features.Commands.TenantCommands;
 
 public class LoginTenantCommand : IRequest<LoginTenantUserQueryResult>
 {
-
-    public string Email { get; set; }         
-    public string Password { get; set; }
+    public string ConnectionString { get; set; }
 }

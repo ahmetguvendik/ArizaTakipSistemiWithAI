@@ -8,7 +8,6 @@ using Serilog;
 
 namespace Frontend.Controllers;
 
-[Authorize(Roles = "Teknisyen")]
 public class TeknisyenController : Controller
 {
     private readonly IHttpClientFactory _httpClientFactory;

@@ -25,69 +25,75 @@ public class LoginController : Controller
         }
 
         // POST: /Login
-        [HttpPost]
-        public async Task<IActionResult> Index(LoginUserDto loginUserDto)
+  [HttpPost]
+public async Task<IActionResult> Index(LoginUserDto loginUserDto)
+{
+    var client = _httpClientFactory.CreateClient();
+
+    try
+    {
+        var response = await client.PostAsJsonAsync("http://localhost:5164/api/Login", loginUserDto);
+
+        if (response.IsSuccessStatusCode)
         {
-            var client = _httpClientFactory.CreateClient();
+            var loginResult = await response.Content.ReadFromJsonAsync<LoginUserQueryResult>();
 
-            try
+            if (loginResult != null)
             {
-                var response = await client.PostAsJsonAsync("http://localhost:5164/api/Login", loginUserDto);
+                // 🔄 Önceki claim'leri al (FactoryLogin'den gelen Tenant bilgileri)
+                var existingClaims = User?.Claims?.ToList() ?? new List<Claim>();
 
-                if (response.IsSuccessStatusCode)
+                // 🆕 Yeni claim'ler (User bilgileri)
+                var newClaims = new List<Claim>
                 {
-                    var loginResult = await response.Content.ReadFromJsonAsync<LoginUserQueryResult>();
+                    new Claim(ClaimTypes.Name, loginUserDto.Username),
+                    new Claim(ClaimTypes.NameIdentifier, loginResult.Id),
+                    new Claim(ClaimTypes.Role, loginResult.Role),
+                    new Claim("DepartmentId", loginResult.DepartmanId ?? "")
+                };
 
-                    if (loginResult != null)
-                    {
-                        // 🔐 Claims oluşturuluyor
-                        var claims = new List<Claim>
-                        {
-                            new Claim(ClaimTypes.Name, loginUserDto.Username),
-                            new Claim(ClaimTypes.NameIdentifier, loginResult.Id), // Burada UserId'yi ekliyoruz
-                            new Claim(ClaimTypes.Role, loginResult.Role),
-                            new Claim("DepartmentId", loginResult.DepartmanId ?? "") // DepartmanId claim olarak
+                // 📌 Aynı claim tiplerini sil, yeni olanları ekle
+                var mergedClaims = existingClaims
+                    .Where(oldClaim => newClaims.All(newClaim => newClaim.Type != oldClaim.Type))
+                    .Concat(newClaims)
+                    .ToList();
 
-                        };
+                var identity = new ClaimsIdentity(mergedClaims, "MyCookieAuth");
+                var principal = new ClaimsPrincipal(identity);
 
-                        var identity = new ClaimsIdentity(claims, "MyCookieAuth");
-                        var principal = new ClaimsPrincipal(identity);
+                await HttpContext.SignInAsync("MyCookieAuth", principal);
 
-                        // 🔐 Kullanıcı oturum açıyor
-                        await HttpContext.SignInAsync("MyCookieAuth", principal);
-                        Log.Information(loginUserDto.Username + "Giris Yapti");
-                        // Rol bazlı yönlendirme
-                        return loginResult.Role switch
-                        {
-                            "Admin" => RedirectToAction("Index", "AdminJob"),   
-                            "Teknisyen" => RedirectToAction("Index", "Teknisyen"),
-                            "Supervisor" => RedirectToAction("Index", "Supervisor"),   
-                            _ => RedirectToAction("Index", "Login"),
-                            
-                        };
-                       
-                    }
-                    else
-                    {
-                        Log.Error("Giris Yapilirken Hata Olustu");
-                        ViewBag.Error = "Kullanıcı adı ya da şifre hatalı.";
-                    }
-                }
-                else
+                Log.Information($"{loginUserDto.Username} giriş yaptı (Kullanıcı)");
+
+                // Rol bazlı yönlendirme
+                return loginResult.Role switch
                 {
-                    var errorText = await response.Content.ReadAsStringAsync();
-                    Log.Error("Giris Yapilirken Hata Olustu" + errorText);
-                    ViewBag.Error = "Sunucudan hata döndü: " + errorText;
-                }
-            }
-            catch (Exception ex)
-            {
-                Log.Error("Giris Yapilirken Hata Olustu" + ex.Message);
-                ViewBag.Error = "İstek sırasında beklenmeyen bir hata oluştu: " + ex.Message;
+                    "Admin" => RedirectToAction("Index", "AdminJob"),
+                    "Teknisyen" => RedirectToAction("Index", "Teknisyen"),
+                    "Supervisor" => RedirectToAction("Index", "Supervisor"),
+                    _ => RedirectToAction("Index", "Login"),
+                };
             }
 
-            return View();
+            ViewBag.Error = "Kullanıcı adı ya da şifre hatalı.";
+            Log.Error("Login sonucu null");
         }
+        else
+        {
+            var errorText = await response.Content.ReadAsStringAsync();
+            ViewBag.Error = "Sunucudan hata döndü: " + errorText;
+            Log.Error("Login API hatası: " + errorText);
+        }
+    }
+    catch (Exception ex)
+    {
+        ViewBag.Error = "İstek sırasında beklenmeyen bir hata oluştu: " + ex.Message;
+        Log.Error("Login exception: " + ex.Message);
+    }
+
+    return View();
+}
+
 
         // Opsiyonel: çıkış işlemi
         public async Task<IActionResult> Logout()

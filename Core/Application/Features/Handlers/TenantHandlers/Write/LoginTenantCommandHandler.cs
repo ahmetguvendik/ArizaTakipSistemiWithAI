@@ -1,31 +1,32 @@
+using Application.Features.Commands.AppUserCommands;
 using Application.Features.Commands.TenantCommands;
 using Application.Features.Results.TenantResults;
-using Application.Repositories.Master;
+using Application.Repositories;
 using MediatR;
+using Microsoft.AspNetCore.Identity;
 
-namespace Application.Features.Handlers.TenantHandlers.Write;
 
-public class LoginTenantCommandHandler : IRequestHandler<LoginTenantCommand,LoginTenantUserQueryResult>
+namespace Application.Features.Handlers.TenantHandlers.Write
 {
-    private readonly ITenantRepository  _tenantRepository;
-
-    public LoginTenantCommandHandler(ITenantRepository tenantRepository)
+    public class LoginTenantCommandHandler : IRequestHandler<LoginTenantCommand, LoginTenantUserQueryResult>
     {
-         _tenantRepository = tenantRepository;
-    }
-    public async Task<LoginTenantUserQueryResult> Handle(LoginTenantCommand request, CancellationToken cancellationToken)
-    {
-        var tenant = await _tenantRepository.GetTenantByCompanyAndEmailAsync(request.Email, request.Password);
+        private readonly ITenantRepository _tenantRepository;
 
-        if (tenant == null)
-            throw new Exception("Şirket bilgileri bulunamadı.");
-
-        return new LoginTenantUserQueryResult
+        public LoginTenantCommandHandler(ITenantRepository tenantRepository)
         {
-            Id = tenant.Id,
-            CompanyName = tenant.CompanyName,
-            ConnectionString = tenant.ConnectionString,
-            Email = tenant.Email,
-        };
+             _tenantRepository = tenantRepository;
+        }
+        
+        public async Task<LoginTenantUserQueryResult> Handle(LoginTenantCommand request, CancellationToken cancellationToken)
+        {
+            var values =  _tenantRepository.GetConnectionString(request.ConnectionString);
+            return new LoginTenantUserQueryResult()
+            {
+                Id = values.Id,
+                CompanyName = values.CompanyName,
+                Email = values.Email,
+                ConnectionString = values.ConnectionString
+            };
+        }
     }
 }

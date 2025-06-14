@@ -13,9 +13,7 @@ using Hangfire.PostgreSql;
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;
 using OpenAI;
-using Persistance.Services;
 using Serilog;
-using WebApi.Controller;
 using WebApi.ViewModels; 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,13 +25,28 @@ builder.Services.AddAuthorization();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Session için gerekli servisler
+builder.Services.AddDistributedMemoryCache();  // Session cache'i
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
+builder.Services.AddHttpContextAccessor(); // HttpContext erişimi için
+
 // Diğer katmanlardaki servis kayıtları (Eğer bu metodlar gerçekten varsa ve servisleri doğru ekliyorsa)
 builder.Services.AddPersistanceService();
 builder.Services.AddApplicationService(builder.Configuration);
 
 builder.Services.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateFaultReportValidation>()); 
 builder.Services.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateMachineValidation>()); 
-Log.Logger = new LoggerConfiguration().WriteTo.PostgreSQL("User ID=postgres;Password=testtest;Host=localhost;Port=5432;Database=logs_db;","Logs",needAutoCreateTable:true).MinimumLevel.Information().CreateLogger();
+
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.PostgreSQL("User ID=postgres;Password=testtest;Host=localhost;Port=5432;Database=logs_db;", "Logs", needAutoCreateTable: true)
+    .MinimumLevel.Information()
+    .CreateLogger();
 
 builder.Services.AddHangfire(configuration => configuration.UsePostgreSqlStorage("User ID=postgres;Password=testtest;Host=localhost;Port=5432;Database=FaultReportDb;"));
 builder.Services.AddHangfireServer();
@@ -75,20 +88,16 @@ builder.Services.AddSingleton<Kernel>(serviceProvider =>
             })
     );
 
-    
     kernelBuilder.Plugins.AddFromObject(serviceProvider.GetRequiredService<FaultTools>());
 
     return kernelBuilder.Build();
 });
-
 
 builder.Services.AddSingleton<IChatCompletionService>(serviceProvider =>
 {
     var kernel = serviceProvider.GetRequiredService<Kernel>();
     return kernel.GetRequiredService<IChatCompletionService>();
 });
-
-
 
 var app = builder.Build();
 
@@ -99,17 +108,21 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-
 app.UseCors("AllowAll");
 app.UseHangfireDashboard();
-app.UseHttpsRedirection(); 
+app.UseHttpsRedirection();
+
+app.UseSession(); // <<< BURAYI EKLEDİM
+
+app.UseStaticFiles();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
 RecurringJob.AddOrUpdate<IHangfireService>(
     "send-report",
     service => service.SendDailyReportEmailAsync(),
     Cron.Daily);
-app.UseStaticFiles();
-app.UseAuthentication();
-app.UseAuthorization();
 
 app.MapControllers();
 
@@ -120,4 +133,4 @@ app.MapPost("/chat", async (AIService aiService, ChatRequestVM chatRequest, Canc
 app.MapHub<FaultHub>("/fault"); 
 app.MapHub<ChatHub>("/ai-hub"); 
 
-app.Run(); // Uygulamayı başlat
+app.Run();

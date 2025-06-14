@@ -32,17 +32,12 @@
 
                     <form asp-action="Index" asp-controller="FactoryLogin" method="post">
                         <div class="form-group">
-                            <label asp-for="Email">Email Adresi</label>
-                            <input type="email" class="form-control" placeholder="Email adınızı girin" asp-for="Email">
+                            <label asp-for="ConnectionString">Bağlantı Anahtarınızı Giriniz</label>
+                            <input type="text" class="form-control" placeholder="Bağlantı Anahtarını Girin" asp-for="ConnectionString">
                         </div>
-
-                        <div class="form-group">
-                            <label asp-for="Password">Şifre</label>
-                            <input type="password" class="form-control" placeholder="Şifrenizi girin" asp-for="Password">
-                        </div>
-
+                        
                         <button type="submit" class="btn btn-success btn-block font-weight-bold">
-                            Giriş Yap
+                            Kaydet
                         </button>
                         
                     </form>

@@ -1,9 +1,11 @@
 using Application.Features.Commands.AppUserCommands;
+using Application.Features.Commands.TenantCommands;
 using Application.Features.Results.AppUserResults;
 using MediatR;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 
 namespace WebApi.Controller;
 
@@ -12,10 +14,12 @@ namespace WebApi.Controller;
 public class LoginController : Microsoft.AspNetCore.Mvc.Controller
 {
     private readonly IMediator _mediator;
+    private readonly IHttpContextAccessor _httpContextAccessor;
 
-    public LoginController(IMediator mediator)
+    public LoginController(IMediator mediator, IHttpContextAccessor httpContextAccessor)
     {
         _mediator = mediator;
+        _httpContextAccessor = httpContextAccessor;
     }
     
     [HttpPost]
@@ -37,6 +41,23 @@ public class LoginController : Microsoft.AspNetCore.Mvc.Controller
         // Kullanıcı başarılı giriş yaptıysa döndürülüyor
         return Ok(result);
     }
+    
+    [HttpPost("SetTenantConnectionString")] 
+    public IActionResult SetTenantConnectionString([FromBody] LoginTenantCommand request)
+    {
+        if (request == null || string.IsNullOrEmpty(request.ConnectionString))
+        {
+            Log.Warning("SetTenantConnectionString: Boş veya null ConnectionString alındı.");
+            return BadRequest("Bağlantı dizesi gönderilmedi.");
+        }
+
+        // ConnectionString'i Backend'in Session'ına kaydet
+        _httpContextAccessor.HttpContext?.Session?.SetString("DynamicConnectionString", request.ConnectionString);
+        Log.Information($"Backend Session'a DynamicConnectionString başarıyla kaydedildi.");
+
+        return Ok(new { Message = "Bağlantı dizesi sunucu oturumuna kaydedildi." });
+    }
+
     
     [HttpPost("reset-password")]
     public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordCommand command)

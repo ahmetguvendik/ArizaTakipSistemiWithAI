@@ -1,40 +1,45 @@
 using Application.Features.Commands.TenantCommands;
 using Application.Features.Results.TenantResults;
-using Application.Repositories.Master;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Threading.Tasks;
 
-namespace WebApi.Controller;
-
-[ApiController]
-[Route("api/[controller]")]
-public class TenantController : ControllerBase
+namespace WebApi.Controller
 {
-    private readonly IMediator _mediator;
+    [ApiController]
+    [Route("api/[controller]")]
+    public class TenantController : ControllerBase
+    {
+        private readonly IMediator _mediator;
 
-    public TenantController(IMediator mediator)
-    {
-         _mediator = mediator;
-    }
-    
-    [HttpPost("login")]
-    public async Task<IActionResult> LoginTenant([FromBody] LoginTenantCommand command)
-    {
-        try
+        public TenantController(IMediator mediator)
         {
-            LoginTenantUserQueryResult result = await _mediator.Send(command);
-           // HttpContext.Session.SetString("TenantCS", result.ConnectionString);
-
-            return Ok(result);
+            _mediator = mediator;
         }
-        catch (Exception ex)
+
+        [HttpPost("login")]
+        public async Task<IActionResult> LoginTenant([FromBody] LoginTenantCommand command)
         {
-            return BadRequest(new
+            try
             {
-                message = "Login failed",
-                error = ex.Message
-            });
+                LoginTenantUserQueryResult result = await _mediator.Send(command);
+
+                // Burada session set etmek istersen, session middleware'i eklemen ve konfigüre etmen lazım.
+                // HttpContext.Session.SetString("TenantCS", result.ConnectionString);
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new
+                {
+                    message = "Login failed",
+                    error = ex.Message
+                });
+            }
         }
+        
+   
     }
-    
 }
