@@ -112,7 +112,6 @@ app.UseCors("AllowAll");
 app.UseHangfireDashboard();
 app.UseHttpsRedirection();
 
-app.UseSession(); // <<< BURAYI EKLEDİM
 
 app.UseStaticFiles();
 

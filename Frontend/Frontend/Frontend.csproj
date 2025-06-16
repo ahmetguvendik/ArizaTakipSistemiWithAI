@@ -23,6 +23,7 @@
     <ItemGroup>
       <_ContentIncludedByDefault Remove="Views\AIAsistant\Index.cshtml" />
       <_ContentIncludedByDefault Remove="Pages\Shared\Components\_UILayoutScriptComponentPartial\Default.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\FactoryLogin\Index.cshtml" />
     </ItemGroup>
 
     <ItemGroup>
