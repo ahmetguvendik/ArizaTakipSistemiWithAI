@@ -2,7 +2,6 @@ namespace Domain.Entities;
 
 public class FaultReport : BaseEntity
 {
-        
         public string Title { get; set; }
         public string Description { get; set; }
         public string ReporterName { get; set; }

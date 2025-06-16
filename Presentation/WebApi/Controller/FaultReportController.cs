@@ -132,7 +132,6 @@ public class FaultReportController  : Microsoft.AspNetCore.Mvc.Controller
     [HttpPost]
     public async Task<IActionResult> Post([FromForm]CreateFaultReportCommand command)
     {
-        
             await _mediator.Send(command);
             await _faultHubContext.Clients.All.SendAsync("ReceiveUpdate", "Yeni Ariza Geldi");  
              return Ok("Eklendi");

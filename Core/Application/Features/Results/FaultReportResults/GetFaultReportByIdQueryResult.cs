@@ -21,7 +21,7 @@ public class GetFaultReportByIdQueryResult
     public string? ClosedById { get; set; } // Kapatan      
     public string? ClosedByName { get; set; } // Kapatan        
     public string ClosedDescription { get; set; }
-    public string DepartmanId { get; set; }
+    public string? DepartmanId { get; set; }
     public string DepartmanName { get; set; }   
     public string FaultFilePath { get; set; }
 

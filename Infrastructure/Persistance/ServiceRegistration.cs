@@ -18,11 +18,9 @@ namespace Persistance
         {
             collection.AddHttpContextAccessor();
             
-            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
             collection.AddDbContext<FaultDbContext>(opt =>
-                opt.UseNpgsql("User ID=postgres;Password=testtest;Host=localhost;Port=5432;Database=FaultReportDb;"));
-            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+                opt.UseSqlServer("Server=localhost;Database=FaultReportDb;User Id=SA;Password=Ahmet.123;Encrypt=True;TrustServerCertificate=True;"));
 
             
             collection.AddIdentity<AppUser, AppRole>()

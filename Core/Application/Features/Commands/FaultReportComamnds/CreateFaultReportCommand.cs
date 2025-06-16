@@ -5,7 +5,6 @@ namespace Application.Features.Commands.FaultReportComamnds;
 
 public class CreateFaultReportCommand : IRequest
 {
-            
     public string Title { get; set; }
     public string Description { get; set; }
     public string ReporterName { get; set; }

@@ -34,9 +34,7 @@ public class CreateFaultReportCommandHandler : IRequestHandler<CreateFaultReport
                 await request.FaultFire.CopyToAsync(stream);
             }
             
-            
         }
-
         
         var  faultReport = new FaultReport();
         faultReport.Id = Guid.NewGuid().ToString();
