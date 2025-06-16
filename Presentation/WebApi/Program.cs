@@ -43,12 +43,11 @@ builder.Services.AddApplicationService(builder.Configuration);
 builder.Services.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateFaultReportValidation>()); 
 builder.Services.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateMachineValidation>()); 
 
-Log.Logger = new LoggerConfiguration()
-    .WriteTo.PostgreSQL("User ID=postgres;Password=testtest;Host=localhost;Port=5432;Database=logs_db;", "Logs", needAutoCreateTable: true)
-    .MinimumLevel.Information()
-    .CreateLogger();
+string env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+Log.Logger = new LoggerConfiguration().WriteTo.MSSqlServer("Server=localhost;Database=LogsDb;User Id=SA;Password=Ahmet.123;Encrypt=True;TrustServerCertificate=True;","Logs").MinimumLevel.Information().CreateLogger();
 
-builder.Services.AddHangfire(configuration => configuration.UsePostgreSqlStorage("User ID=postgres;Password=testtest;Host=localhost;Port=5432;Database=FaultReportDb;"));
+
+builder.Services.AddHangfire(configuration => configuration.UseSqlServerStorage("Server=localhost;Database=FaultReportDb;User Id=SA;Password=Ahmet.123;Encrypt=True;TrustServerCertificate=True;"));
 builder.Services.AddHangfireServer();
 
 builder.Services.AddCors(options =>

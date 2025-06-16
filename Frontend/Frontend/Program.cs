@@ -5,6 +5,7 @@ using Microsoft.SemanticKernel;
 using OpenAI;
 using Persistance.Services;
 using Serilog;
+using Serilog.Sinks.MSSqlServer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,7 +22,24 @@ builder.Services.AddAuthentication("MyCookieAuth")
        
     });
 
-Log.Logger = new LoggerConfiguration().WriteTo.PostgreSQL("User ID=postgres;Password=testtest;Host=localhost;Port=5432;Database=logs_db;","Logs",needAutoCreateTable:true).MinimumLevel.Information().CreateLogger();
+string env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+var columnOptions = new ColumnOptions();
+columnOptions.Store.Remove(StandardColumn.Properties);
+columnOptions.Store.Add(StandardColumn.LogEvent); // LogEvent kolonunu sakla
+
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.MSSqlServer(
+        connectionString: "Server=localhost;Database=LogsDb;User Id=SA;Password=Ahmet.123;Encrypt=True;TrustServerCertificate=True;",
+        sinkOptions: new MSSqlServerSinkOptions
+        {
+            AutoCreateSqlTable = true,
+            TableName = "Logs"
+        },
+        columnOptions: columnOptions
+    )
+    .Enrich.WithProperty("Environment", env)
+    .MinimumLevel.Information()
+    .CreateLogger();
 
 builder.Services
     .AddKernel()

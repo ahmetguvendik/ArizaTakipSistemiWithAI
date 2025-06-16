@@ -19,102 +19,131 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Solvix Arıza Bildirim</title>
+    <title>Solfix Arıza Bildirim</title>
 
     <!-- Stil dosyaları -->
-    <link href="startbootstrap-sb-admin-2-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900" rel="stylesheet">
-    <link href="startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(to right, #4e73df, #224abe);
+        }
+        .card {
+            border-radius: 1rem;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        .btn-success {
+            background-color: #1cc88a;
+            border: none;
+        }
+        .btn-success:hover {
+            background-color: #17a673;
+        }
+        .form-control:focus {
+            border-color: #4e73df;
+            box-shadow: 0 0 0 0.1rem rgba(78, 115, 223, 0.25);
+        }
+        label {
+            font-weight: 600;
+        }
+    </style>
 
     <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
-<body class="bg-gradient-primary d-flex align-items-center min-vh-100">
+<body class="d-flex align-items-center min-vh-100">
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-lg-8 col-md-10">
-            <div class="card shadow-lg border-0 my-5">
-                <div class="card-body p-5">
-                    <div class="text-center mb-4">
-                        <h2 class="text-gray-900 font-weight-bold">Solvix Arıza Bildirim Formu</h2>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 col-md-9">
+                <div class="card p-4">
+                    <div class="card-body">
+                        <div class="text-center mb-4">
+                            <h2 class="text-primary font-weight-bold">
+                                <i class="fas fa-tools mr-2"></i>Solfix Arıza Bildirim Formu
+                            </h2>
+                            <p class="text-muted">Lütfen arıza detaylarını eksiksiz giriniz</p>
+                        </div>
+
+                        <form asp-action="Index" asp-controller="Ariza" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label asp-for="ReporterName">Ad Soyad</label>
+                                <input type="text" class="form-control" placeholder="Adınızı ve soyadınızı girin" asp-for="ReporterName">
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="ReporterEmail">E-posta Adresi</label>
+                                <input type="email" class="form-control" placeholder="example@mail.com" asp-for="ReporterEmail">
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="ReporterPhone">Telefon Numarası</label>
+                                <input type="text" class="form-control" placeholder="05xx xxx xx xx" asp-for="ReporterPhone">
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Title">Arıza Başlığı</label>
+                                <input type="text" class="form-control" placeholder="Örn: Yazıcı çalışmıyor" asp-for="Title">
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Description">Açıklama</label>
+                                <textarea class="form-control" rows="4" placeholder="Arızaya dair detaylı açıklama yazınız..." asp-for="Description"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="FaultFire">Görsel ya da Belge</label>
+                                <input type="file" class="form-control-file" asp-for="FaultFire">
+                            </div>
+
+                            <button type="submit" class="btn btn-success btn-block">
+                                <i class="fas fa-paper-plane mr-1"></i> Gönder
+                            </button>
+
+                            <div class="text-center mt-3">
+                                <a href="/Login" class="text-secondary"><i class="fas fa-sign-in-alt mr-1"></i> Giriş Yap</a>
+                            </div>
+                        </form>
                     </div>
-
-                    <form asp-action="Index" asp-controller="Ariza" method="post" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label asp-for="ReporterName">Ad Soyad</label>
-                            <input type="text" class="form-control" placeholder="Adınızı ve soyadınızı girin" asp-for="ReporterName">
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="ReporterEmail">E-posta Adresi</label>
-                            <input type="email" class="form-control" placeholder="example@mail.com" asp-for="ReporterEmail">
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="ReporterPhone">Telefon Numarası</label>
-                            <input type="text" class="form-control" placeholder="05xx xxx xx xx" asp-for="ReporterPhone">
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="Title">Arıza Başlığı</label>
-                            <input type="text" class="form-control" placeholder="Örn: Yazıcı çalışmıyor" asp-for="Title">
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="Description">Açıklama</label>
-                            <textarea class="form-control" rows="4" placeholder="Arızaya dair detaylı açıklama yazınız..." asp-for="Description"></textarea>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label asp-for="FaultFire">Gorsel Ya da Belge</label>
-                            <input type="file" class="form-control" placeholder="Gorsel Ya da Belge Giriniz" asp-for="FaultFire">   
-                        </div>
-
-                        <button type="submit" class="btn btn-success btn-block font-weight-bold">
-                            Gönder
-                        </button>
-
-                        <div class="text-center mt-3">
-                            <a href="/Login" class="text-primary">Giriş Yap</a>
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- JS dosyaları -->
-<script src="startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.min.js"></script>
-<script src="startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="startbootstrap-sb-admin-2-gh-pages/js/sb-admin-2.min.js"></script>
+    <!-- JS dosyaları -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- SweetAlert mesajları -->
-@if (!string.IsNullOrEmpty(successMessage))
-{
-    <script>
-        Swal.fire({
-            icon: 'success',
-            title: 'Başarılı!',
-            text: '@successMessage',
-            confirmButtonColor: '#3085d6',
-            confirmButtonText: 'Tamam'
-        });
-    </script>
-}
-else if (errorMessages != null && errorMessages.Count > 0)
-{
-    <script>
-        Swal.fire({
-            icon: 'error',
-            title: 'Hata!',
-            html: '@Html.Raw(string.Join("<br/>", errorMessages))',
-            confirmButtonColor: '#d33',
-            confirmButtonText: 'Tamam'
-        });
-    </script>
-}
+    <!-- SweetAlert mesajları -->
+    @if (!string.IsNullOrEmpty(successMessage))
+    {
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Başarılı!',
+                text: '@successMessage',
+                showConfirmButton: true,
+                confirmButtonColor: '#28a745',
+                confirmButtonText: 'Tamam',
+                timer: 4000
+            });
+        </script>
+    }
+    else if (errorMessages != null && errorMessages.Count > 0)
+    {
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Hata!',
+                html: '@Html.Raw(string.Join("<br/>", errorMessages))',
+                confirmButtonColor: '#e74a3b',
+                confirmButtonText: 'Tamam'
+            });
+        </script>
+    }
 </body>
 </html>

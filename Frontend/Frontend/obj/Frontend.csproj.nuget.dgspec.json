@@ -296,6 +296,10 @@
               "target": "Package",
               "version": "[8.0.5, )"
             },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
@@ -303,6 +307,14 @@
             "Serilog": {
               "target": "Package",
               "version": "[4.3.1-dev-02373, )"
+            },
+            "Serilog.Settings.Configuration": {
+              "target": "Package",
+              "version": "[9.0.1-dev-02317, )"
+            },
+            "Serilog.Sinks.MSSqlServer": {
+              "target": "Package",
+              "version": "[8.2.1-dev-00131, )"
             },
             "Serilog.Sinks.PostgreSQL": {
               "target": "Package",

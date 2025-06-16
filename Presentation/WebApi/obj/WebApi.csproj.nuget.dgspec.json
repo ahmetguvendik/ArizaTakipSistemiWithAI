@@ -444,6 +444,10 @@
               "target": "Package",
               "version": "[4.3.1-dev-02373, )"
             },
+            "Serilog.Sinks.MSSqlServer": {
+              "target": "Package",
+              "version": "[8.2.1-dev-00131, )"
+            },
             "Serilog.Sinks.PostgreSQL": {
               "target": "Package",
               "version": "[2.3.0, )"

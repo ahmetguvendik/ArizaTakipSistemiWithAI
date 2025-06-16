@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DhkUHVtnRicwhBX+0+HF5bnWx/1kFv0PgYadDKRbgSw=",
+  "Hash": "d90Pa2SW47bPsBwb9VVQFigYw+LwStDGjBEo+hDbvxk=",
   "Source": "WebApi",
   "BasePath": "_content/WebApi",
   "Mode": "Default",
@@ -16,6 +16,27 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/44852760-9915-46d1-af3d-5b2cb602d628.pdf",
+      "SourceId": "WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/",
+      "BasePath": "_content/WebApi",
+      "RelativePath": "uploads/44852760-9915-46d1-af3d-5b2cb602d628#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jiuwv4daev",
+      "Integrity": "e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/44852760-9915-46d1-af3d-5b2cb602d628.pdf"
+    },
     {
       "Identity": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/5634bc34-1aaa-44f9-95b7-5e9223bc01b2.pdf",
       "SourceId": "WebApi",
@@ -186,6 +207,88 @@
     }
   ],
   "Endpoints": [
+    {
+      "Route": "uploads/44852760-9915-46d1-af3d-5b2cb602d628.jiuwv4daev.pdf",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/44852760-9915-46d1-af3d-5b2cb602d628.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "151050"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Jun 2025 13:02:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jiuwv4daev"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/44852760-9915-46d1-af3d-5b2cb602d628.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/44852760-9915-46d1-af3d-5b2cb602d628.pdf",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/44852760-9915-46d1-af3d-5b2cb602d628.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "151050"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Jun 2025 13:02:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
+        }
+      ]
+    },
     {
       "Route": "uploads/5634bc34-1aaa-44f9-95b7-5e9223bc01b2.jiuwv4daev.pdf",
       "AssetFile": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/5634bc34-1aaa-44f9-95b7-5e9223bc01b2.pdf",
