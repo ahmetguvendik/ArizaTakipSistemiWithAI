@@ -16,16 +16,16 @@ namespace Application.Features.Handlers.AppUserHandlers.Write;
     }
     public async Task Handle(CreateUserCommand request, CancellationToken cancellationToken)
     {
-        {
             var appUser = new AppUser();
             appUser.UserName = request.Username;    
             appUser.NameSurname = request.NameSurname;
             appUser.DepartmentId = request.DepartmanId;
             appUser.Email = request.Email;
+            
             var response = await _userManager.CreateAsync(appUser, request.Password);
             if (response.Succeeded)
             {
-                var role = await _roleManager.FindByNameAsync("Teknisyen");
+                var role = await _roleManager.FindByNameAsync(request.Role);
                 if (role == null)
                 {
                     var appRole = new AppRole()
@@ -33,11 +33,12 @@ namespace Application.Features.Handlers.AppUserHandlers.Write;
                         Name = "Teknisyen",
                     };
                     await _roleManager.CreateAsync(appRole);
+                    await _userManager.AddToRoleAsync(appUser, "Teknisyen");    
+
                 }
 
-                await _userManager.AddToRoleAsync(appUser, "Teknisyen");    
+                await _userManager.AddToRoleAsync(appUser, request.Role);    
             }
-                
-        }
+        
     }
 }

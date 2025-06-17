@@ -1,0 +1,96 @@
+@model DTO.AppUserDto.CreateUserDto
+@using Newtonsoft.Json
+
+@{
+    Layout = "~/Views/_SupervisorLayout/Index.cshtml";
+
+    var successMessage = TempData["SuccessMessage"] as string;
+    var errorMessages = TempData["ErrorMessages"] != null
+        ? JsonConvert.DeserializeObject<List<string>>(TempData["ErrorMessages"]?.ToString())
+        : null;
+}
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+
+@if (!string.IsNullOrEmpty(successMessage))
+{
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Başarılı!',
+            text: '@successMessage',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Tamam'
+        });
+    </script>
+}
+else if (errorMessages != null && errorMessages.Count > 0)
+{
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Hata!',
+            html: '@Html.Raw(string.Join("<br/>", errorMessages))',
+            confirmButtonColor: '#d33',
+            confirmButtonText: 'Tamam'
+        });
+    </script>
+}
+
+
+<div class="container-fluid px-4">
+    <h1 class="h3 mb-4 text-gray-800">Kullanıcı Ekle</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-lg border-0">
+                <div class="card-header bg-primary text-white font-weight-bold">
+                    <i class="fas fa-cogs mr-2"></i>Yeni Kullanıcı Kaydı
+                </div>
+                <div class="card-body">
+                    <form asp-action="Index" asp-controller="CreateUser" method="post">
+                        <div class="form-group mb-3">
+                            <label asp-for="NameSurname" class="font-weight-semibold">İsim Soyisim Giriniz</label>
+                            <input type="text" class="form-control" placeholder="İsim Soyisim Giriniz" asp-for="NameSurname" required />
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="Username" class="font-weight-semibold">Kullanıcı Adı Giriniz</label>
+                            <input type="text" class="form-control" placeholder="Kullanıcı Adı Giriniz" asp-for="Username" required />
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <label asp-for="Email" class="font-weight-semibold">Email Giriniz</label>
+                            <input type="email" class="form-control" placeholder="Email Giriniz" asp-for="Email" required />
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <label asp-for="Password" class="font-weight-semibold">Şifre Giriniz</label>
+                            <input type="password" class="form-control" placeholder="Şifre Giriniz" asp-for="Password" required />
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label asp-for="DepartmanId" class="font-weight-semibold">Departman</label>
+                            @Html.DropDownListFor(model => model.DepartmanId,
+                                (List<SelectListItem>)ViewBag.Department,
+                                "Departman Seçiniz",
+                                new { @class = "form-control" })
+                        </div>
+                        
+                        <div class="form-group mb-4">
+                            <label asp-for="Role" class="font-weight-semibold">Rol</label>
+                            @Html.DropDownListFor(model => model.Role,
+                                (List<SelectListItem>)ViewBag.Role,
+                                "Role Seçiniz",
+                                new { @class = "form-control" })
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100 font-weight-bold">
+                            <i class="fas fa-plus-circle mr-2"></i>Kişiyi Ekle
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

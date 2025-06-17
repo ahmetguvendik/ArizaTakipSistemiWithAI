@@ -22,4 +22,11 @@ public class DepartmentController : ControllerBase
         var values = await _mediator.Send(new GetDepartmentByUserIdQuery(id));
         return Ok(values);  
     }
+    
+    [HttpGet("GetAll")]
+    public async Task<IActionResult> GetAll()   
+    {
+        var values = await _mediator.Send(new GetAllDepartmentQuery());
+        return Ok(values);  
+    }
 }

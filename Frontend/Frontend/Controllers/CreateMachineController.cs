@@ -57,21 +57,29 @@ public class CreateMachineController : Controller
                 {
                     
                     allErrors.AddRange(err.Value);
+                    Log.Error($"{err.Key}: {err.Value}");
+
                 }
             }
             else
             {
                 allErrors.Add("Bilinmeyen bir hata oluştu.");
+                Log.Error("Bilinmeyen bir hata oluştu");
+
+                
             }
         }
         catch
         {
             allErrors.Add("Sunucudan geçersiz cevap alındı.");
             allErrors.Add(responseContent);
+            Log.Error(responseContent);
+
         }
 
         TempData["ErrorMessages"] = JsonConvert.SerializeObject(allErrors);
-        
+        Log.Error(JsonConvert.SerializeObject(allErrors));
+
         return View();
     }
 }

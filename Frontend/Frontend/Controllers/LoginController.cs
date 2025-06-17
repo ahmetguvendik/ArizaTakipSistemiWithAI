@@ -128,4 +128,9 @@ public class LoginController : Controller
 
             return View();
         }
+
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
     }
