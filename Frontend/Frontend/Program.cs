@@ -81,6 +81,7 @@ app.UseHttpsRedirection();
 app.UseRouting();
 app.UseCors("AllowAll");
 
+app.UseStatusCodePagesWithReExecute("/Error/{0}");
 
 app.UseStaticFiles();
 
