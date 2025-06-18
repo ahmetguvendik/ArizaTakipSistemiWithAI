@@ -19,7 +19,9 @@ public class GetUserByIdQueryHandler : IRequestHandler<GetUserByIdQuery,GetUserB
        return new GetUserByIdQueryResult()  
        {
            NameSurname = user.NameSurname,
-           DepartmentName = user.Department.Name
+           DepartmentName = user.Department.Name,
+           Email = user.Email,
+           Username = user.UserName,
        };
     }
 }

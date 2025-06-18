@@ -93,7 +93,7 @@ public class LoginController : Controller
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync("MyCookieAuth");
-            return RedirectToAction("Index", "Ariza");    
+            return RedirectToAction("Index", "Login");    
         }
         
         public async Task<IActionResult> ResetPassword(ResetPasswordDto resetPasswordDto)

@@ -1,0 +1,48 @@
+@using System.Security.Claims
+@model DTO.AppUserDto.GetUserByIdDto
+
+@{
+    Layout = User.FindFirstValue(ClaimTypes.Role)?.Contains("Teknisyen") == true
+        ? "~/Views/_TeknisyenLayout/Index.cshtml"
+        : "~/Views/_SupervisorLayout/Index.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+
+<body>
+
+    <div class="container profile-container">
+        <div class="card">
+            <div class="text-center mb-4">
+                <h3 class="text-primary font-weight-bold">
+                    <i class="fas fa-user mr-2"></i>Kullanıcı Profili
+                </h3>
+                <p class="text-muted">Kullanıcı bilgileri görüntülenmektedir.</p>
+            </div>
+
+            <div class="form-group">
+                <label>Ad Soyad</label>
+                <input type="text" class="form-control" value="@Model.NameSurname" readonly />
+            </div>
+
+            <div class="form-group">
+                <label>E-posta</label>
+                <input type="email" class="form-control" value="@Model.Email" readonly />
+            </div>
+
+            <div class="form-group">
+                <label>Kullanıcı Adı</label>
+                <input type="text" class="form-control" value="@Model.Username" readonly />
+            </div>
+
+            <div class="form-group">
+                <label>Departman</label>
+                <input type="text" class="form-control" value="@Model.DepartmentName" readonly />
+            </div>
+            
+        </div>
+    </div>
+
+</body>
+</html>
