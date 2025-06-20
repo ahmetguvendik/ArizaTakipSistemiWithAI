@@ -3,6 +3,8 @@ using System.Text;
 using Application.Services;
 using DTO.FaultReportDtos;
 using Microsoft.AspNetCore.Mvc;
+using MimeKit;
+using MimeKit.Text;
 using Newtonsoft.Json;
 using Serilog;
 
@@ -65,7 +67,28 @@ public async Task<IActionResult> Index(CreateFaultReportDto createJobDto)
     {
         Log.Information(createJobDto.ReporterName + " " + " Ariza olusturdu");
         TempData["SuccessMessage"] = "Ariza Kaydiniz Basarili Bir Sekilde Olusturuldu";
-        await _emailService.SendFaultEmailAsync(createJobDto.ReporterEmail, "Arizaniz Basrili Bir Sekilde Olusturuldu ve Supervizore Iletildi");
+        string body = $@"
+<div style='font-family:Arial,sans-serif; font-size:15px; color:#333;'>
+    <p>Sayın {createJobDto.ReporterName},</p>
+
+    <p>
+        Tarafımıza iletmiş olduğunuz <strong>{createJobDto.Title} başlıklı arıza bildirimi</strong> başarılı bir şekilde alınmış ve ilgili <strong>süpervizöre</strong> yönlendirilmiştir.
+    </p>
+
+    <p>
+        En kısa sürede sizinle iletişime geçilecek ve gerekli müdahale sağlanacaktır.
+    </p>
+
+    <p>
+        Destek talebinizin durumu hakkında gelişmeleri tarafınıza bildirmeye devam edeceğiz.
+    </p>
+
+    <br/>
+    <p>İyi günler dileriz,</p>
+    <p style='color:#4a90e2; font-weight:bold;'>Solfix Destek Ekibi</p>
+</div>";
+
+        await _emailService.SendFaultEmailAsync(createJobDto.ReporterEmail, body);
         return RedirectToAction("Index", "Ariza");
     }
 

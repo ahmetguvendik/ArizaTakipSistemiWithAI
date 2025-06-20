@@ -150,7 +150,6 @@ public class FaultReportController  : Microsoft.AspNetCore.Mvc.Controller
     {
         await _mediator.Send(command);
         await _faultHubContext.Clients.All.SendAsync("ReceiveUpdate", "Arıza Kapatildi");
-    
         Log.Information("Ariza ID: "+command.Id +"Ariza Kapatan: "+command.ClosedById);
         return Ok("Kapatildi");
     }

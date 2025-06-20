@@ -87,11 +87,27 @@ public class SupervisorController : Controller
             var json = JsonConvert.SerializeObject(atamaDto);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             var response = await client.PutAsync("http://localhost:5164/api/FaultReport", content);
+            string body = $@"
+<div style='font-family:Arial,sans-serif; font-size:15px; color:#333;'>
+    <p>Sayın {values.ReporterName},</p>
 
+    <p>
+        Tarafımıza iletmiş olduğunuz <strong>{values.Title} başlıklı arıza bildirimi</strong>, süpervizörümüz tarafından değerlendirilmiş ve ilgili <strong>teknisyene</strong> atanmıştır.
+    </p>
+
+    <p>
+        Görevli teknisyen en kısa sürede sizinle iletişime geçerek gerekli müdahaleyi sağlayacaktır.
+    </p>
+
+
+    <br/>
+    <p>İyi günler dileriz,</p>
+    <p style='color:#4a90e2; font-weight:bold;'>Solfix Destek Ekibi</p>
+</div>";
             if (response.IsSuccessStatusCode)
             {
-                await _emailService.SendSupervisorToTeknisyenEmailAsync(values.ReporterEmail,
-                    "Arizasiniz Supervizor Tarafindan Ilgili Teknisyene Atanmistir");
+                    await _emailService.SendSupervisorToTeknisyenEmailAsync(values.ReporterEmail,
+                        body);
                 Log.Information(messageTemplate:"Ariza ID: " + faultReportId+" Supervisor ID: "+supervisorId + " " + "Teknisyen ID:"+ assignedToId +" "+"Adli kisiye ariza atamistir");
                 return RedirectToAction("Index"); 
             }

@@ -15,7 +15,7 @@ public class EmailService  : IEmailService
         email.From.Add(MailboxAddress.Parse("ahmetguvendik011348@gmail.com"));
         email.To.Add(MailboxAddress.Parse(emailAdress));
         email.Subject = "Arizaniz Hakkinda";
-        email.Body = new TextPart(TextFormat.Plain) { Text = body };
+        email.Body = new TextPart(TextFormat.Html) { Text = body };
         using var smtp = new SmtpClient();  
         smtp.Connect("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
         smtp.Authenticate("ahmetguvendik011348@gmail.com", "avfe nhlb iwfj qokg");
@@ -29,7 +29,7 @@ public class EmailService  : IEmailService
         email.From.Add(MailboxAddress.Parse("ahmetguvendik011348@gmail.com"));
         email.To.Add(MailboxAddress.Parse(emailAdress));
         email.Subject = "Arizaniz Hakkinda";
-        email.Body = new TextPart(TextFormat.Plain) { Text = body };
+        email.Body = new TextPart(TextFormat.Html) { Text = body };
         using var smtp = new SmtpClient();  
         smtp.Connect("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
         smtp.Authenticate("ahmetguvendik011348@gmail.com", "avfe nhlb iwfj qokg");
@@ -43,7 +43,7 @@ public class EmailService  : IEmailService
         email.From.Add(MailboxAddress.Parse("ahmetguvendik011348@gmail.com"));
         email.To.Add(MailboxAddress.Parse(emailAdress));
         email.Subject = "Arizaniz Hakkinda";    
-        email.Body = new TextPart(TextFormat.Plain) { Text = body };
+        email.Body = new TextPart(TextFormat.Html) { Text = body };
         using var smtp = new SmtpClient();  
         smtp.Connect("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
         smtp.Authenticate("ahmetguvendik011348@gmail.com", "avfe nhlb iwfj qokg");  
