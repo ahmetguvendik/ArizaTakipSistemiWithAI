@@ -1,11 +1,13 @@
 using Application.Features.Queries.StatisticsQueries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controller;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize(Roles = "Supervisor")]
 public class StatisticsController : Microsoft.AspNetCore.Mvc.Controller
 {
     private readonly IMediator _mediator;

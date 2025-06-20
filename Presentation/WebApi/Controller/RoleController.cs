@@ -1,12 +1,14 @@
 using Application.Features.Queries.AppRoleQueries;
 using Application.Features.Results.AppRoleResults;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controller;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class RoleController : ControllerBase
 {
     private readonly IMediator _mediator;

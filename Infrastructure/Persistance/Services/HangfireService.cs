@@ -94,7 +94,7 @@ namespace Persistance.Services
             builder.TextBody = "Günlük arıza raporu ekte gönderilmiştir.";
 
             // Excel dosyasını ekle
-            builder.Attachments.Add("Arizalar.xlsx", fileBytes, new ContentType("application", "vnd.openxmlformats-officedocument.spreadsheetml.sheet"));
+            builder.Attachments.Add($"Arizalar_{DateTime.Now}.xlsx", fileBytes, new ContentType("application", "vnd.openxmlformats-officedocument.spreadsheetml.sheet"));
 
             email.Body = builder.ToMessageBody();
 

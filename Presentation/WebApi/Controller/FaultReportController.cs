@@ -68,7 +68,7 @@ public class FaultReportController  : Microsoft.AspNetCore.Mvc.Controller
         }
 
         var fileBytes = package.GetAsByteArray();
-        return File(fileBytes, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Arizalar.xlsx");
+        return File(fileBytes, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", $"Arizalar_{DateTime.Now}.xlsx");
     }
     
     [HttpGet("export-to-excel-departmant/{departmanId}")]
@@ -103,7 +103,7 @@ public class FaultReportController  : Microsoft.AspNetCore.Mvc.Controller
         }
 
         var fileBytes = package.GetAsByteArray();
-        return File(fileBytes, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Arizalar.xlsx");
+        return File(fileBytes, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", $"Arizalar_{DateTime.Now}.xlsx");
     }
     
     

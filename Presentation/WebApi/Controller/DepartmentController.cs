@@ -1,6 +1,7 @@
 using Application.Features.Queries;
 using Application.Features.Results.DepartmentResults;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controller;
@@ -17,6 +18,7 @@ public class DepartmentController : ControllerBase
     }
 
     [HttpGet]
+    [Authorize]
     public async Task<IActionResult> Get(string id)
     {
         var values = await _mediator.Send(new GetDepartmentByUserIdQuery(id));
@@ -24,6 +26,7 @@ public class DepartmentController : ControllerBase
     }
     
     [HttpGet("GetAll")]
+    [Authorize]
     public async Task<IActionResult> GetAll()   
     {
         var values = await _mediator.Send(new GetAllDepartmentQuery());

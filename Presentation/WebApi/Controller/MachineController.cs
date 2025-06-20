@@ -2,6 +2,7 @@ using Application.Features.Commands.MachineCommands;
 using Application.Features.Queries.FaultReportQueries;
 using Application.Features.Queries.MachineQueries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OfficeOpenXml;
 
@@ -26,6 +27,7 @@ public class MachineController : Microsoft.AspNetCore.Mvc.Controller
     }
 
     [HttpPost]
+    [Authorize(Roles = "Teknisyen")]
     public async Task<IActionResult> CreateMachine(CreateMachineCommand command)
     {
         await _mediator.Send(command);
