@@ -101,7 +101,7 @@ namespace Persistance.Services
             // SMTP ile gönder
             using var smtp = new SmtpClient();
             await smtp.ConnectAsync("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
-            await smtp.AuthenticateAsync("ahmetguvendik011348@gmail.com", "avfe nhlb iwfj qokg");
+            await smtp.AuthenticateAsync("solfixhelpdesk@gmail.com", "zuwu jwvv ovka hxal");
             await smtp.SendAsync(email);
             await smtp.DisconnectAsync(true);
         }

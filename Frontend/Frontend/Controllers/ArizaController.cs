@@ -65,7 +65,6 @@ public async Task<IActionResult> Index(CreateFaultReportDto createJobDto)
 
     if (response.IsSuccessStatusCode)
     {
-        Log.Information(createJobDto.ReporterName + " " + " Ariza olusturdu");
         TempData["SuccessMessage"] = "Ariza Kaydiniz Basarili Bir Sekilde Olusturuldu";
         string body = $@"
 <div style='font-family:Arial,sans-serif; font-size:15px; color:#333;'>
