@@ -85,7 +85,7 @@ namespace Persistance.Services
 
             // Mail mesajını oluştur
             var email = new MimeMessage();
-            email.From.Add(MailboxAddress.Parse("ahmetguvendik011348@gmail.com"));
+            email.From.Add(MailboxAddress.Parse("solfixhelpdesk@gmail.com"));
             email.To.Add(MailboxAddress.Parse("ahmetguvendik01@gmail.com"));
             email.Subject = "Günlük Arıza Raporları Hakkında";
 
@@ -101,7 +101,7 @@ namespace Persistance.Services
             // SMTP ile gönder
             using var smtp = new SmtpClient();
             await smtp.ConnectAsync("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
-            await smtp.AuthenticateAsync("solfixhelpdesk@gmail.com", "zuwu jwvv ovka hxal");
+            await smtp.AuthenticateAsync("solfixhelpdesk@gmail.com", "yizc vapq wiue maty");
             await smtp.SendAsync(email);
             await smtp.DisconnectAsync(true);
         }

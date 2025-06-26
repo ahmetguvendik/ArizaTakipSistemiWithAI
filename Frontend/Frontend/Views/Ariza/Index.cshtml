@@ -73,26 +73,35 @@
                             <div class="form-group">
                                 <label asp-for="ReporterName">Ad Soyad</label>
                                 <input type="text" class="form-control" placeholder="Adınızı ve soyadınızı girin" asp-for="ReporterName">
+                                <span asp-validation-for="ReporterName" class="text-danger"></span>
+                                
                             </div>
 
                             <div class="form-group">
                                 <label asp-for="ReporterEmail">E-posta Adresi</label>
                                 <input type="email" class="form-control" placeholder="example@mail.com" asp-for="ReporterEmail">
+                                <span asp-validation-for="ReporterEmail" class="text-danger"></span>
                             </div>
 
                             <div class="form-group">
                                 <label asp-for="ReporterPhone">Telefon Numarası</label>
-                                <input type="text" class="form-control" placeholder="05xx xxx xx xx" asp-for="ReporterPhone">
+                                <input type="number" class="form-control" placeholder="05xx xxx xx xx" asp-for="ReporterPhone">
+                                <span asp-validation-for="ReporterPhone" class="text-danger"></span>
+                                
                             </div>
 
                             <div class="form-group">
                                 <label asp-for="Title">Arıza Başlığı</label>
                                 <input type="text" class="form-control" placeholder="Örn: Yazıcı çalışmıyor" asp-for="Title">
+                                <span asp-validation-for="Title" class="text-danger"></span>
+                                
                             </div>
 
                             <div class="form-group">
                                 <label asp-for="Description">Açıklama</label>
                                 <textarea class="form-control" rows="4" placeholder="Arızaya dair detaylı açıklama yazınız..." asp-for="Description"></textarea>
+                                <span asp-validation-for="Description" class="text-danger"></span>
+                                
                             </div>
 
                             <div class="form-group">

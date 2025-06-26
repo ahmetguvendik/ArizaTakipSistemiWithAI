@@ -18,7 +18,7 @@ public class EmailService  : IEmailService
         email.Body = new TextPart(TextFormat.Html) { Text = body };
         using var smtp = new SmtpClient();  
         smtp.Connect("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
-        smtp.Authenticate("solfixhelpdesk@gmail.com", "zuwu jwvv ovka hxal");
+        smtp.Authenticate("solfixhelpdesk@gmail.com", "yizc vapq wiue maty");
         smtp.Send(email);
         smtp.Disconnect(true);
     }
@@ -32,7 +32,7 @@ public class EmailService  : IEmailService
         email.Body = new TextPart(TextFormat.Html) { Text = body };
         using var smtp = new SmtpClient();  
         smtp.Connect("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
-        smtp.Authenticate("solfixhelpdesk@gmail.com", "zuwu jwvv ovka hxal");
+        smtp.Authenticate("solfixhelpdesk@gmail.com", "yizc vapq wiue maty");
         smtp.Send(email);
         smtp.Disconnect(true);
     }
@@ -46,7 +46,7 @@ public class EmailService  : IEmailService
         email.Body = new TextPart(TextFormat.Html) { Text = body };
         using var smtp = new SmtpClient();  
         smtp.Connect("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
-        smtp.Authenticate("solfixhelpdesk@gmail.com", "zuwu jwvv ovka hxal");  
+        smtp.Authenticate("solfixhelpdesk@gmail.com", "yizc vapq wiue maty");  
         smtp.Send(email);
         smtp.Disconnect(true);
     }
@@ -61,7 +61,7 @@ public class EmailService  : IEmailService
 
         using var smtp = new SmtpClient();
         smtp.Connect("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
-        smtp.Authenticate("solfixhelpdesk@gmail.com", "zuwu jwvv ovka hxal");  
+        smtp.Authenticate("solfixhelpdesk@gmail.com", "yizc vapq wiue maty");  
         smtp.Send(email);
         smtp.Disconnect(true);
     }
