@@ -1,0 +1,13 @@
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/DTO/bin/Release/net9.0/DTO.deps.json
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/DTO/bin/Release/net9.0/DTO.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/DTO/bin/Release/net9.0/DTO.pdb
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/DTO/obj/Release/net9.0/DTO.csproj.AssemblyReference.cache
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/DTO/obj/Release/net9.0/DTO.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/DTO/obj/Release/net9.0/DTO.AssemblyInfoInputs.cache
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/DTO/obj/Release/net9.0/DTO.AssemblyInfo.cs
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/DTO/obj/Release/net9.0/DTO.csproj.CoreCompileInputs.cache
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/DTO/obj/Release/net9.0/DTO.sourcelink.json
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/DTO/obj/Release/net9.0/DTO.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/DTO/obj/Release/net9.0/refint/DTO.dll
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/DTO/obj/Release/net9.0/DTO.pdb
+/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/DTO/obj/Release/net9.0/ref/DTO.dll
