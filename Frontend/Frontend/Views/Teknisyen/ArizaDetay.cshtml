@@ -62,7 +62,7 @@ _ => "bg-secondary"
                     <p><strong>İsim Soyisim:</strong> @Model.ReporterName</p>
                     <p><strong>Email:</strong> @Model.ReporterEmail</p>
                     <p><strong>Telefon:</strong> @Model.ReporterPhone</p>
-                    <p><strong>Gorsel Yada Belge:</strong>   <a href="@($"http://localhost:5164/{@Model.FaultFilePath}")" target="_blank">Görüntüle</a>      </p>
+                    <p><strong>Gorsel Yada Belge:</strong>   <a href="@($"http://testapi.solfix.help:5164/{@Model.FaultFilePath}")" target="_blank">Görüntüle</a>      </p>
                 
                 </div>
 
@@ -81,7 +81,7 @@ _ => "bg-secondary"
                     <div class="section-header">👥 Atamalar</div>
                     <p><strong>Süpervizör:</strong> @Model.AssignedByName</p>
                     <p><strong>Teknisyen:</strong> @Model.AssignedToName</p>
-                    <p><strong>Atanma Zamanı:</strong> @Model.AssignedTime</p>
+                    <p><strong>Atanma Zamanı:</strong> @Model.AssignedTime.ToString("dd.MM.yyyy HH:mm")</p>
                 </div>
             </div>
         </div>
@@ -94,7 +94,7 @@ _ => "bg-secondary"
                     <p><strong>Makine:</strong> @Model.MachineName</p>
                     <p><strong>Departman:</strong> @Model.DepartmanName</p>
                     <p><strong>Durum:</strong> <span class="badge @GetStatusBadgeClass(@Model.Status) px-3 py-2">@Model.Status</span></p>
-                    <p><strong>Kapatma Tarihi:</strong> @Model.ClosedTime</p>
+                    <p><strong>Kapatma Tarihi:</strong> @Model.ClosedTime.ToString("dd.MM.yyyy HH:mm")</p>
                     <p><strong>Kapatan Personel:</strong> @(!string.IsNullOrEmpty(Model.ClosedByName) ? Model.ClosedByName : "Kapatan kişi bilgisi yok")</p>
 
 
@@ -165,7 +165,7 @@ _ => "bg-secondary"
         if (departmanId) {
             $('#loading').removeClass('d-none');
             $.ajax({
-                url: 'http://localhost:5164/api/Machine/GetMachineByDepartmanId/' + departmanId,
+                url: 'http://testapi.solfix.help:5164/api/Machine/GetMachineByDepartmanId/' + departmanId,
                 type: 'GET',
                 success: function (data) {
                     $('#loading').addClass('d-none');
@@ -203,7 +203,7 @@ _ => "bg-secondary"
                 $('#resultMessage').html('<div class="text-info">İşlem yapılıyor...</div>');
 
                 $.ajax({
-                    url: 'http://localhost:5164/api/FaultReport/CloseFault',
+                    url: 'http://testapi.solfix.help:5164/api/FaultReport/CloseFault',
                     type: 'PUT',
                     contentType: 'application/json',
                     data: JSON.stringify({

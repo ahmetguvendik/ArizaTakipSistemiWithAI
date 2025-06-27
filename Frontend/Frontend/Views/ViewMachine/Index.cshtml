@@ -3,82 +3,47 @@
 @{
     Layout = "~/Views/_TeknisyenLayout/Index.cshtml";   
 }
-<!DOCTYPE html>
-<html lang="en">
 
-<body id="page-top">
-
-    <!-- Page Wrapper -->
-    <div id="wrapper">
-        
-        <!-- End of Sidebar -->
-
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
-
-            <!-- Main Content -->
-            <div id="content">
-
-                <!-- Topbar -->
-  
-                <!-- End of Topbar -->
-
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-
-                    <a href="http://localhost:5164/api/Machine/export-to-excel-department/@(ViewBag.DepartmentId)" class="btn btn-success mb-3">
-                        <i class="fas fa-file-excel"></i> Excel'e Aktar
-                    </a>
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                    <tr>
-                                        <th>Makine Adi</th>
-                                        <th>Makine Seri Numarasi</th>
-                                    </tr>
-                                    </thead>
-                                    <tfoot>
-                                    <tr>
-                                        <th>Makine Adi</th>
-                                        <th>Makine Seri Numarasi</th>
-                                    </tr>
-                                    </tfoot>
-                                    <tbody>
-                                    @foreach (var item in Model)
-                                    {
-                                        <tr>
-                                            <td>@item.Name</td>
-                                            <td>@item.SeriNo</td>
-                                        </tr>
-                                    }
-                                    
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- /.container-fluid -->
-
-            </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <!-- End of Footer -->
-
-        </div>
-        <!-- End of Content Wrapper -->
-
+<!-- Sayfa Başlığı ve Excel'e Aktar Butonu -->
+<div class="container-fluid px-4">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4 mt-2">
+        <h1 class="h3 text-gray-800">Makineler</h1>
+        <a href="http://testapi.solfix.help:5164/api/Machine/export-to-excel-department/@(ViewBag.DepartmentId)" class="btn btn-success shadow-sm">
+            <i class="fas fa-file-excel fa-sm text-white-50"></i> Excel'e Aktar
+        </a>
     </div>
-    <!-- End of Page Wrapper -->
-    <!-- Scroll to Top Button-->
 
-</body>
-
-</html>
-
-
+    <!-- Makine Tablosu -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Makine Listesi</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead class="thead-light">
+                    <tr>
+                        <th>Makine Adı</th>
+                        <th>Makine Seri Numarası</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.SeriNo</td>
+                        </tr>
+                    }
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th>Makine Adı</th>
+                        <th>Makine Seri Numarası</th>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

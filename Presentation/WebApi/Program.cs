@@ -25,14 +25,19 @@ builder.Services.AddAuthorization();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Session için gerekli servisler
-builder.Services.AddDistributedMemoryCache();  // Session cache'i
-builder.Services.AddSession(options =>
-{
-    options.IdleTimeout = TimeSpan.FromMinutes(30);
-    options.Cookie.HttpOnly = true;
-    options.Cookie.IsEssential = true;
-});
+builder.Services.AddAuthentication("MyCookieAuth")
+    .AddCookie("MyCookieAuth", options =>
+    {
+        options.LoginPath = "/Login/Index";
+        options.AccessDeniedPath = "/Login/AccessDenied";
+        options.Cookie.Name = ".Solfix.Auth"; // Ortak bir isim ver
+        options.Cookie.HttpOnly = true;
+        options.Cookie.SameSite = SameSiteMode.Lax; // None değil çünkü HTTP'de çalışmaz
+        options.Cookie.SecurePolicy = CookieSecurePolicy.None; // HTTPS zorunlu değil
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(60); // Oturum süresi
+        options.SlidingExpiration = true; // Her istekte süre uzar
+        // options.Cookie.Domain = ".solfix.help"; // Şimdilik YORUMDA bırak, çünkü HTTP'de + cross-subdomain çalışmaz
+    });
 
 builder.Services.AddHttpContextAccessor(); // HttpContext erişimi için
 
@@ -44,10 +49,10 @@ builder.Services.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyCont
 builder.Services.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateMachineValidation>()); 
 
 string env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
-Log.Logger = new LoggerConfiguration().WriteTo.MSSqlServer("Server=localhost;Database=LogsDb;User Id=SA;Password=Ahmet.123;Encrypt=True;TrustServerCertificate=True;","Logs").MinimumLevel.Information().CreateLogger();
+Log.Logger = new LoggerConfiguration().WriteTo.MSSqlServer("Server=4.180.226.250,1433;Database=LogsDb;User Id=sa;Password=Ahmet123;Encrypt=True;TrustServerCertificate=True;","Logs").MinimumLevel.Information().CreateLogger();
 
 
-builder.Services.AddHangfire(configuration => configuration.UseSqlServerStorage("Server=localhost;Database=FaultReportDb;User Id=SA;Password=Ahmet.123;Encrypt=True;TrustServerCertificate=True;"));
+builder.Services.AddHangfire(configuration => configuration.UseSqlServerStorage("Server=4.180.226.250,1433;Database=FaultReportTestDb;User Id=sa;Password=Ahmet123;Encrypt=True;TrustServerCertificate=True;"));
 builder.Services.AddHangfireServer();
 
 builder.Services.AddCors(options =>

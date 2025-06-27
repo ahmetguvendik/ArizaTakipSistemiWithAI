@@ -7,52 +7,46 @@
 
 @await Component.InvokeAsync("_UILayoutHeadComponentPartial")   
 
-<body id="page-top">
+<body id="page-top" style="background-color: #f8f9fa;"> <!-- Burada arka plan rengi verildi -->
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
+<!-- Page Wrapper -->
+<div id="wrapper">
 
-        <!-- Sidebar -->
-        @await Component.InvokeAsync("_TeknisyenSidebarComponentPartial")           
+    <!-- Sidebar -->
+    @await Component.InvokeAsync("_TeknisyenSidebarComponentPartial")           
+    <!-- End of Sidebar -->
 
-        <!-- End of Sidebar -->
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column" style="background-color: #f8f9fa;"> <!-- Yedek olarak buraya da eklendi -->
 
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
 
-            <!-- Main Content -->
-            <div id="content">
+            <!-- Topbar -->
+            @await Component.InvokeAsync("_TeknisyenTopBarComponentPartial", new { id = User.FindFirst(ClaimTypes.NameIdentifier)?.Value })
+            <!-- End of Topbar -->
 
-                <!-- Topbar -->
-                @await Component.InvokeAsync("_TeknisyenTopBarComponentPartial", new { id = User.FindFirst(ClaimTypes.NameIdentifier)?.Value })
-                <!-- End of Topbar -->
-
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-                    
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        @RenderBody()
-                    </div>
-
-                </div>
-                <!-- /.container-fluid -->
-
+            <!-- Begin Page Content -->
+            <div class="container-fluid px-4">
+                @RenderBody() <!-- Kart kaldırıldı, doğrudan içerik gelecek -->
             </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            @await Component.InvokeAsync("_UILayoutFooterComponentPartial")     
-            <!-- End of Footer -->
+            <!-- /.container-fluid -->
 
         </div>
-        <!-- End of Content Wrapper -->
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        @await Component.InvokeAsync("_UILayoutFooterComponentPartial")     
+        <!-- End of Footer -->
 
     </div>
-    <!-- End of Page Wrapper -->
+    <!-- End of Content Wrapper -->
 
-    <!-- Scroll to Top Button-->
-    @await Component.InvokeAsync("_UILayoutScriptComponentPartial")    
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+@await Component.InvokeAsync("_UILayoutScriptComponentPartial")    
 
 </body>
 

@@ -20,7 +20,7 @@ namespace Persistance
             
 
             collection.AddDbContext<FaultDbContext>(opt =>
-                opt.UseSqlServer("Server=localhost;Database=FaultReportDb;User Id=SA;Password=Ahmet.123;Encrypt=True;TrustServerCertificate=True;"));
+                opt.UseSqlServer("Server=4.180.226.250,1433;Database=FaultReportTestDb;User Id=sa;Password=Ahmet123;Encrypt=True;TrustServerCertificate=True;"));
 
             
             collection.AddIdentity<AppUser, AppRole>()

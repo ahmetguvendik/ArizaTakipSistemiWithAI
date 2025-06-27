@@ -15,7 +15,7 @@ public class _TeknisyenTopBarComponentPartial : ViewComponent
     public async Task<IViewComponentResult> InvokeAsync(string id)
     {
         var client = _httpClientFactory.CreateClient();
-        var response = await client.GetAsync($"http://localhost:5164/api/User/GetUserById/{id}");
+        var response = await client.GetAsync($"http://testapi.solfix.help:5164/api/User/GetUserById/{id}");
         if (response.IsSuccessStatusCode)
         {
             var json = await response.Content.ReadAsStringAsync();

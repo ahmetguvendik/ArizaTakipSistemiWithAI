@@ -22,7 +22,7 @@
             let currentConnectionId = null;
 
             const connection = new signalR.HubConnectionBuilder()
-                .withUrl("http://localhost:5164/ai-hub")
+                .withUrl("http://testapi.solfix.help:5164/ai-hub")
                 .withAutomaticReconnect()
                 .build();
 

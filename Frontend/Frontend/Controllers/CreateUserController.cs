@@ -23,7 +23,7 @@ public class CreateUserController : Controller
     public async Task<IActionResult> Index()
     {
         var client = _httpClientFactory.CreateClient();
-        var response = await client.GetAsync("http://localhost:5164/api/Department/GetAll");
+        var response = await client.GetAsync("http://testapi.solfix.help:5164/api/Department/GetAll");
         if (response.IsSuccessStatusCode)
         {
             var values = JsonConvert.DeserializeObject<List<GetAllDepartmentDto>>(await response.Content.ReadAsStringAsync());
@@ -31,7 +31,7 @@ public class CreateUserController : Controller
         }
         
         var client2 = _httpClientFactory.CreateClient();
-        var response2 = await client2.GetAsync("http://localhost:5164/api/Role");
+        var response2 = await client2.GetAsync("http://testapi.solfix.help:5164/api/Role");
         if (response2.IsSuccessStatusCode)
         {
             var values2 = JsonConvert.DeserializeObject<List<GetAllRoleDto>>(await response2.Content.ReadAsStringAsync());
@@ -45,7 +45,7 @@ public class CreateUserController : Controller
     {
         var userid = User.FindFirstValue(ClaimTypes.NameIdentifier);
         var client = _httpClientFactory.CreateClient();
-        var response = await client.PostAsJsonAsync("http://localhost:5164/api/Register", createUserDto);
+        var response = await client.PostAsJsonAsync("http://testapi.solfix.help:5164/api/Register", createUserDto);
         if (response.IsSuccessStatusCode)
         {
             TempData["SuccessMessage"] = "Kişi Kaydiniz Basarili Bir Sekilde Olusturuldu";

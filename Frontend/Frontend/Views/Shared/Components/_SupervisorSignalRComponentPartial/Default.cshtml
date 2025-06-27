@@ -19,7 +19,7 @@
         $('#dataTable').DataTable();
 
         const connection = new signalR.HubConnectionBuilder()
-            .withUrl("http://localhost:5164/fault")
+            .withUrl("http://testapi.solfix.help:5164/fault")
             .configureLogging(signalR.LogLevel.Information) 
             .build();
 

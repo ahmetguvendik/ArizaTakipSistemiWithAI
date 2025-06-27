@@ -19,7 +19,13 @@ builder.Services.AddAuthentication("MyCookieAuth")
     {
         options.LoginPath = "/Login/Index";
         options.AccessDeniedPath = "/Login/AccessDenied";
-       
+        options.Cookie.Name = ".Solfix.Auth"; // Ortak bir isim ver
+        options.Cookie.HttpOnly = true;
+        options.Cookie.SameSite = SameSiteMode.Lax; // None değil çünkü HTTP'de çalışmaz
+        options.Cookie.SecurePolicy = CookieSecurePolicy.None; // HTTPS zorunlu değil
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(60); // Oturum süresi
+        options.SlidingExpiration = true; // Her istekte süre uzar
+        // options.Cookie.Domain = ".solfix.help"; // Şimdilik YORUMDA bırak, çünkü HTTP'de + cross-subdomain çalışmaz
     });
 
 string env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
@@ -29,7 +35,7 @@ columnOptions.Store.Add(StandardColumn.LogEvent); // LogEvent kolonunu sakla
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.MSSqlServer(
-        connectionString: "Server=localhost;Database=LogsDb;User Id=SA;Password=Ahmet.123;Encrypt=True;TrustServerCertificate=True;",
+        connectionString: "Server=4.180.226.250,1433;Database=LogsDb;User Id=sa;Password=Ahmet123;Encrypt=True;TrustServerCertificate=True;\n",
         sinkOptions: new MSSqlServerSinkOptions
         {
             AutoCreateSqlTable = true,

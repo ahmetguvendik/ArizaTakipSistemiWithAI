@@ -2,73 +2,80 @@
 @using Newtonsoft.Json
 
 @{
-    Layout = "~/Views/_TeknisyenLayout/Index.cshtml";
+Layout = "~/Views/_TeknisyenLayout/Index.cshtml";
 
-    var successMessage = TempData["SuccessMessage"] as string;
-    var errorMessages = TempData["ErrorMessages"] != null
-        ? JsonConvert.DeserializeObject<List<string>>(TempData["ErrorMessages"]?.ToString())
-        : null;
+var successMessage = TempData["SuccessMessage"] as string;
+var errorMessages = TempData["ErrorMessages"] != null
+? JsonConvert.DeserializeObject<List<string>>(TempData["ErrorMessages"]?.ToString())
+: null;
 }
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+<!-- Bildirimler -->
 @if (!string.IsNullOrEmpty(successMessage))
 {
-    <script>
-        Swal.fire({
-            icon: 'success',
-            title: 'Başarılı!',
-            text: '@successMessage',
-            confirmButtonColor: '#3085d6',
-            confirmButtonText: 'Tamam'
-        });
-    </script>
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Başarılı!',
+        text: '@successMessage',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Tamam'
+    });
+</script>
 }
 else if (errorMessages != null && errorMessages.Count > 0)
 {
-    <script>
-        Swal.fire({
-            icon: 'error',
-            title: 'Hata!',
-            html: '@Html.Raw(string.Join("<br/>", errorMessages))',
-            confirmButtonColor: '#d33',
-            confirmButtonText: 'Tamam'
-        });
-    </script>
+<script>
+    Swal.fire({
+        icon: 'error',
+        title: 'Hata!',
+        html: '@Html.Raw(string.Join("<br/>", errorMessages))',
+        confirmButtonColor: '#d33',
+        confirmButtonText: 'Tamam'
+    });
+</script>
 }
 
-
+<!-- Sayfa İçeriği -->
 <div class="container-fluid px-4">
-    <h1 class="h3 mb-4 text-gray-800">Makine Ekle</h1>
+    <div class="d-sm-flex align-items-center justify-content-between mt-3 mb-4">
+        <h1 class="h3 text-gray-800">Makine Ekle</h1>
+    </div>
 
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-6">
-            <div class="card shadow-lg border-0">
-                <div class="card-header bg-primary text-white font-weight-bold">
-                    <i class="fas fa-cogs mr-2"></i>Yeni Makine Kaydı
+            <div class="card shadow border-0">
+                <div class="card-header bg-primary text-white">
+                    <i class="fas fa-cogs mr-2"></i> Yeni Makine Kaydı
                 </div>
                 <div class="card-body">
                     <form asp-action="Index" asp-controller="CreateMachine" method="post">
                         <div class="form-group mb-3">
                             <label asp-for="Name" class="font-weight-semibold">Makine Adı</label>
-                            <input type="text" class="form-control" placeholder="Makine adını girin" asp-for="Name" required />
+                            <input asp-for="Name" class="form-control" placeholder="Makine adını girin" required />
+                            <span asp-validation-for="Name" class="text-danger"></span>
                         </div>
 
                         <div class="form-group mb-3">
                             <label asp-for="SerialNumber" class="font-weight-semibold">Seri Numarası</label>
-                            <input type="text" class="form-control" placeholder="Seri numarasını girin" asp-for="SerialNumber" required />
+                            <input asp-for="SerialNumber" class="form-control" placeholder="Seri numarasını girin" required />
+                            <span asp-validation-for="SerialNumber" class="text-danger"></span>
                         </div>
 
                         <div class="form-group mb-4">
                             <label asp-for="DepartmentId" class="font-weight-semibold">Departman</label>
                             @Html.DropDownListFor(model => model.DepartmentId,
-                                (List<SelectListItem>)ViewBag.Department,
-                                "Departman Seçiniz",
-                                new { @class = "form-control" })
+                            (List<SelectListItem>)ViewBag.Department,
+                            "Departman Seçiniz",
+                            new { @class = "form-control" })
+                            <span asp-validation-for="DepartmentId" class="text-danger"></span>
                         </div>
 
                         <button type="submit" class="btn btn-success w-100 font-weight-bold">
-                            <i class="fas fa-plus-circle mr-2"></i>Makineyi Ekle
+                            <i class="fas fa-plus-circle mr-2"></i> Makineyi Ekle
                         </button>
                     </form>
                 </div>

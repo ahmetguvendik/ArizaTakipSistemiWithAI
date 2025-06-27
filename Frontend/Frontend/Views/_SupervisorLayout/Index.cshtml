@@ -6,7 +6,8 @@
 <!DOCTYPE html>
 <html lang="tr">
 @await Component.InvokeAsync("_UILayoutHeadComponentPartial")   
-<body id="page-top">
+
+<body id="page-top" style="background-color: #f8f9fa;"> <!-- Body arka plan rengi -->
 
 <div id="wrapper">
 
@@ -14,18 +15,16 @@
     @await Component.InvokeAsync("_SupervisorSidebarComponentPartial")   
 
     <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
+    <div id="content-wrapper" class="d-flex flex-column" style="background-color: #f8f9fa;"> <!-- Yedek olarak buraya da -->
 
         <!-- Main Content -->
         <div id="content">
 
             <!-- Topbar -->
-        
             @await Component.InvokeAsync("_SupervisorTopbarComponentPartial", new { id = User.FindFirst(ClaimTypes.NameIdentifier)?.Value })
-    
-            <!-- Begin Page Content -->
-            <div class="container-fluid">
 
+            <!-- Begin Page Content -->
+            <div class="container-fluid px-4"> <!-- Kenarlardan boşluk -->
                 @RenderBody()
             </div>
 
@@ -35,10 +34,9 @@
 
 </div>
 
+@await Component.InvokeAsync("_UILayoutFooterComponentPartial")    
 <!-- JS -->
 @await Component.InvokeAsync("_UILayoutScriptComponentPartial")    
-
-
 @await Component.InvokeAsync("_SupervisorSignalRComponentPartial")    
 
 </body>
