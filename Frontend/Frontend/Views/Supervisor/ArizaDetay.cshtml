@@ -50,7 +50,9 @@
                 <dd class="col-sm-8">@Model.Description</dd>
 
                 <dt class="col-sm-4">Tarih</dt>
-                <dd class="col-sm-8">@Model.CreatedAt.ToString("dd.MM.yyyy HH:mm")</dd>
+                <dd class="col-sm-8">
+                    @(Model.CreatedAt != DateTime.MinValue ? Model.CreatedAt.ToString("dd.MM.yyyy HH:mm") : "")
+                </dd>
 
                 <dt class="col-sm-4">Süpervizör</dt>
                 <dd class="col-sm-8">@Model.AssignedByName</dd>
@@ -59,7 +61,9 @@
                 <dd class="col-sm-8">@Model.AssignedToName</dd>
                 
                 <dt class="col-sm-4">Atanma Tarih</dt>
-                <dd class="col-sm-8">@Model.AssignedTime.ToString("dd.MM.yyyy HH:mm")</dd>
+                <dd class="col-sm-8">
+                    @(Model.AssignedTime != DateTime.MinValue ? Model.AssignedTime.ToString("dd.MM.yyyy HH:mm") : "")
+                </dd>
 
                 <dt class="col-sm-4">Makine</dt>
                 <dd class="col-sm-8">@Model.MachineName</dd>
@@ -74,7 +78,9 @@
                 <dd class="col-sm-8">@Model.ClosedDescription</dd>
                 
                 <dt class="col-sm-4">Kapatma Tarihi</dt>
-                <dd class="col-sm-8">@Model.ClosedTime.ToString("dd.MM.yyyy HH:mm")</dd>
+                <dd class="col-sm-8">
+                    @(Model.ClosedTime != DateTime.MinValue ? Model.ClosedTime.ToString("dd.MM.yyyy HH:mm") : "")
+                </dd>
                 
                 
                 <dt class="col-sm-4">Görsel ya da Belge</dt>

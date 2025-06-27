@@ -20,7 +20,7 @@
 
         const connection = new signalR.HubConnectionBuilder()
             .withUrl("http://testapi.solfix.help:5164/fault")
-            .configureLogging(signalR.LogLevel.Information) 
+            .configureLogging(signalR.LogLevel.Information)     
             .build();
 
         connection.on("ReceiveUpdate", function (message) {
