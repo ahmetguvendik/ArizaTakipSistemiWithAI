@@ -18,7 +18,6 @@ public class DepartmentController : ControllerBase
     }
 
     [HttpGet]
-    [Authorize]
     public async Task<IActionResult> Get(string id)
     {
         var values = await _mediator.Send(new GetDepartmentByUserIdQuery(id));
@@ -26,7 +25,6 @@ public class DepartmentController : ControllerBase
     }
     
     [HttpGet("GetAll")]
-    [Authorize]
     public async Task<IActionResult> GetAll()   
     {
         var values = await _mediator.Send(new GetAllDepartmentQuery());

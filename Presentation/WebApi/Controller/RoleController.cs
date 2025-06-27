@@ -8,7 +8,6 @@ namespace WebApi.Controller;
 
 [ApiController]
 [Route("api/[controller]")]
-[Authorize]
 public class RoleController : ControllerBase
 {
     private readonly IMediator _mediator;

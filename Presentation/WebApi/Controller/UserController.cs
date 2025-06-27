@@ -17,7 +17,6 @@ public class UserController  : Microsoft.AspNetCore.Mvc.Controller
     }
     
     [HttpGet]
-    [Authorize]
     public async Task<IActionResult> Get()  
     {
         var valus = await _mediator.Send(new GetTeknisyenUserQuery());
@@ -25,7 +24,6 @@ public class UserController  : Microsoft.AspNetCore.Mvc.Controller
     }
     
     [HttpGet("GetUserById/{id}")]   
-    [Authorize]
     public async Task<IActionResult> GetUserById(string id)
     {
         var valus = await _mediator.Send(new GetUserByIdQuery(id));

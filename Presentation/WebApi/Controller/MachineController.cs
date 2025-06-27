@@ -27,7 +27,6 @@ public class MachineController : Microsoft.AspNetCore.Mvc.Controller
     }
 
     [HttpPost]
-    [Authorize(Roles = "Teknisyen")]
     public async Task<IActionResult> CreateMachine(CreateMachineCommand command)
     {
         await _mediator.Send(command);

@@ -9,7 +9,6 @@ namespace WebApi.Controller;
 
 [Route("api/[controller]")]
 [ApiController]
-[Authorize]
 public class RegisterController : Microsoft.AspNetCore.Mvc.Controller
 {
     private readonly IMediator  _mediator;

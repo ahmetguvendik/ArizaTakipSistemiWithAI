@@ -7,7 +7,6 @@ namespace WebApi.Controller;
 
 [Route("api/[controller]")]
 [ApiController]
-[Authorize(Roles = "Supervisor")]
 public class StatisticsController : Microsoft.AspNetCore.Mvc.Controller
 {
     private readonly IMediator _mediator;
