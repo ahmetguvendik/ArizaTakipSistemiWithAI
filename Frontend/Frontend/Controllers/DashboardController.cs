@@ -21,10 +21,10 @@ public class DashboardController : Controller
         var client = _httpClientFactory.CreateClient();
 
         // Aylık arıza verisi
-        var responseMonth = await client.GetAsync("http://testapi.solfix.help:5164/api/FaultReport/GetFaultByMonth");
+        var responseMonth = await client.GetAsync("https://testapi.solfix.help:444/api/FaultReport/GetFaultByMonth");
 
         // Departman bazlı arıza verisi
-        var responseDepartment = await client.GetAsync("http://testapi.solfix.help:5164/api/FaultReport/GetFaultByDepartman");    
+        var responseDepartment = await client.GetAsync("https://testapi.solfix.help:444/api/FaultReport/GetFaultByDepartman");    
 
         var viewModel = new DashboardViewModel();
 

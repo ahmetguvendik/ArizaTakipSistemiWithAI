@@ -27,7 +27,7 @@ public class SupervisorController : Controller
     public async Task<IActionResult> Index()
     {
         var client = _httpClientFactory.CreateClient();
-        var response = await client.GetAsync("http://testapi.solfix.help:5164/api/FaultReport");
+        var response = await client.GetAsync("https://testapi.solfix.help:444/api/FaultReport");
         if (response.IsSuccessStatusCode)
         {
             var jsonData = await response.Content.ReadAsStringAsync();
@@ -43,7 +43,7 @@ public class SupervisorController : Controller
         var client = _httpClientFactory.CreateClient();
 
         // Teknisyenleri her durumda çek
-        var userResponse = await client.GetAsync("http://testapi.solfix.help:5164/api/User");
+        var userResponse = await client.GetAsync("https://testapi.solfix.help:444/api/User");
         var jsonData2 = await userResponse.Content.ReadAsStringAsync();
         var values2 = JsonConvert.DeserializeObject<List<GetTeknisyenDto>>(jsonData2);
 
@@ -54,7 +54,7 @@ public class SupervisorController : Controller
         }).ToList();
 
         // Arıza bilgilerini çek
-        var response = await client.GetAsync($"http://testapi.solfix.help:5164/api/FaultReport/" + id);
+        var response = await client.GetAsync($"https://testapi.solfix.help:444/api/FaultReport/" + id);
         if (response.IsSuccessStatusCode)
         {
             var jsonData = await response.Content.ReadAsStringAsync();
@@ -79,14 +79,14 @@ public class SupervisorController : Controller
             AssignedTime = DateTime.Now,
         };
         
-            var response2 = await client.GetAsync($"http://testapi.solfix.help:5164/api/FaultReport/" + faultReportId);
+            var response2 = await client.GetAsync($"https://testapi.solfix.help:444/api/FaultReport/" + faultReportId);
             var jsonData = await response2.Content.ReadAsStringAsync();
             var values = JsonConvert.DeserializeObject<GetFaultReportDto>(jsonData);
             
 
             var json = JsonConvert.SerializeObject(atamaDto);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await client.PutAsync("http://testapi.solfix.help:5164/api/FaultReport", content);
+            var response = await client.PutAsync("https://testapi.solfix.help:444/api/FaultReport", content);
             string body = $@"
 <div style='font-family:Arial,sans-serif; font-size:15px; color:#333;'>
     <p>Sayın {values.ReporterName},</p>

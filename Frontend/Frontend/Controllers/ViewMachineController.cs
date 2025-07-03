@@ -22,7 +22,7 @@ public class ViewMachineController : Controller
         var departmanId = User.Identity.IsAuthenticated ? User.FindFirstValue("DepartmentId") : null;       
         ViewBag.DepartmentId = departmanId;
         var client = _clientFactory.CreateClient();
-        var response = await client.GetAsync($"http://testapi.solfix.help:5164/api/Machine/GetMachineByDepartmanId/{departmanId}");
+        var response = await client.GetAsync($"https://testapi.solfix.help:444/api/Machine/GetMachineByDepartmanId/{departmanId}");
         if (response.IsSuccessStatusCode)
         {
             var json = await response.Content.ReadAsStringAsync();

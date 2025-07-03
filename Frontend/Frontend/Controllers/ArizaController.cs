@@ -61,7 +61,7 @@ public async Task<IActionResult> Index(CreateFaultReportDto createJobDto)
     }
 
     // 3. POST isteği gönder
-    var response = await client.PostAsync("http://testapi.solfix.help:5164/api/FaultReport", content);
+    var response = await client.PostAsync("https://testapi.solfix.help:444/api/FaultReport", content);
 
     if (response.IsSuccessStatusCode)
     {

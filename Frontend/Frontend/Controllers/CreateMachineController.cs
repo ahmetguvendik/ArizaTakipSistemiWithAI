@@ -23,7 +23,7 @@ public class CreateMachineController : Controller
     {
         var userId = User.Identity.IsAuthenticated ? User.FindFirstValue(ClaimTypes.NameIdentifier) : null;
         var client = _clientFactory.CreateClient();
-        var response = await client.GetAsync($"http://testapi.solfix.help:5164/api/Department?id={userId}");
+        var response = await client.GetAsync($"https://testapi.solfix.help:444/api/Department?id={userId}");
         var values = JsonConvert.DeserializeObject<List<GetDepartmentByUserIdDto>>(await response.Content.ReadAsStringAsync());
         ViewBag.Department = values.Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).ToList();
         return View();
@@ -35,7 +35,7 @@ public class CreateMachineController : Controller
         var userId = User.Identity.IsAuthenticated ? User.FindFirstValue(ClaimTypes.NameIdentifier) : null;
 
         var client = _clientFactory.CreateClient();
-        var response = await client.PostAsJsonAsync("http://testapi.solfix.help:5164/api/Machine", createMachine);
+        var response = await client.PostAsJsonAsync("https://testapi.solfix.help:444/api/Machine", createMachine);
         if (response.IsSuccessStatusCode)
         {
             TempData["SuccessMessage"] = "Makine Kaydiniz Basarili Bir Sekilde Olusturuldu";

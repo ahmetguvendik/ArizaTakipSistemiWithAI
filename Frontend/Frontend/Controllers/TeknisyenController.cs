@@ -25,7 +25,7 @@ public class TeknisyenController : Controller
         var departmentId = User.FindFirstValue("DepartmentId");
         ViewBag.DepartmentId = departmentId;
         var client = _httpClientFactory.CreateClient();
-        var response = await client.GetAsync($"http://testapi.solfix.help:5164/api/FaultReport/GetByDepartmanId/{departmentId}"); 
+        var response = await client.GetAsync($"https://testapi.solfix.help:444/api/FaultReport/GetByDepartmanId/{departmentId}"); 
         if (response.IsSuccessStatusCode)
         {
             var jsonData = await response.Content.ReadAsStringAsync();
@@ -42,7 +42,7 @@ public class TeknisyenController : Controller
         var userid = User.Identity.IsAuthenticated ? User.FindFirstValue(ClaimTypes.NameIdentifier) : null;
         ViewBag.UserId = userid;
         var client = _httpClientFactory.CreateClient();
-        var response = await client.GetAsync($"http://testapi.solfix.help:5164/api/FaultReport/" + id);
+        var response = await client.GetAsync($"https://testapi.solfix.help:444/api/FaultReport/" + id);
         if (response.IsSuccessStatusCode)
         {
             var jsonData = await response.Content.ReadAsStringAsync();

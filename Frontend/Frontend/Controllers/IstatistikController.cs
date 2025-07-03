@@ -19,7 +19,7 @@ public class IstatistikController : Controller
     {
         var client = _httpClientFactory.CreateClient();
         
-        var response = await client.GetAsync("http://testapi.solfix.help:5164/api/Statistics/GetTotalFaultCount");
+        var response = await client.GetAsync("https://testapi.solfix.help:444/api/Statistics/GetTotalFaultCount");
         if (response.IsSuccessStatusCode)
         {
             var jsonData = await response.Content.ReadAsStringAsync();
@@ -27,7 +27,7 @@ public class IstatistikController : Controller
             ViewBag.v1 = values.GetTotalFaultCount;
         }
         
-        var response1 = await client.GetAsync("http://testapi.solfix.help:5164/api/Statistics/GetAssignedlFaultCount");
+        var response1 = await client.GetAsync("https://testapi.solfix.help:444/api/Statistics/GetAssignedlFaultCount");
         if (response1.IsSuccessStatusCode)
         {
             var jsonData1 = await response1.Content.ReadAsStringAsync();
@@ -35,7 +35,7 @@ public class IstatistikController : Controller
             ViewBag.v2 = values1.GetAssignedFaultCount; 
         }
         
-        var response2 = await client.GetAsync("http://testapi.solfix.help:5164/api/Statistics/GetClosedFaultCount");   
+        var response2 = await client.GetAsync("https://testapi.solfix.help:444/api/Statistics/GetClosedFaultCount");   
         if (response2.IsSuccessStatusCode)
         {
             var jsonData2 = await response2.Content.ReadAsStringAsync();
@@ -43,7 +43,7 @@ public class IstatistikController : Controller
             ViewBag.v3 = values2.GetClosedFaultCount; 
         }
         
-        var response3 = await client.GetAsync("http://testapi.solfix.help:5164/api/Statistics/GetNewFaultCount");   
+        var response3 = await client.GetAsync("https://testapi.solfix.help:444/api/Statistics/GetNewFaultCount");   
         if (response3.IsSuccessStatusCode)
         {
             var jsonData3 = await response3.Content.ReadAsStringAsync();
@@ -51,7 +51,7 @@ public class IstatistikController : Controller
             ViewBag.v4 = values3.GetNewFaultCount; 
         }
         
-        var response4 = await client.GetAsync("http://testapi.solfix.help:5164/api/Statistics/GetAverageAssignmentTimeInMinutes");   
+        var response4 = await client.GetAsync("https://testapi.solfix.help:444/api/Statistics/GetAverageAssignmentTimeInMinutes");   
         if (response4.IsSuccessStatusCode)
         {
             var jsonData4 = await response4.Content.ReadAsStringAsync();
@@ -60,7 +60,7 @@ public class IstatistikController : Controller
         }
 
         
-        var response5 = await client.GetAsync("http://testapi.solfix.help:5164/api/Statistics/GetAverageClosedTimeInMinutes");   
+        var response5 = await client.GetAsync("https://testapi.solfix.help:444/api/Statistics/GetAverageClosedTimeInMinutes");   
         if (response5.IsSuccessStatusCode)
         {
             var jsonData5 = await response5.Content.ReadAsStringAsync();

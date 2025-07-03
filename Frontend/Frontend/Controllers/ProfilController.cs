@@ -18,7 +18,7 @@ public class ProfilController : Controller
     {
         var userid = User.Identity.IsAuthenticated ? User.FindFirstValue(ClaimTypes.NameIdentifier) : null;
         var client = _clientFactory.CreateClient();
-        var response = await client.GetAsync($"http://testapi.solfix.help:5164/api/User/GetUserById/{userid}");
+        var response = await client.GetAsync($"https://testapi.solfix.help:444/api/User/GetUserById/{userid}");
         if (response.IsSuccessStatusCode)
         {
             var json = await response.Content.ReadAsStringAsync();

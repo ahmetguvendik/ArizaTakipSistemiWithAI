@@ -32,7 +32,7 @@ public class LoginController : Controller
 
             try
             {
-                var response = await client.PostAsJsonAsync("http://testapi.solfix.help:5164/api/Login", loginUserDto);
+                var response = await client.PostAsJsonAsync("https://testapi.solfix.help:444/api/Login", loginUserDto);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -101,7 +101,7 @@ public class LoginController : Controller
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(resetPasswordDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var response = await client.PostAsync("http://testapi.solfix.help:5164/api/Login/reset-password", stringContent);
+            var response = await client.PostAsync("https://testapi.solfix.help:444/api/Login/reset-password", stringContent);
             if (response.IsSuccessStatusCode)
             {
                 Log.Information("Sifre Sifirlama Istegi Yapildi" + resetPasswordDto.Email);
@@ -117,7 +117,7 @@ public class LoginController : Controller
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(resetPasswordEmailDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var response = await client.PostAsync("http://testapi.solfix.help:5164/api/Login/forgot-password", stringContent);
+            var response = await client.PostAsync("https://testapi.solfix.help:444/api/Login/forgot-password", stringContent);
 
             if (response.IsSuccessStatusCode)
             {
