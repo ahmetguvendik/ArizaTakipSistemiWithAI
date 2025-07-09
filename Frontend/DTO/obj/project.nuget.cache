@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SvMouOtMs4c=",
+  "dgSpecHash": "A9EEWHdQfLw=",
   "success": true,
-  "projectFilePath": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/DTO/DTO.csproj",
+  "projectFilePath": "/Users/ahmetguvendik/Desktop/Solfix/Frontend/DTO/DTO.csproj",
   "expectedPackageFiles": [
     "/Users/ahmetguvendik/.nuget/packages/microsoft.aspnetcore.http.features/2.3.0/microsoft.aspnetcore.http.features.2.3.0.nupkg.sha512",
     "/Users/ahmetguvendik/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512"

@@ -1908,11 +1908,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Domain/Domain.csproj",
+      "projectUniqueName": "/Users/ahmetguvendik/Desktop/Solfix/Core/Domain/Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Domain/Domain.csproj",
+      "projectPath": "/Users/ahmetguvendik/Desktop/Solfix/Core/Domain/Domain.csproj",
       "packagesPath": "/Users/ahmetguvendik/.nuget/packages/",
-      "outputPath": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Domain/obj/",
+      "outputPath": "/Users/ahmetguvendik/Desktop/Solfix/Core/Domain/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/ahmetguvendik/.nuget/NuGet/NuGet.Config"

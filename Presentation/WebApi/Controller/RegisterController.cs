@@ -20,7 +20,14 @@ public class RegisterController : Microsoft.AspNetCore.Mvc.Controller
     [HttpPost]
     public async Task<IActionResult> Post(CreateUserCommand command)
     {
-        await _mediator.Send(command);
-        return Ok("EKlendi");   
+        try
+        {
+            await _mediator.Send(command);
+            return Ok("Kullanıcı başarıyla oluşturuldu.");
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message); // stack trace yok!
+        }
     }
 }

@@ -70,7 +70,7 @@ public class FaultReportRepository : IFaultReportRepository
 
     public async Task<List<FaultReport>> GetFaultByDepartmanIdAsync(string departmanId)
     {
-        var values = await _context.FaultReports.Include(x=>x.AssignedBy).Include(x=>x.AssignedTo).Include(x=>x.ClosedBy).ThenInclude(y=>y.Department).Include(x=>x.Machine).Where(x=> x.AssignedTo.DepartmentId == departmanId).ToListAsync();
+        var values = await _context.FaultReports.Include(x=>x.AssignedBy).Include(x=>x.AssignedTo).Include(x=>x.ClosedBy).ThenInclude(y=>y.Department).Include(x=>x.Machine).Where(x=> x.AssignedTo.DepartmentId == departmanId).OrderByDescending(x=>x.CreatedAt).ToListAsync();
         return values;
     }
 }

@@ -29,15 +29,13 @@ public class LoginController : Microsoft.AspNetCore.Mvc.Controller
             return BadRequest("Invalid request");           
         }
 
-        // Mediator ile LoginUserCommand gönderiliyor
         var result = await _mediator.Send(command);
 
-        if (result == null)
+        if (result == null || string.IsNullOrEmpty(result.Role))
         {
             return Unauthorized("Invalid credentials");
         }
 
-        // Kullanıcı başarılı giriş yaptıysa döndürülüyor
         return Ok(result);
     }
     
@@ -79,5 +77,12 @@ public class LoginController : Microsoft.AspNetCore.Mvc.Controller
             // Hata varsa burada loglayabilir veya kullanıcıya özel mesaj dönebilirsin
             return BadRequest(new { Error = ex.Message });
         }
+    }
+    
+    [HttpPost("logout")]
+    public async Task<IActionResult> Logout()
+    {
+        await _mediator.Send(new LogoutUserCommand());
+        return Ok(new { message = "Çıkış başarılı" });
     }
 }

@@ -2422,6 +2422,7 @@
           "ModelContextProtocol.AspNetCore": "0.2.0-preview.1",
           "ModelContextProtocol.NET.Server": "0.3.2-alpha",
           "Newtonsoft.Json": "13.0.3",
+          "Serilog": "4.3.1-dev-02373",
           "System.ComponentModel": "4.3.0"
         },
         "compile": {
@@ -6810,11 +6811,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/Frontend.csproj",
+      "projectUniqueName": "/Users/ahmetguvendik/Desktop/Solfix/Frontend/Frontend/Frontend.csproj",
       "projectName": "Frontend",
-      "projectPath": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/Frontend.csproj",
+      "projectPath": "/Users/ahmetguvendik/Desktop/Solfix/Frontend/Frontend/Frontend.csproj",
       "packagesPath": "/Users/ahmetguvendik/.nuget/packages/",
-      "outputPath": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/Frontend/obj/",
+      "outputPath": "/Users/ahmetguvendik/Desktop/Solfix/Frontend/Frontend/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/ahmetguvendik/.nuget/NuGet/NuGet.Config"
@@ -6829,14 +6830,14 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Application/Application.csproj": {
-              "projectPath": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Application/Application.csproj"
+            "/Users/ahmetguvendik/Desktop/Solfix/Core/Application/Application.csproj": {
+              "projectPath": "/Users/ahmetguvendik/Desktop/Solfix/Core/Application/Application.csproj"
             },
-            "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/DTO/DTO.csproj": {
-              "projectPath": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Frontend/DTO/DTO.csproj"
+            "/Users/ahmetguvendik/Desktop/Solfix/Frontend/DTO/DTO.csproj": {
+              "projectPath": "/Users/ahmetguvendik/Desktop/Solfix/Frontend/DTO/DTO.csproj"
             },
-            "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Infrastructure/Persistance/Persistance.csproj": {
-              "projectPath": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Infrastructure/Persistance/Persistance.csproj"
+            "/Users/ahmetguvendik/Desktop/Solfix/Infrastructure/Persistance/Persistance.csproj": {
+              "projectPath": "/Users/ahmetguvendik/Desktop/Solfix/Infrastructure/Persistance/Persistance.csproj"
             }
           }
         }

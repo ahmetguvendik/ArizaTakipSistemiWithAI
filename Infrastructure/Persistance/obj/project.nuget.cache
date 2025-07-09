@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pJfTAnpZ6cc=",
+  "dgSpecHash": "s3eHI5f2qrQ=",
   "success": true,
-  "projectFilePath": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Infrastructure/Persistance/Persistance.csproj",
+  "projectFilePath": "/Users/ahmetguvendik/Desktop/Solfix/Infrastructure/Persistance/Persistance.csproj",
   "expectedPackageFiles": [
     "/Users/ahmetguvendik/.nuget/packages/azure.ai.openai/2.2.0-beta.4/azure.ai.openai.2.2.0-beta.4.nupkg.sha512",
     "/Users/ahmetguvendik/.nuget/packages/azure.core/1.44.1/azure.core.1.44.1.nupkg.sha512",
@@ -95,6 +95,7 @@
     "/Users/ahmetguvendik/.nuget/packages/npgsql/9.0.3/npgsql.9.0.3.nupkg.sha512",
     "/Users/ahmetguvendik/.nuget/packages/npgsql.entityframeworkcore.postgresql/9.0.4/npgsql.entityframeworkcore.postgresql.9.0.4.nupkg.sha512",
     "/Users/ahmetguvendik/.nuget/packages/openai/2.2.0-beta.4/openai.2.2.0-beta.4.nupkg.sha512",
+    "/Users/ahmetguvendik/.nuget/packages/serilog/4.3.1-dev-02373/serilog.4.3.1-dev-02373.nupkg.sha512",
     "/Users/ahmetguvendik/.nuget/packages/system.buffers/4.6.0/system.buffers.4.6.0.nupkg.sha512",
     "/Users/ahmetguvendik/.nuget/packages/system.clientmodel/1.4.0-beta.1/system.clientmodel.1.4.0-beta.1.nupkg.sha512",
     "/Users/ahmetguvendik/.nuget/packages/system.componentmodel/4.3.0/system.componentmodel.4.3.0.nupkg.sha512",

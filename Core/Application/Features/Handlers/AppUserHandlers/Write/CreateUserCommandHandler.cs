@@ -2,6 +2,7 @@ using Application.Features.Commands.AppUserCommands;
 using Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
+using Serilog;
 
 namespace Application.Features.Handlers.AppUserHandlers.Write;
 
@@ -38,6 +39,14 @@ namespace Application.Features.Handlers.AppUserHandlers.Write;
                 }
 
                 await _userManager.AddToRoleAsync(appUser, request.Role);    
+            }
+            else
+            {
+                // Hataları logla
+                var errorMessages = string.Join(" | ", response.Errors.Select(e => e.Description));
+                Log.Error("Kullanıcı oluşturulamadı: {Errors}", errorMessages);
+                // Kullanıcıya sade bir hata fırlat
+                throw new Exception("Kullanıcı oluşturulamadı. Lütfen girdiğiniz bilgileri kontrol edin.");
             }
         
     }
