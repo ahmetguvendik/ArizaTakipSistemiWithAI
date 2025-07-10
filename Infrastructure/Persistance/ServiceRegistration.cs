@@ -9,18 +9,20 @@ using Microsoft.Extensions.DependencyInjection;
 using Persistance.Repositories;
 using Persistance.Services;
 using System;
+using Microsoft.Extensions.Configuration;
 
 namespace Persistance
 {
     public static class ServiceRegistration
     {
-        public static void AddPersistanceService(this IServiceCollection collection)
+        public static void AddPersistanceService(this IServiceCollection collection, IConfiguration configuration)
         {
             collection.AddHttpContextAccessor();
             
 
+            var connectionString = configuration.GetConnectionString("DefaultConnection");
             collection.AddDbContext<FaultDbContext>(opt =>
-                opt.UseSqlServer("Server=4.180.226.250,1433;Database=FaultReportTestDb;User Id=sa;Password=Ahmet123;Encrypt=True;TrustServerCertificate=True;"));
+                opt.UseSqlServer(connectionString));
 
             
             collection.AddIdentity<AppUser, AppRole>()

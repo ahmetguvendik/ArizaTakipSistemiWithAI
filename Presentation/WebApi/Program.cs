@@ -42,17 +42,17 @@ builder.Services.AddAuthentication("MyCookieAuth")
 builder.Services.AddHttpContextAccessor(); // HttpContext erişimi için
 
 // Diğer katmanlardaki servis kayıtları (Eğer bu metodlar gerçekten varsa ve servisleri doğru ekliyorsa)
-builder.Services.AddPersistanceService();
+builder.Services.AddPersistanceService(builder.Configuration);
 builder.Services.AddApplicationService(builder.Configuration);
 
 builder.Services.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateFaultReportValidation>()); 
 builder.Services.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateMachineValidation>()); 
 
-string env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
-Log.Logger = new LoggerConfiguration().WriteTo.MSSqlServer("Server=4.180.226.250,1433;Database=LogsDb;User Id=sa;Password=Ahmet123;Encrypt=True;TrustServerCertificate=True;","Logs").MinimumLevel.Information().CreateLogger();
+var logsDbConnection = builder.Configuration.GetSection("LoggingDbConnectionStrings")["LogsDb"];
+Log.Logger = new LoggerConfiguration().WriteTo.MSSqlServer(logsDbConnection,"Logs").MinimumLevel.Information().CreateLogger();
 
-
-builder.Services.AddHangfire(configuration => configuration.UseSqlServerStorage("Server=4.180.226.250,1433;Database=FaultReportTestDb;User Id=sa;Password=Ahmet123;Encrypt=True;TrustServerCertificate=True;"));
+var defaultConnection = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddHangfire(configuration => configuration.UseSqlServerStorage(defaultConnection));
 builder.Services.AddHangfireServer();
 
 builder.Services.AddCors(options =>

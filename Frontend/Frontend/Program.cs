@@ -33,9 +33,10 @@ var columnOptions = new ColumnOptions();
 columnOptions.Store.Remove(StandardColumn.Properties);
 columnOptions.Store.Add(StandardColumn.LogEvent); // LogEvent kolonunu sakla
 
+var logsDbConnection = builder.Configuration.GetSection("LoggingDbConnectionStrings")["LogsDb"];
 Log.Logger = new LoggerConfiguration()
     .WriteTo.MSSqlServer(
-        connectionString: "Server=4.180.226.250,1433;Database=LogsDb;User Id=sa;Password=Ahmet123;Encrypt=True;TrustServerCertificate=True;",
+        connectionString: logsDbConnection,
         sinkOptions: new MSSqlServerSinkOptions
         {
             AutoCreateSqlTable = true,
