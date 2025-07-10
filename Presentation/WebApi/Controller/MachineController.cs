@@ -5,6 +5,7 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OfficeOpenXml;
+using Serilog;
 
 namespace WebApi.Controller;
 
@@ -22,41 +23,65 @@ public class MachineController : Microsoft.AspNetCore.Mvc.Controller
     [HttpGet("GetMachineByDepartmanId/{id}")]         
     public async Task<IActionResult> GetMachineByDepartmanId(string id)
     {
-        var valus = await _mediator.Send(new GetMachineByDepartmanIdQuery(id));
-        return Ok(valus);
+        try
+        {
+            var valus = await _mediator.Send(new GetMachineByDepartmanIdQuery(id));
+            return Ok(valus);
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex, "Error in MachineController.GetMachineByDepartmanId (id: {Id})", id);
+            return StatusCode(500, "Internal server error");
+        }
     }
 
     [HttpPost]
     public async Task<IActionResult> CreateMachine(CreateMachineCommand command)
     {
-        await _mediator.Send(command);
-        return Ok("Eklendi");
+        try
+        {
+            await _mediator.Send(command);
+            return Ok("Eklendi");
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex, "Error in MachineController.CreateMachine");
+            return StatusCode(500, "Internal server error");
+        }
     }
     
     [HttpGet("export-to-excel-department/{departmanId}")]
     public async Task<IActionResult> ExportToExcelDepartment(string departmanId)    
     {
-        ExcelPackage.License.SetNonCommercialPersonal("Ahmet Guvendik");
-        
-        var reports = await _mediator.Send(new GetMachineByDepartmanIdQuery(departmanId));
-
-        using var package = new ExcelPackage();
-        var worksheet = package.Workbook.Worksheets.Add("Makineler");
-
-        // Başlık satırı
-        worksheet.Cells[1, 1].Value = "Makine Adi";
-        worksheet.Cells[1, 2].Value = "Makine Seri No";
-
-        
-        int row = 2;
-        foreach (var item in reports)
+        try
         {
-            worksheet.Cells[row, 1].Value = item.Name;
-            worksheet.Cells[row, 2].Value = item.SeriNo;
-            row++;
-        }
+            ExcelPackage.License.SetNonCommercialPersonal("Ahmet Guvendik");
+            
+            var reports = await _mediator.Send(new GetMachineByDepartmanIdQuery(departmanId));
 
-        var fileBytes = package.GetAsByteArray();
-        return File(fileBytes, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Makinalar.xlsx");
+            using var package = new ExcelPackage();
+            var worksheet = package.Workbook.Worksheets.Add("Makineler");
+
+            // Başlık satırı
+            worksheet.Cells[1, 1].Value = "Makine Adi";
+            worksheet.Cells[1, 2].Value = "Makine Seri No";
+
+            
+            int row = 2;
+            foreach (var item in reports)
+            {
+                worksheet.Cells[row, 1].Value = item.Name;
+                worksheet.Cells[row, 2].Value = item.SeriNo;
+                row++;
+            }
+
+            var fileBytes = package.GetAsByteArray();
+            return File(fileBytes, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Makinalar.xlsx");
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex, "Error in MachineController.ExportToExcelDepartment (departmanId: {DepartmanId})", departmanId);
+            return StatusCode(500, "Internal server error");
+        }
     }
 }

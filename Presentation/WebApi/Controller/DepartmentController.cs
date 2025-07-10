@@ -3,6 +3,7 @@ using Application.Features.Results.DepartmentResults;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 
 namespace WebApi.Controller;
 
@@ -20,14 +21,30 @@ public class DepartmentController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> Get(string id)
     {
-        var values = await _mediator.Send(new GetDepartmentByUserIdQuery(id));
-        return Ok(values);  
+        try
+        {
+            var values = await _mediator.Send(new GetDepartmentByUserIdQuery(id));
+            return Ok(values);
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex, "Error in DepartmentController.Get (id: {Id})", id);
+            return StatusCode(500, "Internal server error");
+        }
     }
     
     [HttpGet("GetAll")]
     public async Task<IActionResult> GetAll()   
     {
-        var values = await _mediator.Send(new GetAllDepartmentQuery());
-        return Ok(values);  
+        try
+        {
+            var values = await _mediator.Send(new GetAllDepartmentQuery());
+            return Ok(values);
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex, "Error in DepartmentController.GetAll");
+            return StatusCode(500, "Internal server error");
+        }
     }
 }

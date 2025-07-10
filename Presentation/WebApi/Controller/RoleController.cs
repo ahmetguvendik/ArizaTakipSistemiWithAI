@@ -3,6 +3,7 @@ using Application.Features.Results.AppRoleResults;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 
 namespace WebApi.Controller;
 
@@ -20,7 +21,15 @@ public class RoleController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
-        var values = await _mediator.Send(new GetAllRoleQuery());
-        return Ok(values);
+        try
+        {
+            var values = await _mediator.Send(new GetAllRoleQuery());
+            return Ok(values);
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex, "Error in RoleController.GetAll");
+            return StatusCode(500, "Internal server error");
+        }
     }
 }
