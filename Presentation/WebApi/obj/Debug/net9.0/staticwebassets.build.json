@@ -1,20 +1,12 @@
 {
   "Version": 1,
-  "Hash": "+hh123gI8kBSSzT40oIJ63J8wf03LYw9z6/Uns35poI=",
+  "Hash": "3fzD1EelHVW7I8sZnXbFvVts4pyDK1lx9zGyE0YOAsI=",
   "Source": "WebApi",
   "BasePath": "_content/WebApi",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [
-    {
-      "Name": "WebApi/wwwroot",
-      "Source": "WebApi",
-      "ContentRoot": "/Users/ahmetguvendik/Desktop/Solfix/Presentation/WebApi/wwwroot/",
-      "BasePath": "_content/WebApi",
-      "Pattern": "**"
-    }
-  ],
+  "DiscoveryPatterns": [],
   "Assets": [],
   "Endpoints": []
 }

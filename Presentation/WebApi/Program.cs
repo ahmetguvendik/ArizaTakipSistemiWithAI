@@ -15,6 +15,9 @@ using Microsoft.SemanticKernel.ChatCompletion;
 using OpenAI;
 using Serilog;
 using WebApi.ViewModels; 
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,6 +41,28 @@ builder.Services.AddAuthentication("MyCookieAuth")
         options.SlidingExpiration = true; // Her istekte süre uzar
         // options.Cookie.Domain = ".solfix.help"; // Şimdilik YORUMDA bırak, çünkü HTTP'de + cross-subdomain çalışmaz
     });
+
+// Cookie authentication'dan sonra JWT authentication ekle
+var jwtSettings = builder.Configuration.GetSection("Jwt").Get<Application.DTOs.JwtSettings>();
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = jwtSettings.Issuer,
+        ValidAudience = jwtSettings.Audience,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.Key)),
+        ClockSkew = TimeSpan.Zero
+    };
+});
 
 builder.Services.AddHttpContextAccessor(); // HttpContext erişimi için
 

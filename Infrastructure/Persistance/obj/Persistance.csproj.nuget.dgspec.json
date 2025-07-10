@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ahmetguvendik/Desktop/Solfix/Infrastructure/Persistance/Persistance.csproj": {}
+    "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Infrastructure/Persistance/Persistance.csproj": {}
   },
   "projects": {
-    "/Users/ahmetguvendik/Desktop/Solfix/Core/Application/Application.csproj": {
+    "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Core/Application/Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ahmetguvendik/Desktop/Solfix/Core/Application/Application.csproj",
+        "projectUniqueName": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Core/Application/Application.csproj",
         "projectName": "Application",
-        "projectPath": "/Users/ahmetguvendik/Desktop/Solfix/Core/Application/Application.csproj",
+        "projectPath": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Core/Application/Application.csproj",
         "packagesPath": "/Users/ahmetguvendik/.nuget/packages/",
-        "outputPath": "/Users/ahmetguvendik/Desktop/Solfix/Core/Application/obj/",
+        "outputPath": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Core/Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/ahmetguvendik/.nuget/NuGet/NuGet.Config"
@@ -26,11 +26,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/Users/ahmetguvendik/Desktop/Solfix/Core/Domain/Domain.csproj": {
-                "projectPath": "/Users/ahmetguvendik/Desktop/Solfix/Core/Domain/Domain.csproj"
+              "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Core/Domain/Domain.csproj": {
+                "projectPath": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Core/Domain/Domain.csproj"
               },
-              "/Users/ahmetguvendik/Desktop/Solfix/Frontend/DTO/DTO.csproj": {
-                "projectPath": "/Users/ahmetguvendik/Desktop/Solfix/Frontend/DTO/DTO.csproj"
+              "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Frontend/DTO/DTO.csproj": {
+                "projectPath": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Frontend/DTO/DTO.csproj"
               }
             }
           }
@@ -112,14 +112,14 @@
         }
       }
     },
-    "/Users/ahmetguvendik/Desktop/Solfix/Core/Domain/Domain.csproj": {
+    "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Core/Domain/Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ahmetguvendik/Desktop/Solfix/Core/Domain/Domain.csproj",
+        "projectUniqueName": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Core/Domain/Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "/Users/ahmetguvendik/Desktop/Solfix/Core/Domain/Domain.csproj",
+        "projectPath": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Core/Domain/Domain.csproj",
         "packagesPath": "/Users/ahmetguvendik/.nuget/packages/",
-        "outputPath": "/Users/ahmetguvendik/Desktop/Solfix/Core/Domain/obj/",
+        "outputPath": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Core/Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/ahmetguvendik/.nuget/NuGet/NuGet.Config"
@@ -181,14 +181,14 @@
         }
       }
     },
-    "/Users/ahmetguvendik/Desktop/Solfix/Frontend/DTO/DTO.csproj": {
+    "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Frontend/DTO/DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ahmetguvendik/Desktop/Solfix/Frontend/DTO/DTO.csproj",
+        "projectUniqueName": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Frontend/DTO/DTO.csproj",
         "projectName": "DTO",
-        "projectPath": "/Users/ahmetguvendik/Desktop/Solfix/Frontend/DTO/DTO.csproj",
+        "projectPath": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Frontend/DTO/DTO.csproj",
         "packagesPath": "/Users/ahmetguvendik/.nuget/packages/",
-        "outputPath": "/Users/ahmetguvendik/Desktop/Solfix/Frontend/DTO/obj/",
+        "outputPath": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Frontend/DTO/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/ahmetguvendik/.nuget/NuGet/NuGet.Config"
@@ -246,14 +246,14 @@
         }
       }
     },
-    "/Users/ahmetguvendik/Desktop/Solfix/Infrastructure/Persistance/Persistance.csproj": {
+    "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Infrastructure/Persistance/Persistance.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ahmetguvendik/Desktop/Solfix/Infrastructure/Persistance/Persistance.csproj",
+        "projectUniqueName": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Infrastructure/Persistance/Persistance.csproj",
         "projectName": "Persistance",
-        "projectPath": "/Users/ahmetguvendik/Desktop/Solfix/Infrastructure/Persistance/Persistance.csproj",
+        "projectPath": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Infrastructure/Persistance/Persistance.csproj",
         "packagesPath": "/Users/ahmetguvendik/.nuget/packages/",
-        "outputPath": "/Users/ahmetguvendik/Desktop/Solfix/Infrastructure/Persistance/obj/",
+        "outputPath": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Infrastructure/Persistance/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/ahmetguvendik/.nuget/NuGet/NuGet.Config"
@@ -268,11 +268,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/Users/ahmetguvendik/Desktop/Solfix/Core/Application/Application.csproj": {
-                "projectPath": "/Users/ahmetguvendik/Desktop/Solfix/Core/Application/Application.csproj"
+              "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Core/Application/Application.csproj": {
+                "projectPath": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Core/Application/Application.csproj"
               },
-              "/Users/ahmetguvendik/Desktop/Solfix/Core/Domain/Domain.csproj": {
-                "projectPath": "/Users/ahmetguvendik/Desktop/Solfix/Core/Domain/Domain.csproj"
+              "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Core/Domain/Domain.csproj": {
+                "projectPath": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Core/Domain/Domain.csproj"
               }
             }
           }

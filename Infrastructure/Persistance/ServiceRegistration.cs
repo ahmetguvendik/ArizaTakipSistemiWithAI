@@ -10,6 +10,7 @@ using Persistance.Repositories;
 using Persistance.Services;
 using System;
 using Microsoft.Extensions.Configuration;
+using Application.DTOs;
 
 namespace Persistance
 {
@@ -38,6 +39,10 @@ namespace Persistance
             collection.AddScoped<IDepartmentRepository, DepartmentRepository>();
             collection.AddScoped<IUserRepository, UserRepository>();
             collection.AddScoped<AIService>();
+
+            // JwtSettings ve TokenHandler DI registration
+            collection.Configure<JwtSettings>(configuration.GetSection("Jwt"));
+            collection.AddScoped<ITokenHandler, TokenHandler>();
         }
     }
 }

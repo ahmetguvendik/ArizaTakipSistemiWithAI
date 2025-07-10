@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NOuLt7Ft5kc=",
+  "dgSpecHash": "Dx7yPjt1OIM=",
   "success": true,
-  "projectFilePath": "/Users/ahmetguvendik/Desktop/Solfix/Frontend/Frontend/Frontend.csproj",
+  "projectFilePath": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Frontend/Frontend/Frontend.csproj",
   "expectedPackageFiles": [
     "/Users/ahmetguvendik/.nuget/packages/azure.ai.openai/2.2.0-beta.4/azure.ai.openai.2.2.0-beta.4.nupkg.sha512",
     "/Users/ahmetguvendik/.nuget/packages/azure.core/1.44.1/azure.core.1.44.1.nupkg.sha512",

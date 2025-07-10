@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
+using Microsoft.AspNetCore.Identity;
+using Application.Services;
+using Domain.Entities;
 
 namespace WebApi.Controller;
 
@@ -14,11 +17,15 @@ public class LoginController : Microsoft.AspNetCore.Mvc.Controller
 {
     private readonly IMediator _mediator;
     private readonly IHttpContextAccessor _httpContextAccessor;
+    private readonly ITokenHandler _tokenHandler;
+    private readonly UserManager<AppUser> _userManager;
 
-    public LoginController(IMediator mediator, IHttpContextAccessor httpContextAccessor)
+    public LoginController(IMediator mediator, IHttpContextAccessor httpContextAccessor, ITokenHandler tokenHandler, UserManager<AppUser> userManager)
     {
         _mediator = mediator;
         _httpContextAccessor = httpContextAccessor;
+        _tokenHandler = tokenHandler;
+        _userManager = userManager;
     }
     
     [HttpPost]
@@ -80,9 +87,42 @@ public class LoginController : Microsoft.AspNetCore.Mvc.Controller
     }
     
     [HttpPost("logout")]
-    public async Task<IActionResult> Logout()
+    public async Task<IActionResult> Logout()   
     {
         await _mediator.Send(new LogoutUserCommand());
         return Ok(new { message = "Çıkış başarılı" });
+    }
+
+    [HttpPost("jwt-login")]
+    public async Task<IActionResult> JwtLogin([FromBody] LoginUserCommand command)
+    {
+        if (command == null)
+            return BadRequest("Invalid request");
+
+        var result = await _mediator.Send(command);
+
+        if (result == null || string.IsNullOrEmpty(result.Role))
+            return Unauthorized("Invalid credentials");
+
+        // Kullanıcıyı bul
+        var user = await _userManager.FindByNameAsync(command.Username);
+        if (user == null)
+            return Unauthorized("User not found");
+
+        // JWT token oluştur
+        var token = _tokenHandler.CreateAccessToken();
+
+        return Ok(new
+        {
+            token = token.AccessToken,
+            expiration = token.Expiration,
+            user = new
+            {
+                result.Id,
+                result.Username,
+                result.Role,
+                result.DepartmanId
+            }
+        });
     }
 }
