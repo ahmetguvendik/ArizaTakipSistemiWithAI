@@ -1,4 +1,5 @@
 using Application.Features.Commands.AppUserCommands;
+using Application.Repositories;
 using Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
@@ -10,6 +11,7 @@ namespace Application.Features.Handlers.AppUserHandlers.Write;
 {
     private readonly UserManager<AppUser> _userManager;
     private readonly RoleManager<AppRole> _roleManager;
+  
     public CreateUserCommandHandler(UserManager<AppUser> userManager, RoleManager<AppRole> roleManager)
     {
         _userManager = userManager;
@@ -17,6 +19,12 @@ namespace Application.Features.Handlers.AppUserHandlers.Write;
     }
     public async Task Handle(CreateUserCommand request, CancellationToken cancellationToken)
     {
+        var totalUserCount = _userManager.Users.Count();
+
+        if (totalUserCount >= 2)
+        {
+            throw new Exception("Sistemde zaten 2 veya daha fazla kullanıcı var. Yeni kullanıcı eklenemez.");
+        }
             var appUser = new AppUser();
             appUser.UserName = request.Username;    
             appUser.NameSurname = request.NameSurname;

@@ -1,44 +1,16 @@
 {
   "Files": [
     {
-      "Id": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/344bbd51-e8f5-4ce7-aae4-9b36baf01721.png",
-      "PackagePath": "staticwebassets/uploads/344bbd51-e8f5-4ce7-aae4-9b36baf01721.png"
+      "Id": "/Users/ahmetguvendik/Desktop/Solfix/Presentation/WebApi/wwwroot/uploads/4372ecbe-1437-4a88-9d7d-3f5fbda4e4fd.pdf",
+      "PackagePath": "staticwebassets/uploads/4372ecbe-1437-4a88-9d7d-3f5fbda4e4fd.pdf"
     },
     {
-      "Id": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/44852760-9915-46d1-af3d-5b2cb602d628.pdf",
-      "PackagePath": "staticwebassets/uploads/44852760-9915-46d1-af3d-5b2cb602d628.pdf"
+      "Id": "/Users/ahmetguvendik/Desktop/Solfix/Presentation/WebApi/wwwroot/uploads/4ec547c2-8abb-4ec0-b821-1711a2549c0a.jpg",
+      "PackagePath": "staticwebassets/uploads/4ec547c2-8abb-4ec0-b821-1711a2549c0a.jpg"
     },
     {
-      "Id": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/5634bc34-1aaa-44f9-95b7-5e9223bc01b2.pdf",
-      "PackagePath": "staticwebassets/uploads/5634bc34-1aaa-44f9-95b7-5e9223bc01b2.pdf"
-    },
-    {
-      "Id": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/6bd3add1-b516-4b4d-aead-94205d1ca0e2.pdf",
-      "PackagePath": "staticwebassets/uploads/6bd3add1-b516-4b4d-aead-94205d1ca0e2.pdf"
-    },
-    {
-      "Id": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/85a6193b-935f-4f4a-afa2-eea4adb094fc.pdf",
-      "PackagePath": "staticwebassets/uploads/85a6193b-935f-4f4a-afa2-eea4adb094fc.pdf"
-    },
-    {
-      "Id": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/996673b6-a706-4d04-a503-8f3de3a1b721.pdf",
-      "PackagePath": "staticwebassets/uploads/996673b6-a706-4d04-a503-8f3de3a1b721.pdf"
-    },
-    {
-      "Id": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/a406204f-4892-488a-b470-5546c56d62ab.pdf",
-      "PackagePath": "staticwebassets/uploads/a406204f-4892-488a-b470-5546c56d62ab.pdf"
-    },
-    {
-      "Id": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/ae2b31de-f613-4de1-b716-e3a066d6e9fd.pdf",
-      "PackagePath": "staticwebassets/uploads/ae2b31de-f613-4de1-b716-e3a066d6e9fd.pdf"
-    },
-    {
-      "Id": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/b8e7f6bf-e07a-4d98-8f2a-35fa0aec89fb.jpeg",
-      "PackagePath": "staticwebassets/uploads/b8e7f6bf-e07a-4d98-8f2a-35fa0aec89fb.jpeg"
-    },
-    {
-      "Id": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/cff474af-f53c-4616-a5f6-9b38b9f16547.pdf",
-      "PackagePath": "staticwebassets/uploads/cff474af-f53c-4616-a5f6-9b38b9f16547.pdf"
+      "Id": "/Users/ahmetguvendik/Desktop/Solfix/Presentation/WebApi/wwwroot/uploads/7266e4e0-ecbc-49f4-b847-2695b1ec01a5.jpg",
+      "PackagePath": "staticwebassets/uploads/7266e4e0-ecbc-49f4-b847-2695b1ec01a5.jpg"
     },
     {
       "Id": "obj/Release/net9.0/staticwebassets/msbuild.WebApi.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
