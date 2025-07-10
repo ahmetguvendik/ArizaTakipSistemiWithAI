@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oPysK6PDQ50=",
+  "dgSpecHash": "rzIuB64l59I=",
   "success": true,
-  "projectFilePath": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/WebApi.csproj",
+  "projectFilePath": "/Users/ahmetguvendik/Desktop/Solfix/Presentation/WebApi/WebApi.csproj",
   "expectedPackageFiles": [
     "/Users/ahmetguvendik/.nuget/packages/azure.ai.openai/2.2.0-beta.4/azure.ai.openai.2.2.0-beta.4.nupkg.sha512",
     "/Users/ahmetguvendik/.nuget/packages/azure.core/1.44.1/azure.core.1.44.1.nupkg.sha512",

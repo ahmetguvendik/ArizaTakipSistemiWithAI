@@ -1,7 +1,9 @@
 using Application.Features.Commands.AppUserCommands;
+using Application.Repositories;
 using Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
+using Serilog;
 
 namespace Application.Features.Handlers.AppUserHandlers.Write;
 
@@ -9,6 +11,7 @@ namespace Application.Features.Handlers.AppUserHandlers.Write;
 {
     private readonly UserManager<AppUser> _userManager;
     private readonly RoleManager<AppRole> _roleManager;
+  
     public CreateUserCommandHandler(UserManager<AppUser> userManager, RoleManager<AppRole> roleManager)
     {
         _userManager = userManager;
@@ -16,6 +19,12 @@ namespace Application.Features.Handlers.AppUserHandlers.Write;
     }
     public async Task Handle(CreateUserCommand request, CancellationToken cancellationToken)
     {
+        var totalUserCount = _userManager.Users.Count();
+
+        if (totalUserCount >= 2)
+        {
+            throw new Exception("Sistemde zaten 2 veya daha fazla kullanıcı var. Yeni kullanıcı eklenemez.");
+        }
             var appUser = new AppUser();
             appUser.UserName = request.Username;    
             appUser.NameSurname = request.NameSurname;
@@ -38,6 +47,14 @@ namespace Application.Features.Handlers.AppUserHandlers.Write;
                 }
 
                 await _userManager.AddToRoleAsync(appUser, request.Role);    
+            }
+            else
+            {
+                // Hataları logla
+                var errorMessages = string.Join(" | ", response.Errors.Select(e => e.Description));
+                Log.Error("Kullanıcı oluşturulamadı: {Errors}", errorMessages);
+                // Kullanıcıya sade bir hata fırlat
+                throw new Exception("Kullanıcı oluşturulamadı. Lütfen girdiğiniz bilgileri kontrol edin.");
             }
         
     }

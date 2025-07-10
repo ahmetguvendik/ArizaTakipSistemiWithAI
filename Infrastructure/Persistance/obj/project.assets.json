@@ -1601,6 +1601,22 @@
           }
         }
       },
+      "Serilog/4.3.1-dev-02373": {
+        "type": "package",
+        "compile": {
+          "lib/net9.0/Serilog.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/Serilog.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/_._": {}
+        }
+      },
       "System.Buffers/4.6.0": {
         "type": "package",
         "compile": {
@@ -2139,6 +2155,7 @@
           "ModelContextProtocol.AspNetCore": "0.2.0-preview.1",
           "ModelContextProtocol.NET.Server": "0.3.2-alpha",
           "Newtonsoft.Json": "13.0.3",
+          "Serilog": "4.3.1-dev-02373",
           "System.ComponentModel": "4.3.0"
         },
         "compile": {
@@ -4185,6 +4202,32 @@
         "openai.nuspec"
       ]
     },
+    "Serilog/4.3.1-dev-02373": {
+      "sha512": "f0HNPaleOox5++8zqxAdi9afnUUkoznLOmd0ur/UnLbzl8bIaPyyBGOpbIJmC1kz2vHfkQ0fXh6KXMdlz7bcLQ==",
+      "type": "package",
+      "path": "serilog/4.3.1-dev-02373",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "build/Serilog.targets",
+        "icon.png",
+        "lib/net462/Serilog.dll",
+        "lib/net462/Serilog.xml",
+        "lib/net471/Serilog.dll",
+        "lib/net471/Serilog.xml",
+        "lib/net6.0/Serilog.dll",
+        "lib/net6.0/Serilog.xml",
+        "lib/net8.0/Serilog.dll",
+        "lib/net8.0/Serilog.xml",
+        "lib/net9.0/Serilog.dll",
+        "lib/net9.0/Serilog.xml",
+        "lib/netstandard2.0/Serilog.dll",
+        "lib/netstandard2.0/Serilog.xml",
+        "serilog.4.3.1-dev-02373.nupkg.sha512",
+        "serilog.nuspec"
+      ]
+    },
     "System.Buffers/4.6.0": {
       "sha512": "lN6tZi7Q46zFzAbRYXTIvfXcyvQQgxnY7Xm6C6xQ9784dEL1amjM6S6Iw4ZpsvesAKnRVsM4scrDQaDqSClkjA==",
       "type": "package",
@@ -5430,11 +5473,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Infrastructure/Persistance/Persistance.csproj",
+      "projectUniqueName": "/Users/ahmetguvendik/Desktop/Solfix/Infrastructure/Persistance/Persistance.csproj",
       "projectName": "Persistance",
-      "projectPath": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Infrastructure/Persistance/Persistance.csproj",
+      "projectPath": "/Users/ahmetguvendik/Desktop/Solfix/Infrastructure/Persistance/Persistance.csproj",
       "packagesPath": "/Users/ahmetguvendik/.nuget/packages/",
-      "outputPath": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Infrastructure/Persistance/obj/",
+      "outputPath": "/Users/ahmetguvendik/Desktop/Solfix/Infrastructure/Persistance/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/ahmetguvendik/.nuget/NuGet/NuGet.Config"
@@ -5449,11 +5492,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Application/Application.csproj": {
-              "projectPath": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Application/Application.csproj"
+            "/Users/ahmetguvendik/Desktop/Solfix/Core/Application/Application.csproj": {
+              "projectPath": "/Users/ahmetguvendik/Desktop/Solfix/Core/Application/Application.csproj"
             },
-            "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Domain/Domain.csproj": {
-              "projectPath": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Core/Domain/Domain.csproj"
+            "/Users/ahmetguvendik/Desktop/Solfix/Core/Domain/Domain.csproj": {
+              "projectPath": "/Users/ahmetguvendik/Desktop/Solfix/Core/Domain/Domain.csproj"
             }
           }
         }

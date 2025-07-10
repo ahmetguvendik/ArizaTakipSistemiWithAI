@@ -136,12 +136,12 @@ public class FaultReportController  : Microsoft.AspNetCore.Mvc.Controller
             await _faultHubContext.Clients.All.SendAsync("ReceiveUpdate", "Yeni Ariza Geldi");  
              return Ok("Eklendi");
     }
+    
     [HttpPut]
     public async Task<IActionResult> Post(AssignTechnicianCommand command)
     {
         await _mediator.Send(command);
         await _faultHubContext.Clients.All.SendAsync("ReceiveUpdate", "Arıza Atandi");  
-
         return Ok("Atandı");
     }
     
@@ -150,7 +150,6 @@ public class FaultReportController  : Microsoft.AspNetCore.Mvc.Controller
     {
         await _mediator.Send(command);
         await _faultHubContext.Clients.All.SendAsync("ReceiveUpdate", "Arıza Kapatildi");
-        Log.Information("Ariza ID: "+command.Id +"Ariza Kapatan: "+command.ClosedById);
         return Ok("Kapatildi");
     }
     

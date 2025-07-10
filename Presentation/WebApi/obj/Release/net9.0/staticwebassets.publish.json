@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4LwHRLHWGtqk42na3h4qhU7BwBKqZO/5ZMkAPI+j5UY=",
+  "Hash": "RPIQLCCb5W8gnXFWtp1BGM5lvo/kK4qN+7jvHhEry3s=",
   "Source": "WebApi",
   "BasePath": "_content/WebApi",
   "Mode": "Default",
@@ -10,40 +10,19 @@
     {
       "Name": "WebApi/wwwroot",
       "Source": "WebApi",
-      "ContentRoot": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/",
+      "ContentRoot": "/Users/ahmetguvendik/Desktop/Solfix/Presentation/WebApi/wwwroot/",
       "BasePath": "_content/WebApi",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/344bbd51-e8f5-4ce7-aae4-9b36baf01721.png",
+      "Identity": "/Users/ahmetguvendik/Desktop/Solfix/Presentation/WebApi/wwwroot/uploads/4372ecbe-1437-4a88-9d7d-3f5fbda4e4fd.pdf",
       "SourceId": "WebApi",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/",
+      "ContentRoot": "/Users/ahmetguvendik/Desktop/Solfix/Presentation/WebApi/wwwroot/",
       "BasePath": "_content/WebApi",
-      "RelativePath": "uploads/344bbd51-e8f5-4ce7-aae4-9b36baf01721#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "zuytsk7c8i",
-      "Integrity": "Rc5zBBy/JIXqjRMpcZAuCGF225An6LqMMGXjdjFA2Ow=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/uploads/344bbd51-e8f5-4ce7-aae4-9b36baf01721.png"
-    },
-    {
-      "Identity": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/44852760-9915-46d1-af3d-5b2cb602d628.pdf",
-      "SourceId": "WebApi",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/",
-      "BasePath": "_content/WebApi",
-      "RelativePath": "uploads/44852760-9915-46d1-af3d-5b2cb602d628#[.{fingerprint}]?.pdf",
+      "RelativePath": "uploads/4372ecbe-1437-4a88-9d7d-3f5fbda4e4fd#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -56,15 +35,15 @@
       "Integrity": "e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/uploads/44852760-9915-46d1-af3d-5b2cb602d628.pdf"
+      "OriginalItemSpec": "wwwroot/uploads/4372ecbe-1437-4a88-9d7d-3f5fbda4e4fd.pdf"
     },
     {
-      "Identity": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/5634bc34-1aaa-44f9-95b7-5e9223bc01b2.pdf",
+      "Identity": "/Users/ahmetguvendik/Desktop/Solfix/Presentation/WebApi/wwwroot/uploads/4ec547c2-8abb-4ec0-b821-1711a2549c0a.jpg",
       "SourceId": "WebApi",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/",
+      "ContentRoot": "/Users/ahmetguvendik/Desktop/Solfix/Presentation/WebApi/wwwroot/",
       "BasePath": "_content/WebApi",
-      "RelativePath": "uploads/5634bc34-1aaa-44f9-95b7-5e9223bc01b2#[.{fingerprint}]?.pdf",
+      "RelativePath": "uploads/4ec547c2-8abb-4ec0-b821-1711a2549c0a#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -73,19 +52,19 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "jiuwv4daev",
-      "Integrity": "e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=",
+      "Fingerprint": "5xek7dql5a",
+      "Integrity": "iSO8ueZfXTdVwrYuShQSUNV8GIfOmD/QGrB7h6QoQCI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/uploads/5634bc34-1aaa-44f9-95b7-5e9223bc01b2.pdf"
+      "OriginalItemSpec": "wwwroot/uploads/4ec547c2-8abb-4ec0-b821-1711a2549c0a.jpg"
     },
     {
-      "Identity": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/6bd3add1-b516-4b4d-aead-94205d1ca0e2.pdf",
+      "Identity": "/Users/ahmetguvendik/Desktop/Solfix/Presentation/WebApi/wwwroot/uploads/7266e4e0-ecbc-49f4-b847-2695b1ec01a5.jpg",
       "SourceId": "WebApi",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/",
+      "ContentRoot": "/Users/ahmetguvendik/Desktop/Solfix/Presentation/WebApi/wwwroot/",
       "BasePath": "_content/WebApi",
-      "RelativePath": "uploads/6bd3add1-b516-4b4d-aead-94205d1ca0e2#[.{fingerprint}]?.pdf",
+      "RelativePath": "uploads/7266e4e0-ecbc-49f4-b847-2695b1ec01a5#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -94,143 +73,17 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "jiuwv4daev",
-      "Integrity": "e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=",
+      "Fingerprint": "5xek7dql5a",
+      "Integrity": "iSO8ueZfXTdVwrYuShQSUNV8GIfOmD/QGrB7h6QoQCI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/uploads/6bd3add1-b516-4b4d-aead-94205d1ca0e2.pdf"
-    },
-    {
-      "Identity": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/85a6193b-935f-4f4a-afa2-eea4adb094fc.pdf",
-      "SourceId": "WebApi",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/",
-      "BasePath": "_content/WebApi",
-      "RelativePath": "uploads/85a6193b-935f-4f4a-afa2-eea4adb094fc#[.{fingerprint}]?.pdf",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "jiuwv4daev",
-      "Integrity": "e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/uploads/85a6193b-935f-4f4a-afa2-eea4adb094fc.pdf"
-    },
-    {
-      "Identity": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/996673b6-a706-4d04-a503-8f3de3a1b721.pdf",
-      "SourceId": "WebApi",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/",
-      "BasePath": "_content/WebApi",
-      "RelativePath": "uploads/996673b6-a706-4d04-a503-8f3de3a1b721#[.{fingerprint}]?.pdf",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "jiuwv4daev",
-      "Integrity": "e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/uploads/996673b6-a706-4d04-a503-8f3de3a1b721.pdf"
-    },
-    {
-      "Identity": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/a406204f-4892-488a-b470-5546c56d62ab.pdf",
-      "SourceId": "WebApi",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/",
-      "BasePath": "_content/WebApi",
-      "RelativePath": "uploads/a406204f-4892-488a-b470-5546c56d62ab#[.{fingerprint}]?.pdf",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "jiuwv4daev",
-      "Integrity": "e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/uploads/a406204f-4892-488a-b470-5546c56d62ab.pdf"
-    },
-    {
-      "Identity": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/ae2b31de-f613-4de1-b716-e3a066d6e9fd.pdf",
-      "SourceId": "WebApi",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/",
-      "BasePath": "_content/WebApi",
-      "RelativePath": "uploads/ae2b31de-f613-4de1-b716-e3a066d6e9fd#[.{fingerprint}]?.pdf",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "jiuwv4daev",
-      "Integrity": "e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/uploads/ae2b31de-f613-4de1-b716-e3a066d6e9fd.pdf"
-    },
-    {
-      "Identity": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/b8e7f6bf-e07a-4d98-8f2a-35fa0aec89fb.jpeg",
-      "SourceId": "WebApi",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/",
-      "BasePath": "_content/WebApi",
-      "RelativePath": "uploads/b8e7f6bf-e07a-4d98-8f2a-35fa0aec89fb#[.{fingerprint}]?.jpeg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "0ndpz5hyar",
-      "Integrity": "TNgSJp+MoJ5Jna2GHLAKnYoO2oK+zCQuRSpC7qh13LE=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/uploads/b8e7f6bf-e07a-4d98-8f2a-35fa0aec89fb.jpeg"
-    },
-    {
-      "Identity": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/cff474af-f53c-4616-a5f6-9b38b9f16547.pdf",
-      "SourceId": "WebApi",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/",
-      "BasePath": "_content/WebApi",
-      "RelativePath": "uploads/cff474af-f53c-4616-a5f6-9b38b9f16547#[.{fingerprint}]?.pdf",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "jiuwv4daev",
-      "Integrity": "e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/uploads/cff474af-f53c-4616-a5f6-9b38b9f16547.pdf"
+      "OriginalItemSpec": "wwwroot/uploads/7266e4e0-ecbc-49f4-b847-2695b1ec01a5.jpg"
     }
   ],
   "Endpoints": [
     {
-      "Route": "uploads/344bbd51-e8f5-4ce7-aae4-9b36baf01721.png",
-      "AssetFile": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/344bbd51-e8f5-4ce7-aae4-9b36baf01721.png",
+      "Route": "uploads/4372ecbe-1437-4a88-9d7d-3f5fbda4e4fd.jiuwv4daev.pdf",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/Solfix/Presentation/WebApi/wwwroot/uploads/4372ecbe-1437-4a88-9d7d-3f5fbda4e4fd.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -239,19 +92,146 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1105357"
+          "Value": "151050"
         },
         {
           "Name": "Content-Type",
-          "Value": "image/png"
+          "Value": "application/pdf"
         },
         {
           "Name": "ETag",
-          "Value": "\"Rc5zBBy/JIXqjRMpcZAuCGF225An6LqMMGXjdjFA2Ow=\""
+          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 19 Jun 2025 14:52:56 GMT"
+          "Value": "Thu, 10 Jul 2025 08:26:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jiuwv4daev"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/4372ecbe-1437-4a88-9d7d-3f5fbda4e4fd.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/4372ecbe-1437-4a88-9d7d-3f5fbda4e4fd.pdf",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/Solfix/Presentation/WebApi/wwwroot/uploads/4372ecbe-1437-4a88-9d7d-3f5fbda4e4fd.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "151050"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 10 Jul 2025 08:26:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/4ec547c2-8abb-4ec0-b821-1711a2549c0a.5xek7dql5a.jpg",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/Solfix/Presentation/WebApi/wwwroot/uploads/4ec547c2-8abb-4ec0-b821-1711a2549c0a.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4533448"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iSO8ueZfXTdVwrYuShQSUNV8GIfOmD/QGrB7h6QoQCI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 10 Jul 2025 08:27:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5xek7dql5a"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/4ec547c2-8abb-4ec0-b821-1711a2549c0a.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-iSO8ueZfXTdVwrYuShQSUNV8GIfOmD/QGrB7h6QoQCI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/4ec547c2-8abb-4ec0-b821-1711a2549c0a.jpg",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/Solfix/Presentation/WebApi/wwwroot/uploads/4ec547c2-8abb-4ec0-b821-1711a2549c0a.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4533448"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iSO8ueZfXTdVwrYuShQSUNV8GIfOmD/QGrB7h6QoQCI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 10 Jul 2025 08:27:15 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -261,13 +241,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Rc5zBBy/JIXqjRMpcZAuCGF225An6LqMMGXjdjFA2Ow="
+          "Value": "sha256-iSO8ueZfXTdVwrYuShQSUNV8GIfOmD/QGrB7h6QoQCI="
         }
       ]
     },
     {
-      "Route": "uploads/344bbd51-e8f5-4ce7-aae4-9b36baf01721.zuytsk7c8i.png",
-      "AssetFile": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/344bbd51-e8f5-4ce7-aae4-9b36baf01721.png",
+      "Route": "uploads/7266e4e0-ecbc-49f4-b847-2695b1ec01a5.5xek7dql5a.jpg",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/Solfix/Presentation/WebApi/wwwroot/uploads/7266e4e0-ecbc-49f4-b847-2695b1ec01a5.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -276,626 +256,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1105357"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Rc5zBBy/JIXqjRMpcZAuCGF225An6LqMMGXjdjFA2Ow=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 19 Jun 2025 14:52:56 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "zuytsk7c8i"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/344bbd51-e8f5-4ce7-aae4-9b36baf01721.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-Rc5zBBy/JIXqjRMpcZAuCGF225An6LqMMGXjdjFA2Ow="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/44852760-9915-46d1-af3d-5b2cb602d628.jiuwv4daev.pdf",
-      "AssetFile": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/44852760-9915-46d1-af3d-5b2cb602d628.pdf",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "151050"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/pdf"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 16 Jun 2025 13:02:04 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "jiuwv4daev"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/44852760-9915-46d1-af3d-5b2cb602d628.pdf"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/44852760-9915-46d1-af3d-5b2cb602d628.pdf",
-      "AssetFile": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/44852760-9915-46d1-af3d-5b2cb602d628.pdf",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "151050"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/pdf"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 16 Jun 2025 13:02:04 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/5634bc34-1aaa-44f9-95b7-5e9223bc01b2.jiuwv4daev.pdf",
-      "AssetFile": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/5634bc34-1aaa-44f9-95b7-5e9223bc01b2.pdf",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "151050"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/pdf"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 04 Jun 2025 10:47:51 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "jiuwv4daev"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/5634bc34-1aaa-44f9-95b7-5e9223bc01b2.pdf"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/5634bc34-1aaa-44f9-95b7-5e9223bc01b2.pdf",
-      "AssetFile": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/5634bc34-1aaa-44f9-95b7-5e9223bc01b2.pdf",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "151050"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/pdf"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 04 Jun 2025 10:47:51 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/6bd3add1-b516-4b4d-aead-94205d1ca0e2.jiuwv4daev.pdf",
-      "AssetFile": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/6bd3add1-b516-4b4d-aead-94205d1ca0e2.pdf",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "151050"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/pdf"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 04 Jun 2025 11:22:57 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "jiuwv4daev"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/6bd3add1-b516-4b4d-aead-94205d1ca0e2.pdf"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/6bd3add1-b516-4b4d-aead-94205d1ca0e2.pdf",
-      "AssetFile": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/6bd3add1-b516-4b4d-aead-94205d1ca0e2.pdf",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "151050"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/pdf"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 04 Jun 2025 11:22:57 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/85a6193b-935f-4f4a-afa2-eea4adb094fc.jiuwv4daev.pdf",
-      "AssetFile": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/85a6193b-935f-4f4a-afa2-eea4adb094fc.pdf",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "151050"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/pdf"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 04 Jun 2025 11:37:05 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "jiuwv4daev"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/85a6193b-935f-4f4a-afa2-eea4adb094fc.pdf"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/85a6193b-935f-4f4a-afa2-eea4adb094fc.pdf",
-      "AssetFile": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/85a6193b-935f-4f4a-afa2-eea4adb094fc.pdf",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "151050"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/pdf"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 04 Jun 2025 11:37:05 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/996673b6-a706-4d04-a503-8f3de3a1b721.jiuwv4daev.pdf",
-      "AssetFile": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/996673b6-a706-4d04-a503-8f3de3a1b721.pdf",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "151050"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/pdf"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 04 Jun 2025 11:37:05 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "jiuwv4daev"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/996673b6-a706-4d04-a503-8f3de3a1b721.pdf"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/996673b6-a706-4d04-a503-8f3de3a1b721.pdf",
-      "AssetFile": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/996673b6-a706-4d04-a503-8f3de3a1b721.pdf",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "151050"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/pdf"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 04 Jun 2025 11:37:05 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/a406204f-4892-488a-b470-5546c56d62ab.jiuwv4daev.pdf",
-      "AssetFile": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/a406204f-4892-488a-b470-5546c56d62ab.pdf",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "151050"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/pdf"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 04 Jun 2025 11:22:57 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "jiuwv4daev"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/a406204f-4892-488a-b470-5546c56d62ab.pdf"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/a406204f-4892-488a-b470-5546c56d62ab.pdf",
-      "AssetFile": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/a406204f-4892-488a-b470-5546c56d62ab.pdf",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "151050"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/pdf"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 04 Jun 2025 11:22:57 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/ae2b31de-f613-4de1-b716-e3a066d6e9fd.jiuwv4daev.pdf",
-      "AssetFile": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/ae2b31de-f613-4de1-b716-e3a066d6e9fd.pdf",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "151050"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/pdf"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 04 Jun 2025 11:20:22 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "jiuwv4daev"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/ae2b31de-f613-4de1-b716-e3a066d6e9fd.pdf"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/ae2b31de-f613-4de1-b716-e3a066d6e9fd.pdf",
-      "AssetFile": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/ae2b31de-f613-4de1-b716-e3a066d6e9fd.pdf",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "151050"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/pdf"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 04 Jun 2025 11:20:22 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/b8e7f6bf-e07a-4d98-8f2a-35fa0aec89fb.0ndpz5hyar.jpeg",
-      "AssetFile": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/b8e7f6bf-e07a-4d98-8f2a-35fa0aec89fb.jpeg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "479721"
+          "Value": "4533448"
         },
         {
           "Name": "Content-Type",
@@ -903,11 +264,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"TNgSJp+MoJ5Jna2GHLAKnYoO2oK+zCQuRSpC7qh13LE=\""
+          "Value": "\"iSO8ueZfXTdVwrYuShQSUNV8GIfOmD/QGrB7h6QoQCI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 04 Jun 2025 11:02:38 GMT"
+          "Value": "Thu, 10 Jul 2025 08:27:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -917,21 +278,21 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "0ndpz5hyar"
+          "Value": "5xek7dql5a"
         },
         {
           "Name": "label",
-          "Value": "uploads/b8e7f6bf-e07a-4d98-8f2a-35fa0aec89fb.jpeg"
+          "Value": "uploads/7266e4e0-ecbc-49f4-b847-2695b1ec01a5.jpg"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-TNgSJp+MoJ5Jna2GHLAKnYoO2oK+zCQuRSpC7qh13LE="
+          "Value": "sha256-iSO8ueZfXTdVwrYuShQSUNV8GIfOmD/QGrB7h6QoQCI="
         }
       ]
     },
     {
-      "Route": "uploads/b8e7f6bf-e07a-4d98-8f2a-35fa0aec89fb.jpeg",
-      "AssetFile": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/b8e7f6bf-e07a-4d98-8f2a-35fa0aec89fb.jpeg",
+      "Route": "uploads/7266e4e0-ecbc-49f4-b847-2695b1ec01a5.jpg",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/Solfix/Presentation/WebApi/wwwroot/uploads/7266e4e0-ecbc-49f4-b847-2695b1ec01a5.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -940,7 +301,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "479721"
+          "Value": "4533448"
         },
         {
           "Name": "Content-Type",
@@ -948,11 +309,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"TNgSJp+MoJ5Jna2GHLAKnYoO2oK+zCQuRSpC7qh13LE=\""
+          "Value": "\"iSO8ueZfXTdVwrYuShQSUNV8GIfOmD/QGrB7h6QoQCI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 04 Jun 2025 11:02:38 GMT"
+          "Value": "Thu, 10 Jul 2025 08:27:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -962,89 +323,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-TNgSJp+MoJ5Jna2GHLAKnYoO2oK+zCQuRSpC7qh13LE="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/cff474af-f53c-4616-a5f6-9b38b9f16547.jiuwv4daev.pdf",
-      "AssetFile": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/cff474af-f53c-4616-a5f6-9b38b9f16547.pdf",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "151050"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/pdf"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 04 Jun 2025 10:58:44 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "jiuwv4daev"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/cff474af-f53c-4616-a5f6-9b38b9f16547.pdf"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/cff474af-f53c-4616-a5f6-9b38b9f16547.pdf",
-      "AssetFile": "/Users/ahmetguvendik/Desktop/untitled folder/Project/ArizaTakipSistemi/Presentation/WebApi/wwwroot/uploads/cff474af-f53c-4616-a5f6-9b38b9f16547.pdf",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "151050"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/pdf"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 04 Jun 2025 10:58:44 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
+          "Value": "sha256-iSO8ueZfXTdVwrYuShQSUNV8GIfOmD/QGrB7h6QoQCI="
         }
       ]
     }

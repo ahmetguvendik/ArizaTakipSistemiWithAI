@@ -20,7 +20,11 @@ namespace Application.Features.Handlers.AppUserHandlers.Write;
 
         public async Task<LoginUserQueryResult> Handle(LoginUserCommand request, CancellationToken cancellationToken)
         {
-            var appUser = await _userManager.FindByNameAsync(request.Username); 
+            var appUser = await _userManager.FindByNameAsync(request.Username);
+            if (appUser == null)
+            {
+                return null;
+            }
             await _userManager.SetTwoFactorEnabledAsync(appUser, true);
             var response = await _signInManager.PasswordSignInAsync(appUser,request.Password,false,false);
             if (response.Succeeded)
@@ -63,9 +67,9 @@ namespace Application.Features.Handlers.AppUserHandlers.Write;
             
             return new LoginUserQueryResult()
             {
-                Id = appUser.Id,
-                Username = request.Username,
-                DepartmanId = appUser.DepartmentId,
+                Id = "",
+                Username = "",
+                DepartmanId = "",
                 Role = ""
             };
             

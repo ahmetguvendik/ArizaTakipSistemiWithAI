@@ -1005,6 +1005,14 @@
           }
         }
       },
+      "Serilog/4.3.1-dev-02373": {
+        "runtime": {
+          "lib/net9.0/Serilog.dll": {
+            "assemblyVersion": "4.3.0.0",
+            "fileVersion": "4.3.0.0"
+          }
+        }
+      },
       "System.Buffers/4.6.0": {},
       "System.ClientModel/1.4.0-beta.1": {
         "dependencies": {
@@ -1274,6 +1282,7 @@
           "ModelContextProtocol.AspNetCore": "0.2.0-preview.1",
           "ModelContextProtocol.NET.Server": "0.3.2-alpha",
           "Newtonsoft.Json": "13.0.3",
+          "Serilog": "4.3.1-dev-02373",
           "System.ComponentModel": "4.3.0"
         },
         "runtime": {
@@ -1950,6 +1959,13 @@
       "sha512": "sha512-JZ4/mlVXLaXDIZuC4Ddu0KCAA23z4Ax1AQTS26mpJRuSShjXik7DU8a3basY3ddD51W04F7jeX5eAXamKA6rHw==",
       "path": "openai/2.2.0-beta.4",
       "hashPath": "openai.2.2.0-beta.4.nupkg.sha512"
+    },
+    "Serilog/4.3.1-dev-02373": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-f0HNPaleOox5++8zqxAdi9afnUUkoznLOmd0ur/UnLbzl8bIaPyyBGOpbIJmC1kz2vHfkQ0fXh6KXMdlz7bcLQ==",
+      "path": "serilog/4.3.1-dev-02373",
+      "hashPath": "serilog.4.3.1-dev-02373.nupkg.sha512"
     },
     "System.Buffers/4.6.0": {
       "type": "package",
