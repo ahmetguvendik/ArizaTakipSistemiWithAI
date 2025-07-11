@@ -110,19 +110,12 @@ public class LoginController : Microsoft.AspNetCore.Mvc.Controller
             return Unauthorized("User not found");
 
         // JWT token oluştur
-        var token = _tokenHandler.CreateAccessToken();
+        var token = _tokenHandler.CreateAccessToken(user, result.Role);
 
         return Ok(new
         {
             token = token.AccessToken,
-            expiration = token.Expiration,
-            user = new
-            {
-                result.Id,
-                result.Username,
-                result.Role,
-                result.DepartmanId
-            }
+            expiration = token.Expiration
         });
     }
 }

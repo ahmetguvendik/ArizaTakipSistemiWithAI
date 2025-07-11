@@ -8,7 +8,7 @@ namespace WebApi.Controller;
 
 [Route("api/[controller]")]
 [ApiController]
-public class StatisticsController : Microsoft.AspNetCore.Mvc.Controller
+public class StatisticsController : ControllerBase
 {
     private readonly IMediator _mediator;
 

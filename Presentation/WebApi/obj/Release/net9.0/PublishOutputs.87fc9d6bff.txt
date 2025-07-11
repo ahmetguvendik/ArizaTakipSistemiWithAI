@@ -1,6 +1,12 @@
 /Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/publish/WebApi
+/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/publish/publish/web.config
 /Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/publish/appsettings.Development.json
 /Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/publish/appsettings.json
+/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/publish/publish/appsettings.Development.json
+/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/publish/publish/appsettings.json
+/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/publish/publish/WebApi.deps.json
+/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/publish/publish/WebApi.runtimeconfig.json
+/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/publish/publish/WebApi.staticwebassets.endpoints.json
 /Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/publish/WebApi.dll
 /Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/publish/WebApi.runtimeconfig.json
 /Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/publish/WebApi.pdb

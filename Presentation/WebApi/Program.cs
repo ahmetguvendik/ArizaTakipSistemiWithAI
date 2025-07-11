@@ -18,6 +18,7 @@ using WebApi.ViewModels;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,21 +29,7 @@ builder.Services.AddAuthorization();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddAuthentication("MyCookieAuth")
-    .AddCookie("MyCookieAuth", options =>
-    {
-        options.LoginPath = "/Login/Index";
-        options.AccessDeniedPath = "/Login/AccessDenied";
-        options.Cookie.Name = ".Solfix.Auth"; // Ortak bir isim ver
-        options.Cookie.HttpOnly = true;
-        options.Cookie.SameSite = SameSiteMode.Lax; // None değil çünkü HTTP'de çalışmaz
-        options.Cookie.SecurePolicy = CookieSecurePolicy.None; // HTTPS zorunlu değil
-        options.ExpireTimeSpan = TimeSpan.FromMinutes(60); // Oturum süresi
-        options.SlidingExpiration = true; // Her istekte süre uzar
-        // options.Cookie.Domain = ".solfix.help"; // Şimdilik YORUMDA bırak, çünkü HTTP'de + cross-subdomain çalışmaz
-    });
-
-// Cookie authentication'dan sonra JWT authentication ekle
+// Cookie authentication kaldırıldı, sadece JWT authentication kaldı
 var jwtSettings = builder.Configuration.GetSection("Jwt").Get<Application.DTOs.JwtSettings>();
 builder.Services.AddAuthentication(options =>
 {
@@ -60,7 +47,9 @@ builder.Services.AddAuthentication(options =>
         ValidIssuer = jwtSettings.Issuer,
         ValidAudience = jwtSettings.Audience,
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.Key)),
-        ClockSkew = TimeSpan.Zero
+        ClockSkew = TimeSpan.Zero,
+        RoleClaimType = ClaimTypes.Role,
+        NameClaimType = ClaimTypes.Name
     };
 });
 

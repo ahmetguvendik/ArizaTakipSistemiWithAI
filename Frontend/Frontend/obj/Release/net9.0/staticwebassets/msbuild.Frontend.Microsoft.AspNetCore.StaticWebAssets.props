@@ -4044,8 +4044,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>sot52ot9a1</Fingerprint>
-      <Integrity>dChmkTPsPsTV13HU145uFtyThdb6GJpTcnYka2efamM=</Integrity>
+      <Fingerprint>43nnk0s5f9</Fingerprint>
+      <Integrity>YJeebxLNGkHErIIGksYDfDqjQg2UGPpiWartuLahi8E=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\startbootstrap-sb-admin-2-gh-pages\vendor\chart.js\Chart.js'))</OriginalItemSpec>
@@ -4062,8 +4062,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>1bkk5f9ct6</Fingerprint>
-      <Integrity>MwuaABKOZBmQ/lAvt5Y2+IPc+I4LP33TTpcv/3Jv/X8=</Integrity>
+      <Fingerprint>bw0uvtlh7x</Fingerprint>
+      <Integrity>9fzhKgYIoRrnZK3atuiiIxRf4dhSQjkaxwYin780WJs=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\startbootstrap-sb-admin-2-gh-pages\vendor\chart.js\Chart.bundle.js'))</OriginalItemSpec>

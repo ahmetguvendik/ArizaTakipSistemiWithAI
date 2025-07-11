@@ -30,4 +30,5 @@ public class RegisterController : Microsoft.AspNetCore.Mvc.Controller
             return BadRequest(ex.Message); // stack trace yok!
         }
     }
+
 }

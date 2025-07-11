@@ -767,3 +767,9 @@
 /Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/obj/Release/net9.0/WebApi.pdb
 /Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/obj/Release/net9.0/WebApi.genruntimeconfig.cache
 /Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/obj/Release/net9.0/ref/WebApi.dll
+/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/bin/Release/net9.0/publish/web.config
+/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/bin/Release/net9.0/publish/appsettings.Development.json
+/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/bin/Release/net9.0/publish/appsettings.json
+/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/bin/Release/net9.0/publish/WebApi.deps.json
+/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/bin/Release/net9.0/publish/WebApi.runtimeconfig.json
+/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/bin/Release/net9.0/publish/WebApi.staticwebassets.endpoints.json

@@ -1,0 +1,5 @@
+/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/publish/DTO.dll
+/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/publish/DTO.deps.json
+/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/publish/DTO.pdb
+/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/publish/Microsoft.AspNetCore.Http.Features.dll
+/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/publish/Microsoft.Extensions.Primitives.dll
