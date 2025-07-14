@@ -1,12 +1,1052 @@
 {
   "Version": 1,
-  "Hash": "QGVSizwXrTph6AuD6pqykRFG+aXM2jYWKVOutMjEBdE=",
+  "Hash": "8lJTY4whcAjhpNGsvaSeIOg4PvIoH5bsGt8LCEp0VWQ=",
   "Source": "WebApi",
   "BasePath": "_content/WebApi",
   "Mode": "Default",
   "ManifestType": "Publish",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "WebApi/wwwroot",
+      "Source": "WebApi",
+      "ContentRoot": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/",
+      "BasePath": "_content/WebApi",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/2a5f1790-7aa3-44a6-a0f5-df5eaa889988.pdf",
+      "SourceId": "WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/",
+      "BasePath": "_content/WebApi",
+      "RelativePath": "uploads/2a5f1790-7aa3-44a6-a0f5-df5eaa889988#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jiuwv4daev",
+      "Integrity": "e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/2a5f1790-7aa3-44a6-a0f5-df5eaa889988.pdf"
+    },
+    {
+      "Identity": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/2b21fa07-967d-442c-b6cb-fa77f7403d71.pdf",
+      "SourceId": "WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/",
+      "BasePath": "_content/WebApi",
+      "RelativePath": "uploads/2b21fa07-967d-442c-b6cb-fa77f7403d71#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jiuwv4daev",
+      "Integrity": "e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/2b21fa07-967d-442c-b6cb-fa77f7403d71.pdf"
+    },
+    {
+      "Identity": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/42b55720-b917-4850-9d2b-9aeab91dcdb8.pdf",
+      "SourceId": "WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/",
+      "BasePath": "_content/WebApi",
+      "RelativePath": "uploads/42b55720-b917-4850-9d2b-9aeab91dcdb8#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jiuwv4daev",
+      "Integrity": "e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/42b55720-b917-4850-9d2b-9aeab91dcdb8.pdf"
+    },
+    {
+      "Identity": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/7d3e46e8-d08a-4ba6-a573-c8c164961af3.pdf",
+      "SourceId": "WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/",
+      "BasePath": "_content/WebApi",
+      "RelativePath": "uploads/7d3e46e8-d08a-4ba6-a573-c8c164961af3#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jiuwv4daev",
+      "Integrity": "e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/7d3e46e8-d08a-4ba6-a573-c8c164961af3.pdf"
+    },
+    {
+      "Identity": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/8c87242c-17d1-4898-89c8-89af6b9d15e2.jpg",
+      "SourceId": "WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/",
+      "BasePath": "_content/WebApi",
+      "RelativePath": "uploads/8c87242c-17d1-4898-89c8-89af6b9d15e2#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5xek7dql5a",
+      "Integrity": "iSO8ueZfXTdVwrYuShQSUNV8GIfOmD/QGrB7h6QoQCI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/8c87242c-17d1-4898-89c8-89af6b9d15e2.jpg"
+    },
+    {
+      "Identity": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/c33ca49d-271f-4748-acb5-1e12d5b607c5.pdf",
+      "SourceId": "WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/",
+      "BasePath": "_content/WebApi",
+      "RelativePath": "uploads/c33ca49d-271f-4748-acb5-1e12d5b607c5#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jiuwv4daev",
+      "Integrity": "e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/c33ca49d-271f-4748-acb5-1e12d5b607c5.pdf"
+    },
+    {
+      "Identity": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/e638c391-4d30-473e-9d9f-0aed31909bbe.pdf",
+      "SourceId": "WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/",
+      "BasePath": "_content/WebApi",
+      "RelativePath": "uploads/e638c391-4d30-473e-9d9f-0aed31909bbe#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jiuwv4daev",
+      "Integrity": "e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/e638c391-4d30-473e-9d9f-0aed31909bbe.pdf"
+    },
+    {
+      "Identity": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/eb4915ea-0c36-4c1a-97f1-98a070a89bfd.pdf",
+      "SourceId": "WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/",
+      "BasePath": "_content/WebApi",
+      "RelativePath": "uploads/eb4915ea-0c36-4c1a-97f1-98a070a89bfd#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jiuwv4daev",
+      "Integrity": "e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/eb4915ea-0c36-4c1a-97f1-98a070a89bfd.pdf"
+    },
+    {
+      "Identity": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/f2e44787-c078-4bae-8f26-9df427c7ec2b.pdf",
+      "SourceId": "WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/",
+      "BasePath": "_content/WebApi",
+      "RelativePath": "uploads/f2e44787-c078-4bae-8f26-9df427c7ec2b#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jiuwv4daev",
+      "Integrity": "e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/f2e44787-c078-4bae-8f26-9df427c7ec2b.pdf"
+    },
+    {
+      "Identity": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/f448c063-9a0d-4535-94f1-48da1f6ea91d.jpg",
+      "SourceId": "WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/",
+      "BasePath": "_content/WebApi",
+      "RelativePath": "uploads/f448c063-9a0d-4535-94f1-48da1f6ea91d#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5xek7dql5a",
+      "Integrity": "iSO8ueZfXTdVwrYuShQSUNV8GIfOmD/QGrB7h6QoQCI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/f448c063-9a0d-4535-94f1-48da1f6ea91d.jpg"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "uploads/2a5f1790-7aa3-44a6-a0f5-df5eaa889988.jiuwv4daev.pdf",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/2a5f1790-7aa3-44a6-a0f5-df5eaa889988.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "151050"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 14 Jul 2025 11:59:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jiuwv4daev"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/2a5f1790-7aa3-44a6-a0f5-df5eaa889988.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/2a5f1790-7aa3-44a6-a0f5-df5eaa889988.pdf",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/2a5f1790-7aa3-44a6-a0f5-df5eaa889988.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "151050"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 14 Jul 2025 11:59:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/2b21fa07-967d-442c-b6cb-fa77f7403d71.jiuwv4daev.pdf",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/2b21fa07-967d-442c-b6cb-fa77f7403d71.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "151050"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 14 Jul 2025 12:09:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jiuwv4daev"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/2b21fa07-967d-442c-b6cb-fa77f7403d71.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/2b21fa07-967d-442c-b6cb-fa77f7403d71.pdf",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/2b21fa07-967d-442c-b6cb-fa77f7403d71.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "151050"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 14 Jul 2025 12:09:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/42b55720-b917-4850-9d2b-9aeab91dcdb8.jiuwv4daev.pdf",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/42b55720-b917-4850-9d2b-9aeab91dcdb8.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "151050"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 14 Jul 2025 12:06:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jiuwv4daev"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/42b55720-b917-4850-9d2b-9aeab91dcdb8.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/42b55720-b917-4850-9d2b-9aeab91dcdb8.pdf",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/42b55720-b917-4850-9d2b-9aeab91dcdb8.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "151050"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 14 Jul 2025 12:06:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/7d3e46e8-d08a-4ba6-a573-c8c164961af3.jiuwv4daev.pdf",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/7d3e46e8-d08a-4ba6-a573-c8c164961af3.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "151050"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 14 Jul 2025 12:03:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jiuwv4daev"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/7d3e46e8-d08a-4ba6-a573-c8c164961af3.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/7d3e46e8-d08a-4ba6-a573-c8c164961af3.pdf",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/7d3e46e8-d08a-4ba6-a573-c8c164961af3.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "151050"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 14 Jul 2025 12:03:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/8c87242c-17d1-4898-89c8-89af6b9d15e2.5xek7dql5a.jpg",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/8c87242c-17d1-4898-89c8-89af6b9d15e2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4533448"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iSO8ueZfXTdVwrYuShQSUNV8GIfOmD/QGrB7h6QoQCI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 14 Jul 2025 11:54:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5xek7dql5a"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/8c87242c-17d1-4898-89c8-89af6b9d15e2.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-iSO8ueZfXTdVwrYuShQSUNV8GIfOmD/QGrB7h6QoQCI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/8c87242c-17d1-4898-89c8-89af6b9d15e2.jpg",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/8c87242c-17d1-4898-89c8-89af6b9d15e2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4533448"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iSO8ueZfXTdVwrYuShQSUNV8GIfOmD/QGrB7h6QoQCI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 14 Jul 2025 11:54:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-iSO8ueZfXTdVwrYuShQSUNV8GIfOmD/QGrB7h6QoQCI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/c33ca49d-271f-4748-acb5-1e12d5b607c5.jiuwv4daev.pdf",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/c33ca49d-271f-4748-acb5-1e12d5b607c5.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "151050"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 14 Jul 2025 12:11:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jiuwv4daev"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/c33ca49d-271f-4748-acb5-1e12d5b607c5.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/c33ca49d-271f-4748-acb5-1e12d5b607c5.pdf",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/c33ca49d-271f-4748-acb5-1e12d5b607c5.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "151050"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 14 Jul 2025 12:11:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/e638c391-4d30-473e-9d9f-0aed31909bbe.jiuwv4daev.pdf",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/e638c391-4d30-473e-9d9f-0aed31909bbe.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "151050"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 14 Jul 2025 11:55:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jiuwv4daev"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/e638c391-4d30-473e-9d9f-0aed31909bbe.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/e638c391-4d30-473e-9d9f-0aed31909bbe.pdf",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/e638c391-4d30-473e-9d9f-0aed31909bbe.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "151050"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 14 Jul 2025 11:55:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/eb4915ea-0c36-4c1a-97f1-98a070a89bfd.jiuwv4daev.pdf",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/eb4915ea-0c36-4c1a-97f1-98a070a89bfd.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "151050"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 14 Jul 2025 12:10:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jiuwv4daev"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/eb4915ea-0c36-4c1a-97f1-98a070a89bfd.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/eb4915ea-0c36-4c1a-97f1-98a070a89bfd.pdf",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/eb4915ea-0c36-4c1a-97f1-98a070a89bfd.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "151050"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 14 Jul 2025 12:10:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/f2e44787-c078-4bae-8f26-9df427c7ec2b.jiuwv4daev.pdf",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/f2e44787-c078-4bae-8f26-9df427c7ec2b.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "151050"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 14 Jul 2025 11:48:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jiuwv4daev"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/f2e44787-c078-4bae-8f26-9df427c7ec2b.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/f2e44787-c078-4bae-8f26-9df427c7ec2b.pdf",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/f2e44787-c078-4bae-8f26-9df427c7ec2b.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "151050"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 14 Jul 2025 11:48:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-e8E4F7SWTRQHSqDaqZTuOM9cQtWL6R3dDTsttH7f/BI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/f448c063-9a0d-4535-94f1-48da1f6ea91d.5xek7dql5a.jpg",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/f448c063-9a0d-4535-94f1-48da1f6ea91d.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4533448"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iSO8ueZfXTdVwrYuShQSUNV8GIfOmD/QGrB7h6QoQCI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 14 Jul 2025 11:49:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5xek7dql5a"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/f448c063-9a0d-4535-94f1-48da1f6ea91d.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-iSO8ueZfXTdVwrYuShQSUNV8GIfOmD/QGrB7h6QoQCI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/f448c063-9a0d-4535-94f1-48da1f6ea91d.jpg",
+      "AssetFile": "/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/wwwroot/uploads/f448c063-9a0d-4535-94f1-48da1f6ea91d.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4533448"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iSO8ueZfXTdVwrYuShQSUNV8GIfOmD/QGrB7h6QoQCI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 14 Jul 2025 11:49:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-iSO8ueZfXTdVwrYuShQSUNV8GIfOmD/QGrB7h6QoQCI="
+        }
+      ]
+    }
+  ]
 }

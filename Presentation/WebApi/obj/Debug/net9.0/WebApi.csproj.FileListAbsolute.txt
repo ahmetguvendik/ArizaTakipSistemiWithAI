@@ -778,3 +778,4 @@
 /Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/bin/Debug/net9.0/publish/publish/WebApi.deps.json
 /Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/bin/Debug/net9.0/publish/publish/WebApi.runtimeconfig.json
 /Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/bin/Debug/net9.0/publish/publish/WebApi.staticwebassets.endpoints.json
+/Users/ahmetguvendik/Desktop/SolfixBackend/ArizaTakipSistemiWithAI/Presentation/WebApi/bin/Debug/net9.0/WebApi.staticwebassets.runtime.json
